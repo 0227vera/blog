@@ -9,7 +9,7 @@ module.exports = {
     repoLabel: 'Github',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'About', link: '/about/about' },
+      { text: 'About', link: '/about/' },
       { text: 'Posts', items: [
         {text: 'HTML', link:'/HTML/'},
         {text: 'CSS', link:'/CSS/'},

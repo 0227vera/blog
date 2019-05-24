@@ -28,12 +28,6 @@ export default {
   },
   methods: {
     BackToTop() {
-      /* this.timer = setInterval(() => {
-        if (document.documentElement.scrollTop === 0) {
-          clearInterval(this.timer)
-        }
-        window.scrollBy(0, -300)
-      }, 30) */
       window.scrollTo(0, 0)
     },
     showRocketIcon() {
