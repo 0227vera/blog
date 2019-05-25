@@ -12,26 +12,20 @@
   * img input （最典型的两个）
 
 - h5新增的一些标签
-  * header、mian、footer 等相关语义化的标签
+  * 布局类
+    * header、mian、footer 等相关语义化的标签
+  * 功能类
+    * figure:定义带图片的文章 figcaption:作为figure标签的标题
+    * progress:进度条（兼容性较差，一般使用其他元素模拟）
+    * 一些新的标签的兼容性可能比较差，所以用的也比较少，但是canvas不一样，canvas用的还是比较多的，特别是基于canvas开发出来的大量的第三方的插件或者框架和引擎，比如：
+        * [babylonJS](https://www.babylonjs.com/)
+        * [threeJS](https://threejs.org/)
   * canvas （使用canvas做手写签批）（下面是签名的例子）
-
-
 <canvas-sign />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* 资料来源 [SignaturePad源码和demo](https://codepen.io/theonelucas/pen/PjzYeg)
+* 标注功能(类似于微信截图功能)资料来源 [fabric.js](https://get.fabric.io/)
+* [标注功能事件demo](http://fabricjs.com/events)
+* [网上优秀使用和讲解](https://blog.csdn.net/sufu1065/article/details/80116758) 
+* [](https://vipstone.github.io/drawingboard/drawingboard/index.html)
 
 <back-to-top />

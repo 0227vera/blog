@@ -26,7 +26,8 @@ module.exports = {
           title: 'HTML',
           collapsable: false,
           children: [
-            '/HTML/'
+            '/HTML/',
+            '/HTML/常见布局.md'
           ] 
         },
         {
@@ -34,14 +35,19 @@ module.exports = {
           collapsable: false,
           children: [
             '/CSS/box-module.md',
-            '/CSS/test.md'
+            '/CSS/弹性盒.md',
+            '/CSS/浮动和定位.md'
           ] 
         },
         {
           title: 'JavaScript',
           collapsable: false,
           children: [
-            '/JavaScript/'
+            '/JavaScript/',
+            '/JavaScript/变量',
+            '/JavaScript/函数',
+            '/JavaScript/数组',
+            '/JavaScript/对象',
           ] 
         },
         {
