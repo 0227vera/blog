@@ -1,7 +1,7 @@
 module.exports = {
   // 可以理解为路由的配置文件
   title: "salvatore and vera",
-  description: 'Live is what? Get busy linving, Or get busy dying',
+  description: 'Live is what? Get busy living, Or get busy dying',
   themeConfig: {
     lastUpdated: true,
     lastUpdated: '最后更新时间',
@@ -34,7 +34,7 @@ module.exports = {
           title: 'CSS',
           collapsable: false,
           children: [
-            '/CSS/box-module.md',
+            '/CSS/',
             '/CSS/弹性盒.md',
             '/CSS/浮动和定位.md'
           ] 
@@ -48,6 +48,7 @@ module.exports = {
             '/JavaScript/函数',
             '/JavaScript/数组',
             '/JavaScript/对象',
+            '/JavaScript/正则',
           ] 
         },
         {
