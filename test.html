@@ -24,5 +24,15 @@
     obj.text = event.target.value
   })
 
+function Salvatore (name,age) {
+  if (!this instanceof Salvatore) {
+    console.log(this)
+    return new Salvatore (name, age)
+  }
+  this._name = name
+  this._age = age
+}
+let s = Salvatore('liaoxuan',25)
+console.log(s)
 </script>
 </html>
