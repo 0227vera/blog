@@ -14,6 +14,7 @@ module.exports = {
         {text: 'HTML', link:'/HTML/'},
         {text: 'CSS', link:'/CSS/'},
         {text: 'JavaScript', link:'/JavaScript/'},
+        {text: 'webpack', link:'/webpack/'},
         {text: 'ES6', link:'/ES6/'},
         {text: 'Vue', link:'/Vue/'},
         {text: 'nodeJS', link:'/nodeJS/'},
@@ -50,6 +51,13 @@ module.exports = {
             '/JavaScript/对象',
             '/JavaScript/正则',
           ] 
+        },
+        {
+          title: 'webpack',
+          collapsable: false,
+          children: [
+            '/webpack/'
+          ]
         },
         {
           title: 'ES6',
