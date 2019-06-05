@@ -37,7 +37,8 @@ module.exports = {
           children: [
             '/CSS/',
             '/CSS/弹性盒.md',
-            '/CSS/浮动和定位.md'
+            '/CSS/浮动和定位.md',
+            '/CSS/玻璃磨砂效果.md'
           ] 
         },
         {
