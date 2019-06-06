@@ -47,9 +47,9 @@ module.exports = {
           children: [
             '/JavaScript/',
             '/JavaScript/变量',
-            '/JavaScript/函数',
             '/JavaScript/数组',
             '/JavaScript/对象',
+            '/JavaScript/面向对象',
             '/JavaScript/正则',
           ] 
         },
