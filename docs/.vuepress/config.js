@@ -18,6 +18,7 @@ module.exports = {
         {text: 'ES6', link:'/ES6/'},
         {text: 'Vue', link:'/Vue/'},
         {text: 'nodeJS', link:'/nodeJS/'},
+        {text: 'tool', link:'/tool/'},
         
       ] }
     ],
@@ -79,6 +80,14 @@ module.exports = {
           collapsable: false,
           children: [
             '/nodeJS/'
+          ]
+        },
+        {
+          title:'tool',
+          collapsable: false,
+          children: [
+            '/tool/',
+            '/tool/设别设备类型'
           ]
         }
       ]
