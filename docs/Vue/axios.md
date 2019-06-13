@@ -55,13 +55,12 @@ export function Axios ({ method, url, params, data, baseURL = window.CONTEXT }) 
       params,
       data,
       baseURL
-    }).then(({ data }) => {
-      data.success ? resolve(data) : reject(data)
-    }, (err) => {
-      reject(err)
-    }).catch((err) => {
-      reject(err)
-    })
+    }).then(
+      { data } => { data.success ? resolve(data) : reject(data) }, 
+      err => { reject(err) }
+      ).catch(
+        err => { reject(err) }
+      )
   })
 }
 // PS: Promise主要是用来封装异步请求的方法

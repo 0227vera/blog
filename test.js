@@ -166,6 +166,19 @@ function add(prev, cur) {
   return prev + cur;
 }
 
-[].reduce(add)
+// [].reduce(add)
 // TypeError: Reduce of empty array with no initial value
 console.log([].reduce(add, 1))
+console.log('----------------')
+async function show () {
+  let a = 5
+  let b = 6 
+  let data = await new Promise((resolve,reject) => {
+    a = 3
+    resolve({a:3,b:4})
+  });
+  console.log(a,data)
+}
+// 普通函数---一直执行，知道结束
+// async/await函数---能够“暂停”
+show()

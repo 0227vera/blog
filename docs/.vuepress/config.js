@@ -58,14 +58,21 @@ module.exports = {
           title: 'webpack',
           collapsable: false,
           children: [
-            '/webpack/'
+            '/webpack/',
+            '/webpack/loader',
+            '/webpack/dev-server',
           ]
         },
         {
           title: 'ES6',
           collapsable: false,
           children: [
-            '/ES6/'
+            '/ES6/',
+            '/ES6/let-const',
+            '/ES6/解构',
+            '/ES6/箭头函数',
+            '/ES6/class',
+            '/ES6/Promise',
           ]
         },
         {
