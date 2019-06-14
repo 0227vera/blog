@@ -22,4 +22,6 @@
   1. none --- 不优化，是什么样还是什么样
   2. development --- 开发环境，会输出一些调试信息，也设置了process.env.NODE_ENV
   3. production --- 最高级别的优化，启用压缩，忽略错误
+
+  [webpack官网](https://www.webpackjs.com/)
   <back-to-top />

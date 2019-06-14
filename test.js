@@ -155,13 +155,14 @@ function _new() {
 }
 // _new(Func, 'haha', 23)
 console.log('-------------')
-let list = [0,1, 2, 3, 4, 5, 6]
+let list = [0, 1, 2, 3, 4, 5, 6]
 
 while (list.shift()) {
   list.shift()
 }
 console.log(list)
 console.log('-----------')
+
 function add(prev, cur) {
   return prev + cur;
 }
@@ -170,15 +171,38 @@ function add(prev, cur) {
 // TypeError: Reduce of empty array with no initial value
 console.log([].reduce(add, 1))
 console.log('----------------')
-async function show () {
+async function show() {
   let a = 5
-  let b = 6 
-  let data = await new Promise((resolve,reject) => {
+  let b = 6
+  let data = await new Promise((resolve, reject) => {
     a = 3
-    resolve({a:3,b:4})
+    resolve({
+      a: 3,
+      b: 4
+    })
   });
-  console.log(a,data)
+  console.log(a, data)
 }
 // 普通函数---一直执行，知道结束
 // async/await函数---能够“暂停”
 show()
+console.log('-------------')
+var a = 123
+if (true) {
+  a = 'abc'
+  // let a
+}
+
+// let bar = (x = y, y = 2) => [x, y]
+// bar();
+
+function f() { console.log('I am outside!'); }
+
+(function () {
+  if (false) {
+    // 重复声明一次函数f
+    function f() { console.log('I am inside!'); }
+  }
+
+  f();
+}());
