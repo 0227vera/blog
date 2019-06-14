@@ -26,7 +26,7 @@ module.exports = {
     sidebar: [
         {
           title: 'HTML',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/HTML/',
             '/HTML/常见布局.md'
@@ -34,7 +34,7 @@ module.exports = {
         },
         {
           title: 'CSS',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/CSS/',
             '/CSS/弹性盒.md',
@@ -44,7 +44,7 @@ module.exports = {
         },
         {
           title: 'JavaScript',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/JavaScript/',
             '/JavaScript/变量',
@@ -56,16 +56,17 @@ module.exports = {
         },
         {
           title: 'webpack',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/webpack/',
             '/webpack/loader',
             '/webpack/dev-server',
+            '/webpack/eslint',
           ]
         },
         {
           title: 'ES6',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/ES6/',
             '/ES6/let-const',
@@ -77,21 +78,21 @@ module.exports = {
         },
         {
           title: 'Vue',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/Vue/axios.md'
           ]
         },
         {
           title: 'nodeJS',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/nodeJS/'
           ]
         },
         {
           title:'tool',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/tool/',
             '/tool/设别设备类型'
