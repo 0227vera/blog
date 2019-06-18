@@ -181,7 +181,7 @@ async function show() {
       b: 4
     })
   });
-  console.log(a, data)
+  // console.log(a, data)
 }
 // 普通函数---一直执行，知道结束
 // async/await函数---能够“暂停”
@@ -196,20 +196,88 @@ if (true) {
 // let bar = (x = y, y = 2) => [x, y]
 // bar();
 
-function f() { console.log('I am outside!'); }
+// function f() {
+//   console.log('I am outside!');
+// }
 
-(function () {
-  if (false) {
-    // 重复声明一次函数f
-    function f() { console.log('I am inside!'); }
-  }
+// (function () {
+//   if (false) {
+//     // 重复声明一次函数f
+//     function f() {
+//       console.log('I am inside!');
+//     }
+//   }
 
-  f();
-}());
+//   f();
+// }());
 
 let [x = 1] = [null];
 // x = null
 
-[[1, 2], [3, 4]].map(([a, b]) => a + b);
+[
+  [1, 2],
+  [3, 4]
+].map(([a, b]) => a + b);
 // [3,7] 
 // [[3],[7]] 
+
+01 + 02 === 03 //  
+
+let getTempItem = id => ({
+  id: id,
+  name: "Temp"
+})
+let arr = [1, 2, 35, 5, 6, 7]
+
+let aa = arr.map(item => ({
+  a: item + 1,
+  b: 'name'
+}))
+console.log('-------------')
+
+function Timer() {
+  this.s1 = 0;
+  this.s2 = 0;
+  setInterval(() => this.s1++, 1000)
+  setInterval(function () {
+    this.s2++
+  }, 1000)
+}
+// var timer = new Timer()
+// setTimeout(() => {
+//   console.log(`s1: ${timer.s1}`)
+// }, 3100)
+// setTimeout(() => {
+//   console.log(`s2: ${timer.s2}`)
+// }, 3100)
+console.log('aa---------------aa')
+
+function insert(value) {
+  return {
+    into: function (arr) {
+      return {
+        after: function (afterValue) {
+          arr.splice(arr.indexOf(afterValue + 1), 0, value)
+          return arr
+        }
+      }
+    }
+  }
+}
+console.log('----------->', insert(2).into([1, 3]).after(1))
+console.log('-----------------')
+
+var _insert = value => ({
+  into: arr => ({
+    after: afterValue => {
+      arr.splice(arr.indexOf(afterValue + 1), 0, value)
+          return arr
+    }
+  })
+})
+console.log('----------->', _insert(2).into([1, 3]).after(1))
+console.log('-----------------')
+const plus1 = a => a + 1
+const plus2 = a => a * 2
+const muilt = val => plus2(plus1(val))
+console.log(muilt(5))
