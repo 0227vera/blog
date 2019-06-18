@@ -16,33 +16,42 @@
 
 <script>
 export default {
-  name: 'BackToTop',
+  name: "BackToTop",
   data() {
     return {
       showRocket: false,
       rotateRocket: false
-    }
+    };
   },
   mounted() {
-    this.showRocketIcon()
+    this.showRocketIcon();
   },
   methods: {
     BackToTop() {
-      window.scrollTo(0, 0)
+      let scrollT =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      let step = scrollT / 20;
+      let timer = setInterval(() => {
+        scrollT -= step;
+        window.scrollTo(0, scrollT);
+        if (scrollT <= 0) {
+          clearInterval(timer);
+        }
+      }, 10);
     },
     showRocketIcon() {
-      let that = this
-      window.addEventListener('scroll', function() {
-        let scrollTop = document.documentElement.scrollTop
+      let that = this;
+      window.addEventListener("scroll", function() {
+        let scrollTop = document.documentElement.scrollTop;
         if (scrollTop >= 50) {
-          that.showRocket = true
+          that.showRocket = true;
         } else {
-          that.showRocket = false
+          that.showRocket = false;
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -57,7 +66,7 @@ export default {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    &>img {
+    & > img {
       width: 100%;
       height: 100%;
       border-radius: 50%;

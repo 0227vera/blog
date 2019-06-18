@@ -206,3 +206,10 @@ function f() { console.log('I am outside!'); }
 
   f();
 }());
+
+let [x = 1] = [null];
+// x = null
+
+[[1, 2], [3, 4]].map(([a, b]) => a + b);
+// [3,7] 
+// [[3],[7]] 
