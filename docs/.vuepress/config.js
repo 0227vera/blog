@@ -16,7 +16,7 @@ module.exports = {
         {text: 'JavaScript', link:'/JavaScript/'},
         {text: 'webpack', link:'/webpack/'},
         {text: 'ES6', link:'/ES6/'},
-        {text: 'lodash', link:'/lodash/'},
+        {text: 'Lodash', link:'/Lodash/'},
         {text: 'Vue', link:'/Vue/'},
         {text: 'nodeJS', link:'/nodeJS/'},
         {text: 'tool', link:'/tool/'},
@@ -78,10 +78,10 @@ module.exports = {
           ]
         },
         {
-          title: 'lodash',
+          title: 'Lodash',
           collapsable: true,
           children:[
-            '/lodash/'
+            '/Lodash/'
           ]
         },
         {
