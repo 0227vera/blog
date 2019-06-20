@@ -271,7 +271,7 @@ var _insert = value => ({
   into: arr => ({
     after: afterValue => {
       arr.splice(arr.indexOf(afterValue + 1), 0, value)
-          return arr
+      return arr
     }
   })
 })
@@ -281,3 +281,63 @@ const plus1 = a => a + 1
 const plus2 = a => a * 2
 const muilt = val => plus2(plus1(val))
 console.log(muilt(5))
+
+console.log('------------------------')
+
+function factorial(n, total = 1) {
+  if (n === 1) return total
+  return factorial(n - 1, n * total) // 这个地方式尾调用
+}
+console.log(factorial(5))
+console.log('--------------')
+
+function Fibonacci(n, total1 = 1, total2 = 1) {
+  if (n <= 1) return total2
+  return Fibonacci(n - 1, total2, total1 + total2)
+}
+console.log(Fibonacci(10)) // 89
+console.log(Fibonacci(100)) // 573147844013817200000
+
+function trampoline(f) {
+  while (f && f instanceof Function) {
+    f = f();
+  }
+  return f;
+}
+// 改写sum函数
+let sum = (x, y) => {
+  if (y) return sum.bind(null, x + 1, y - 1)
+  return x
+}
+console.log(trampoline(sum(1, 100)))
+
+let find = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(find.find(item => item > 3))
+
+console.log('------------')
+
+let Arr = (n, arr = []) => {
+  if (!n) return arr
+  arr.unshift(n)
+  return Arr(n - 1, arr)
+}
+// console.log(Arr(10000))
+
+console.log(Array.from(new Array(10)).map((item,index) => index+1))
+
+function down(arr){
+  return isMulti(arr) ? down(Array.prototype.concat.apply([],arr)) : arr // 这个地方返回down的时候属于尾递归
+}
+function isMulti (arr){
+  // let result = false
+  // arr.forEach(item => {
+  //   if(isArray(item)){
+  //     result = true
+  //   }
+  // })
+  return arr.some(item => isArray(item))
+}
+function isArray(type){
+  return Object.prototype.toString.call(type).match(/\[object (.*?)\]/)[1].toLowerCase() === 'array'
+}
+console.log('---------------->',down([1,2,3,4,[5,6,7,[8,9]]]) )

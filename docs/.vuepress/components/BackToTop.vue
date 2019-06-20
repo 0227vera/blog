@@ -25,19 +25,30 @@ export default {
   },
   mounted() {
     this.showRocketIcon();
+    window.test = () => {};
   },
   methods: {
     BackToTop() {
+      // js 新出的动画模式不用定时器
       let scrollT =
         document.documentElement.scrollTop || document.body.scrollTop;
-      let step = scrollT / 20;
-      let timer = setInterval(() => {
-        scrollT -= step;
-        window.scrollTo(0, scrollT);
-        if (scrollT <= 0) {
-          clearInterval(timer);
-        }
-      }, 10);
+        document.documentElement.scrollTop -= scrollT/10;
+      if (scrollT > 0) {
+        window.requestAnimationFrame(() => {
+          this.BackToTop()
+        })
+      }
+
+      // let scrollT =
+      //   document.documentElement.scrollTop || document.body.scrollTop;
+      // let step = scrollT / 20;
+      // let timer = setInterval(() => {
+      //   scrollT -= step;
+      //   window.scrollTo(0, scrollT);
+      //   if (scrollT <= 0) {
+      //     clearInterval(timer);
+      //   }
+      // }, 10);
     },
     showRocketIcon() {
       let that = this;
@@ -55,6 +66,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+html, body { scroll-behavior:smooth; }
 .back-to-top {
   width: auto;
   height: auto;

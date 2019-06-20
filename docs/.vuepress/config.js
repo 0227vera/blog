@@ -16,6 +16,7 @@ module.exports = {
         {text: 'JavaScript', link:'/JavaScript/'},
         {text: 'webpack', link:'/webpack/'},
         {text: 'ES6', link:'/ES6/'},
+        {text: 'lodash', link:'/lodash/'},
         {text: 'Vue', link:'/Vue/'},
         {text: 'nodeJS', link:'/nodeJS/'},
         {text: 'tool', link:'/tool/'},
@@ -74,6 +75,13 @@ module.exports = {
             '/ES6/箭头函数',
             '/ES6/class',
             '/ES6/Promise',
+          ]
+        },
+        {
+          title: 'lodash',
+          collapsable: true,
+          children:[
+            '/lodash/'
           ]
         },
         {
