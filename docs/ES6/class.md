@@ -41,6 +41,9 @@ class Person { // 类声明
     this.name = name
     this.age = age
   }
+  static self(){ // 不会被实例继承，实例没有此方法 但是可以被继承
+    this._static = 'test' // 这里的this始终指向类，不会指向实例
+  }
   showName () {
     console.log(this.name)
   }

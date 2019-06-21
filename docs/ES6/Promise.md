@@ -47,8 +47,10 @@ async function show () {
 }
 show()
 ```
-普通函数---一直执行，知道结束
+普通函数---一直执行，直到结束
 
 async/await函数---能够“暂停”
+
+[详细文档](http://es6.ruanyifeng.com/#docs/promise)
 
 <back-to-top />

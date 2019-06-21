@@ -323,12 +323,13 @@ let Arr = (n, arr = []) => {
 }
 // console.log(Arr(10000))
 
-console.log(Array.from(new Array(10)).map((item,index) => index+1))
+console.log(Array.from(new Array(10)).map((item, index) => index + 1))
 
-function down(arr){
-  return isMulti(arr) ? down(Array.prototype.concat.apply([],arr)) : arr // 这个地方返回down的时候属于尾递归
+function down(arr) {
+  return isMulti(arr) ? down(Array.prototype.concat.apply([], arr)) : arr // 这个地方返回down的时候属于尾递归
 }
-function isMulti (arr){
+
+function isMulti(arr) {
   // let result = false
   // arr.forEach(item => {
   //   if(isArray(item)){
@@ -337,8 +338,55 @@ function isMulti (arr){
   // })
   return arr.some(item => isArray(item))
 }
-function isArray(type){
+
+function isArray(type) {
   return Object.prototype.toString.call(type).match(/\[object (.*?)\]/)[1].toLowerCase() === 'array'
 }
-console.log('---------------->',down([1,2,3,4,[5,6,7,[8,9]]]) )
+console.log('---------------->', down([1, 2, 3, 4, [5, 6, 7, [8, 9]]]))
 console.log('---------------')
+
+const pro1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject('p1 msg')
+  }, 4000)
+})
+const pro2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(pro1)
+  }, 1000);
+})
+pro2.then(data => console.log('------------>', data)).catch(err => console.log('==========>', err))
+
+class Person { // 类声明
+  constructor(name, age) { // 构造函数
+    this.name = name
+    this.age = age
+  }
+  static self() { // 不会被实例继承，实例没有此方法 但是可以被继承
+    this._static = 'test' // 这里的this始终指向类，不会指向实例
+    return 'test'
+  }
+  static _count = 0 // 静态属性
+  showName() {
+    console.log(this.name)
+  }
+  shoeAge() {
+    console.log(this.age)
+  }
+}
+Person._count = 0 // 静态属性
+
+class Worker extends Person { // 继承
+  constructor(name, age, job) {
+    super(name, age) // 父类/超类
+    this.job = job
+  }
+  static self(){
+    return super.self() + 'children'
+  }
+  showJob() {
+    console.log(this.job)
+  }
+}
+let worker = new Worker('xuanliao', 25, 'nongmin')
+console.log('------------>',Worker.self())

@@ -5,8 +5,8 @@ module.exports = {
   themeConfig: {
     lastUpdated: true,
     lastUpdated: '最后更新时间',
-    repo: 'https://github.com/0227vera',
-    repoLabel: 'Github',
+    // repo: 'https://github.com/0227vera',
+    // repoLabel: 'Github',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
@@ -76,6 +76,7 @@ module.exports = {
             '/ES6/Set-Map',
             '/ES6/class',
             '/ES6/Promise',
+            '/ES6/Module',
           ]
         },
         {
