@@ -73,6 +73,7 @@ module.exports = {
             '/ES6/let-const',
             '/ES6/解构',
             '/ES6/箭头函数',
+            '/ES6/Set-Map',
             '/ES6/class',
             '/ES6/Promise',
           ]

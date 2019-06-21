@@ -341,3 +341,4 @@ function isArray(type){
   return Object.prototype.toString.call(type).match(/\[object (.*?)\]/)[1].toLowerCase() === 'array'
 }
 console.log('---------------->',down([1,2,3,4,[5,6,7,[8,9]]]) )
+console.log('---------------')
