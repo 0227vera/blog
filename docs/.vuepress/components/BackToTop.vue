@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-html, body { scroll-behavior:smooth; }
+// html, body { scroll-behavior:smooth; }
 .back-to-top {
   width: auto;
   height: auto;

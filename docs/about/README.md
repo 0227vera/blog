@@ -1,26 +1,16 @@
 ---
 home: true
 lang: zh-CN
-heroText: '关于我'
-description: '测试自己'
-heroImage: /icon/icon5.jpg
-# footer: MIT Licensed | Copyright © 2019-present salvatore
+heroText: '关于我的'
+description: '这波能反杀'
+features: 
+- title: About Author
+  details: 关注前端，关注技术，热爱生活
+- title: For Interview
+  details: 北京，求职中
 ---
-
-
-# 技术栈
-  * HTML
-  * CSS
-  * JS
-  * VUE
-  * nodeJS
-  * ES6
-
-# 爱好
-  * 唱
-  * 跳
-  * rap
-  * 篮球
+---
+<myself />
 
 
  <back-to-top />
