@@ -105,7 +105,8 @@ module.exports = {
           collapsable: true,
           children: [
             '/tool/',
-            '/tool/设别设备类型'
+            '/tool/设别设备类型',
+            '/tool/method'
           ]
         }
       ]
