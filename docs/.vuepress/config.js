@@ -97,7 +97,8 @@ module.exports = {
           title: 'nodeJS',
           collapsable: true,
           children: [
-            '/nodeJS/'
+            '/nodeJS/',
+            '/nodeJS/npm'
           ]
         },
         {
@@ -106,6 +107,7 @@ module.exports = {
           children: [
             '/tool/',
             '/tool/设别设备类型',
+            '/tool/ES6封装LS，SS',
             '/tool/method'
           ]
         }
