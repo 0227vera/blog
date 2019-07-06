@@ -16,7 +16,8 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "canvas-nest.js": "^2.0.4",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "vuedraggable": "^2.23.0"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
