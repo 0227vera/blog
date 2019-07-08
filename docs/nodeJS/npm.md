@@ -55,5 +55,77 @@ npm config set init.license "MIT"
 [ShellJs](https://www.npmjs.com/package/shelljs)是Unix shell命令在Node.js API上的可移植实现。
 
 ## 4. 并行运行脚本
+可以使用`&&`来依次运行两个和多个脚本,但运行起来还是用一定的时间差的，如果说我们想要去并行这其中的几个脚本呢，有点同步异步的意思哈，目前有两种比较流行的解决方案，`concurrent`和`npm-run-all`
 
+首先安装是免不了的 `npm i concurrently -D`
+添加脚本
+```json
+{
+   "scripts":{
+    "a": "concurrently \"node a2\" \"node a3\" \"node a1\""
+   }
+}
+```
+注意写法
+
+## 5. 在不同的目录中运行脚本
+如果在不同文件夹下面需要同事运行脚本，我们可以使用cd来完成
+```json
+{
+   "scripts":{
+    "a": "concurrently \"node a2\" \"cd a && node a3\" \"cd a && node a1\""
+   }
+}
+```
+这样完成是可以，但就是有点low，如何让其优雅起来呢？
+
+我们可以使用`--prefix`来指定路径
+```json
+{
+   "scripts":{
+    "a": "concurrently \"node a2\" \"npm start --prefix a\""
+   }
+}
+```
+<font color=red>注意这种写法必须要有package.json</font>
+
+## 6. 延迟运行脚本知道端口准备就绪
+通常，在后端使用nodeJS书写的时候，坑定是希望同事启动服务端和客户端的，`wait-on`节点模块提供了一种方便的方法来确保旨在某些进程就绪时候发生，有一种简单的理解，在nodeJS中的项目起来之后，再起前端的项目
+
+todo:nodeJS的东西我自己本身还没有系统的学习过，等我用到前后端项目的会，会考虑使用`wait-on`的
+
+## 7. 列出并选择可用脚本
+在实际开发过程中我们常常需要起多个项目，但又不想开多个vscode窗口，起项目可以使用concurrently，或者通过ntl来查看并且运行
+`npm i -g ntl`
+跳到目录相面直接ntl就可以看到`package.json`中的`scripts`有哪些并且可以选择运行这些脚本，这样是不是方便了很多呢
+
+## 8. 关于package.json中的version
+我们在研发过程中肯定是需要版本迭代的，下面的两个命令可以帮助我们
+
+`npm version patch` 在最后一位`+1`
+
+`npm version major` 在第一位`+1`
+
+## 9. 命令行直接编辑package.json
+`npm i -g json`
+
+`json -I -f package.json -e 'this.scripts.a=\"node a1\"'`
+
+参数解释
+`-I`就地编辑
+`-f`强制修改
+
+这样可以直接在命令行编辑package.json里面的所有信息
+
+## 10 自动设置和打开github库
+如果`package.json`文件中有`repository`，则可以通过输入 `npm repo`在默认浏览器中打开它。
+
+如果你的项目已经连接到远程存储库，并且已经在命令行上安装了git，那你可以使用这个命令找到你的连接存储库
+
+`git config --get remote.origin.url`
+
+更好的解决方案是可以使用如下脚本
+```
+json -I -f package.json -e "this.repository=\"$(git config --get remote.origin.url)\""
+```
 <back-to-top />
