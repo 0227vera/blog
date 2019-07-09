@@ -128,4 +128,64 @@ todo:nodeJS的东西我自己本身还没有系统的学习过，等我用到前
 ```
 json -I -f package.json -e "this.repository=\"$(git config --get remote.origin.url)\""
 ```
+
+## 11. 自定义`npm init`脚本
+
+1. 找到npm所在的目录建立一个`.npm-init.js`文件
+
+确保`.npm-init.js`被指向正确
+
+2. `npm config set init -module ~\.npm-init.js`
+
+3. 编写`.npm-init.js`
+```js
+module.exports = {
+  name: prompt('package name', basename || package.name),
+  version: prompt('version', '1.0.0'),
+  decription: prompt('description', '这是npm自定义的文件'),  
+  main: prompt('entry point', 'index.js'),
+  repository: prompt('git repository', 'https://github.com/0227vera'),
+  keywords: prompt(function (s) { return s.split(/\s+/) }),
+  author: prompt('author', 'xuanliao <1066788870@qq.com>'),
+  license: prompt('license', 'ISC')
+}
+```
+之后的这个文件可以修改和删除
+
+## 12. 使用自定义npm init 脚本将第一个commit提交到github
+
+为了将git命名合并到`.npm-init.js`文件中，需要一种方法来控制命令行，可以使用`child_process`模块，在文件中引入它，但是我们只需要`execSync`函数
+
+`const {execSync} = require('child_process')`
+
+修改刚才的`.npm-init.js`
+
+```js
+const { execSync } = require('child_process')
+let run = func => {
+  console.log('-------->', execSync(func).toString())
+}
+module.exports = {
+  name: prompt('package name', basename || package.name),
+  version: prompt('version', '1.0.0'),
+  decription: prompt('description', '这是npm自定义的文件'),  
+  main: prompt('entry point', 'index.js'),
+  keywords: prompt(function (s) { return s.split(/\s+/) }),
+  author: prompt('author', 'xuanliao <1066788870@qq.com>'),
+  license: prompt('license', 'ISC'),
+  repository: prompt('git repository url', '', url => {
+    if (url) {
+      run ('git init')
+      run ('git add .')
+      run ('git commit -m "first commit"')
+      run (`git remote add origin ${url}`)
+      run ('git push -u origin master')
+    }
+    return url
+  }),
+}
+```
+这个还是比较秀的，可以反杀一波
+
+
 <back-to-top />
