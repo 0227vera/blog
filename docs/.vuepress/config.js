@@ -108,6 +108,7 @@ module.exports = {
             '/tool/',
             '/tool/设别设备类型',
             '/tool/ES6封装LS，SS',
+            '/tool/js开发常用的工具函数',
             '/tool/method'
           ]
         }

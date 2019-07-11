@@ -366,7 +366,7 @@ class Person { // 类声明
     this._static = 'test' // 这里的this始终指向类，不会指向实例
     return 'test'
   }
-  static _count = 0 // 静态属性
+  // static _count = 0 // 静态属性
   showName() {
     console.log(this.name)
   }
@@ -390,3 +390,26 @@ class Worker extends Person { // 继承
 }
 let worker = new Worker('xuanliao', 25, 'nongmin')
 console.log('------------>',Worker.self())
+
+let obj = {
+  a:1,
+  b:2
+}
+for(let [key,value] of Object.entries(obj)){
+  console.log('--------->', key, value)
+}
+
+function assign() {
+  if (arguments.length === 0) {
+    throw new TypeError('Cannot convert undefined or null to object')
+  }
+  let target = arguments[0]
+  let args = [].slice.call(arguments)
+  args.forEach(item => {
+    for(let [key,value] of Object.entries(item)){
+      target[key] = value
+    }
+  })
+  return target
+}
+console.log('--------->', assign({}, {a:2,b:3,c:4},{c:2,d:6}))
