@@ -90,7 +90,9 @@ module.exports = {
           title: 'Vue',
           collapsable: true,
           children: [
-            '/Vue/axios.md'
+            '/Vue/',
+            '/Vue/axios.md',
+            '/Vue/vue-router的两种mode'
           ]
         },
         {
