@@ -100,4 +100,72 @@ switch (mode) {
 
 * 现在网上有一种我不是很同意的说法，但是又能够说明一些道理，`query`相当于`get`请求，页面跳转的时候可以在地址栏看到请求参数，而`params`相当于`post`请求，参数不会再地址栏显示
 
+## 4. vue-router的钩子函数
+
+### （1） 全局钩子
+
+主要包括beforeEach和afterEach
+
+* beforeEach函数有三个参数：
+
+  * to：router即将进入的路由对象
+  * from：当前导航即将离开的的路由
+  * next：Function，进行管道中的一个钩子，如果执行完了，则导航的状态就是confirmed（确认的），否则为false，终止导航
+
+* afterEach函数不用传next（）参数
+
+这类钩子只要作用于全局，一般来判断权限，以及页面丢失的操作
+
+```js
+router.forEach(( to, from, next ) => {
+  const role = window.sessionStorage.getItem('querystring)
+  if (!role && to.path !== '/login' ) {
+    next('./login') // 如果没有身份认证则会跳到登陆页面
+  } else if(to.mate.permission){ // 是否许可进入的情况
+    role === 'some if' ? next() : next('/403')
+  } else {
+    if (!'版本判断') {
+      alert('版本过低，请先升级浏览器)
+    } else {
+      next()
+    }
+  }
+})
+```
+
+### （2） 单个路由里面的钩子
+主要在某个指定路由跳转时候的执行的逻辑，参数和意义和之前的一样
+```js
+{
+  path:'/banch',
+  name:'Banch',
+  component:import('@/page/bamch/'),
+  mate:{
+    index:1
+  },
+  beforeEnter: (to, from, next) => { // 进路由之前
+
+  },
+  beforeLeave: (to, from, next) => { // 离开路由之前
+
+  }
+}
+```
+
+### （3） 组件里面路由钩子
+
+只要包括beforeRouteEnter、beforeRouteUpdate、boforeRouteLeave，参数和意义和之前的一样
+
+```js
+beforeRouteEnter: (to, from, next) => { // 进组件之前
+
+},
+beforeRouteUpdate: (to, from, next) => { // 组件更新之前（因为路由跳转影响的组件更新）
+
+},
+boforeRouteLeave: (to, from, next) => { // 离开组件之前
+
+},
+```
+
 <back-to-top />

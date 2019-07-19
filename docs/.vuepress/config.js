@@ -19,6 +19,7 @@ module.exports = {
         {text: 'Lodash', link:'/Lodash/'},
         {text: 'Vue', link:'/Vue/'},
         {text: 'nodeJS', link:'/nodeJS/'},
+        {text: '网络', link:'/网络/'},
         {text: 'tool', link:'/tool/'},
         
       ] }
@@ -101,6 +102,14 @@ module.exports = {
           children: [
             '/nodeJS/',
             '/nodeJS/npm'
+          ]
+        },
+        {
+          title:'网络',
+          collapsable:true,
+          children:[
+            '/网络/',
+            '/网络/HTTP'
           ]
         },
         {
