@@ -93,7 +93,8 @@ module.exports = {
           children: [
             '/Vue/',
             '/Vue/axios.md',
-            '/Vue/vue-router的两种mode'
+            '/Vue/vue-router的两种mode',
+            '/Vue/keep-alive'
           ]
         },
         {
