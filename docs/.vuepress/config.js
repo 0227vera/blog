@@ -94,7 +94,9 @@ module.exports = {
             '/Vue/',
             '/Vue/axios.md',
             '/Vue/vue-router的两种mode',
-            '/Vue/keep-alive'
+            '/Vue/keep-alive',
+            '/Vue/mixins',
+            '/Vue/自定义指令'
           ]
         },
         {
