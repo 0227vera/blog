@@ -28,4 +28,8 @@
 * [网上优秀使用和讲解](https://blog.csdn.net/sufu1065/article/details/80116758) 
 * [](https://vipstone.github.io/drawingboard/drawingboard/index.html)
 
+
+
+* [vue生成canvas海报图](https://segmentfault.com/a/1190000019975772)
+
 <back-to-top />

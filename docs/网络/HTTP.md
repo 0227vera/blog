@@ -127,6 +127,8 @@ http协议通常承载于TCP协议之上，在http和TCP之间添加一个安全
 
 
 ## 5. 常见的http状态码以及含义
+[](https://segmentfault.com/a/1190000010107482)
+[](https://segmentfault.com/a/1190000014100927)
 
 
 <back-to-top />

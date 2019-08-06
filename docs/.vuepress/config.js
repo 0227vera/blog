@@ -31,7 +31,7 @@ module.exports = {
           collapsable: true,
           children: [
             '/HTML/',
-            '/HTML/常见布局.md'
+            '/HTML/常见布局'
           ] 
         },
         {
@@ -39,9 +39,10 @@ module.exports = {
           collapsable: true,
           children: [
             '/CSS/',
-            '/CSS/弹性盒.md',
-            '/CSS/浮动和定位.md',
-            '/CSS/玻璃磨砂效果.md'
+            '/CSS/弹性盒',
+            '/CSS/浮动和定位',
+            '/CSS/玻璃磨砂效果',
+            '/CSS/伪类',
           ] 
         },
         {
@@ -94,7 +95,7 @@ module.exports = {
           collapsable: true,
           children: [
             '/Vue/',
-            '/Vue/axios.md',
+            '/Vue/axios',
             '/Vue/vue-router的两种mode',
             '/Vue/keep-alive',
             '/Vue/mixins',
