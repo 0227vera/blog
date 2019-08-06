@@ -339,6 +339,7 @@ export default function downloadFile (filename.data) {
 ```
 
 ## 21. 全屏展示和退出
+
 ```js
 function toFullScreen(){
     let elem = document.body;
@@ -372,6 +373,25 @@ export default {
 }
 ```
 
-[资料来源](https://segmentfault.com/a/1190000019601333)
+## 22. performance.timing： 利用performance.timing进行性能分析
+
+```js
+window.onload = function(){
+    setTimeout(function(){
+        let t = performance.timing
+        console.log('DNS查询耗时 ：' + (t.domainLookupEnd - t.domainLookupStart).toFixed(0))
+        console.log('TCP链接耗时 ：' + (t.connectEnd - t.connectStart).toFixed(0))
+        console.log('request请求耗时 ：' + (t.responseEnd - t.responseStart).toFixed(0))
+        console.log('解析dom树耗时 ：' + (t.domComplete - t.domInteractive).toFixed(0))
+        console.log('白屏时间 ：' + (t.responseStart - t.navigationStart).toFixed(0))
+        console.log('domready时间 ：' + (t.domContentLoadedEventEnd - t.navigationStart).toFixed(0))
+        console.log('onload时间 ：' + (t.loadEventEnd - t.navigationStart).toFixed(0))
+
+        if(t = performance.memory){
+            console.log('js内存使用占比 ：' + (t.usedJSHeapSize / t.totalJSHeapSize * 100).toFixed(2) + '%')
+        }
+    })
+}
+```
 
 <back-to-top />

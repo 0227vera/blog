@@ -54,6 +54,8 @@ module.exports = {
             '/JavaScript/对象',
             '/JavaScript/面向对象',
             '/JavaScript/正则',
+            '/JavaScript/基本算法',
+            '/JavaScript/js开发常用的工具函数',
           ] 
         },
         {
@@ -112,7 +114,8 @@ module.exports = {
           collapsable:true,
           children:[
             '/网络/',
-            '/网络/HTTP'
+            '/网络/HTTP',
+            '/网络/多个请求如何书写'
           ]
         },
         {
@@ -122,8 +125,9 @@ module.exports = {
             '/tool/',
             '/tool/设别设备类型',
             '/tool/ES6封装LS，SS',
-            '/tool/js开发常用的工具函数',
-            '/tool/method'
+            '/tool/method',
+            '/tool/vscode',
+            '/tool/优秀文章'
           ]
         }
       ]

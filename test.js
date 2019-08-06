@@ -346,9 +346,9 @@ console.log('---------------->', down([1, 2, 3, 4, [5, 6, 7, [8, 9]]]))
 console.log('---------------')
 
 const pro1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    reject('p1 msg')
-  }, 4000)
+  // setTimeout(() => {
+  //   reject('p1 msg')
+  // }, 4000)
 })
 const pro2 = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -385,18 +385,18 @@ class Worker extends Person { // 继承
     return super.self() + 'children'
   }
   showJob() {
-    console.log(this.job)
+    // console.log(this.job)
   }
 }
 let worker = new Worker('xuanliao', 25, 'nongmin')
-console.log('------------>',Worker.self())
+// console.log('------------>',Worker.self())
 
 let obj = {
   a:1,
   b:2
 }
 for(let [key,value] of Object.entries(obj)){
-  console.log('--------->', key, value)
+  // console.log('--------->', key, value)
 }
 
 function assign() {
@@ -412,4 +412,168 @@ function assign() {
   })
   return target
 }
-console.log('--------->', assign({}, {a:2,b:3,c:4},{c:2,d:6}))
+// console.log('--------->', assign({}, {a:2,b:3,c:4},{c:2,d:6}))
+
+let test = [2,3,4,4,5,6,6,7,7,8,762,899,0,9,87,446,467,4352,87909,62]
+let insertSort = arr => {
+  let sortList = [arr[0]]
+  for (let i = 0; i < arr.length - 1; i++) {
+    let length = sortList.length
+    // 如果取出的数字比已经排序的第一个值小，插在开头
+    if (arr[i] < sortList[0]) {
+      sortList.unshift(arr[i])
+      continue
+    }
+    // 如果取出的数字比已经排序的最后一个值大，插在最后
+    if (arr[i] > sortList[sortList.length-1]) {
+      sortList.push(arr[i])
+      continue
+    }
+    // 剩下的情况就是在sortList中间，把他揪出来，添加进去
+    for (let j = 0; j < sortList.length-1; j++) {
+      if (arr[i] >= sortList[j] && arr[i] <= sortList[j+1]) {
+        sortList.splice(j,0,arr[i])
+        break
+      }
+    }
+  }
+  return sortList
+}
+// console.log(insertSort(test))
+
+let twoInsertSort = arr => {
+  let sortList = [arr[0]] // sortList是已经有顺序的位置
+  for (let i = 0; i < arr.length; i ++) {
+    let get = arr[i]
+    let left = 0;
+    let right = sortList.length - 1
+
+    // 每次找到sortList中间的数字进行比较，确定最终的索引位置
+    while (left <= right) {
+      let mid = parseInt((left + right) / 2) // 先去soltList中间的数字
+      if (sortList[mid] > get) { // 如果大于当前的比较值， 则有序数组的中间值需要向左移动
+        right = mid - 1 // 中间值向左移动
+      } else {
+        left = mid + 1 // 中间值的选取向右移动
+      }
+    }
+    sortList.splice(left, 0, get)
+  }
+  return sortList
+}
+// console.log(twoInsertSort(test))
+
+let hillSort = arr => {
+  let step = Math.floor(arr.length / 2)
+  for (; step > 0; step = Math.floor(step / 2)) { // 用于每次把步长减一半；当步长为0的时候终止循环
+    for (let i = step; i < arr.length; i++) { // 对于数组后半部分遍历一次
+      let j = i
+      while (j - step >=0 && arr[j] < arr[j - step]) { // 这个地方实际上使用的就是冒泡排序
+        [arr[j], arr[j - step]] = [arr[j - step], arr[j]] // 懒得再写一遍替换的函数了，这个地方直接使用结解构替换把
+        j -=step // 每次跳着去寻找，这样就可以按照step找出相关的值，并且进行排序， 当然这一条可以不写，对结果也没有影响，写这个是为了减少while循环的次数
+      }
+    }
+  }
+  return arr
+}
+// console.log('--------------------')
+// console.log(test)
+// console.log('------------>', hillSort(test))
+
+let quickSort = arr => {
+  if (arr.length === 1 || arr.length === 0) { // 递归出去的唯一条件 随着数组的排序减半总为剪到1或者0（奇数偶数的差别）的，
+    return arr
+  }
+  let [left, right] = [[],[]]
+  let mid = Math.floor(arr.length / 2)
+  let midVal = arr[mid]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < arr[mid]) {
+      left.push(arr[i])
+    } else if (arr[i] > arr[mid]){
+      right.push(arr[i])
+    }
+  }
+  let leftArr = quickSort(left)
+  let rightArr = quickSort(right)
+  return leftArr.concat(midVal).concat(rightArr)
+}
+// console.log('<------------>', quickSort(test))
+
+
+
+
+let heapAdjust = (arr, i = 0 , end = arr.length) => {
+  let temp = arr[i]
+  for (let j = 2 * i + 1; j < end; j =  2 * i + 1) {
+    if (j < end && arr[j] < arr[j+1]) {
+      ++j
+    }
+    if (temp >= arr[j]) {
+      break
+    }
+    arr[i] = arr[j]
+    i = j
+  }
+  arr[i] = temp
+}
+let heapSort = arr => {
+  for (let i = arr.length / 2; i >= 0; i--) {
+    heapAdjust(arr, i, arr.length)
+  }
+  for (let i = arr.length; i > 0; i--) {
+    [arr[0], arr[i - 1]] = [arr[i - 1],arr[0]]
+    heapAdjust(arr, 0, i - 2)
+  }
+  return arr
+}
+
+// console.log('===========>', heapSort(test))
+console.log(test)
+
+
+
+let mergeArray = (arr, first, mid, last, t) => {
+  while (first <= mid && mid + 1 <= last) {
+    if (arr[first] > arr[mid + 1]) {
+      t.push(arr[mid+1])
+    } else {
+      t.push(arr[first])
+    }
+  }
+  console.log('------>', t)
+}
+let mergeSort = (arr, first = 0, last= arr.length - 1, t = []) => {
+  if (first < last) {
+    let mid = Math.floor((first + last) / 2)
+    mergeSort(arr, first, mid, t)
+    mergeSort(arr, mid + 1, last, t)
+    mergeArray(arr, first, mid, last, t)
+  }
+  console.log('tag', arr)
+}
+// mergeSort([4,5,6,2,34,5,76,8,90,4,2,5,7,90,0])
+
+// 两个有序的数组合并成为一个有序的数组
+
+let arrA = [0,1,2,3,4,5,6,55]
+let arrB = [2,3,4,5,6,7,8,9,10]
+
+let mergeSortAB = (arrA, ArrB) => {
+  let arr = []
+  while (arrA.length * arrB.length !== 0) {
+    if (arrA[0] > arrB[0]) {
+      arr.push(arrB[0])
+      arrB.shift()
+    } else {
+      arr.push(arrA[0])
+      arrA.shift()
+    }
+  }
+  return arrA.length ? arr.concat(arrA) : arr.concat(arrB)
+}
+// console.log('===========>', mergeSortAB(arrA,arrB))
+
+let uni = arr => arr.filter((item,index) => arr.indexOf(item) === index)
+
+console.log(uni([1,1,1,1,1,1,1,1]))
