@@ -316,7 +316,7 @@ function cached (fn) {
 ## 20. 文件下载
 
 ```js
-export default function downloadFile (filename.data) {
+export default function downloadFile (filename, data) {
   let DownloadLink = document.createElement('a')
   if (DownloadLink) {
     document.body.appendChild(DownloadLink)
@@ -324,12 +324,12 @@ export default function downloadFile (filename.data) {
     DownloadLink.download = filename
     DownloadLink.href = data
 
-    if (document.creatEvent) {
+    if (document.createEvent) {
       let DownloadEvt = document.createEvent('MouseEvents')
       DownloadEvt.initEvent('click', true, false)
       DownloadLink.dispatchEvent(DownloadEvt)
     } else if (document.createEventObject) {
-      DownloadLink.fireEvent('onclick');  
+      DownloadLink.fireEvent('onclick');
     } else if (typeof DownloadLink.onclick == 'function') {
       DownloadLink.onclick();
     }

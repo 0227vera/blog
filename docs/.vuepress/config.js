@@ -5,8 +5,8 @@ module.exports = {
   themeConfig: {
     lastUpdated: true,
     lastUpdated: '最后更新时间',
-    repo: 'https://github.com/0227vera',
-    repoLabel: 'Github',
+    // repo: 'https://github.com/0227vera',
+    // repoLabel: 'Github',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
@@ -44,6 +44,7 @@ module.exports = {
             '/CSS/浮动和定位',
             '/CSS/玻璃磨砂效果',
             '/CSS/伪类',
+            '/CSS/问题',
           ] 
         },
         {
@@ -58,7 +59,8 @@ module.exports = {
             '/JavaScript/正则',
             '/JavaScript/基本算法',
             '/JavaScript/js开发常用的工具函数',
-          ] 
+            '/JavaScript/js中一些比较好的问题',
+          ]
         },
         {
           title: 'webpack',

@@ -32,7 +32,8 @@ export default {
   .hero>img {
     width: 200px;
     height: 200px;
-    border-radius: 50%; 
+    object-fit:cover;
+    border-radius: 50%;
     transition: transform .5s;
     cursor: pointer;
   }
