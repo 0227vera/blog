@@ -20,3 +20,14 @@
 
 9. any-rule
 
+10. gitline
+
+11. vscode-icons
+
+12. npm Dependency Links
+
+13. Auto Close Tag
+
+14. Auto Rename Tag
+
+<back-to-top />

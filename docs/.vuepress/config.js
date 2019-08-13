@@ -5,8 +5,8 @@ module.exports = {
   themeConfig: {
     lastUpdated: true,
     lastUpdated: '最后更新时间',
-    // repo: 'https://github.com/0227vera',
-    // repoLabel: 'Github',
+    repo: 'https://github.com/0227vera',
+    repoLabel: 'Github',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
@@ -31,7 +31,8 @@ module.exports = {
           collapsable: true,
           children: [
             '/HTML/',
-            '/HTML/常见布局'
+            '/HTML/常见布局',
+            '/HTML/问题',
           ] 
         },
         {
