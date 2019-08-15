@@ -71,18 +71,21 @@ switch (mode) {
 除此之外，还有popState()事件，当浏览器跳转到新的状态时，将触发popState事件
 
 * 修改历史状态
-  * 1. window.history.pushState(stateObject, title, URL)
-  * 2. window.history.replaceState(stateObject, title, URL)
+
+  1. window.history.pushState(stateObject, title, URL)
+  2. window.history.replaceState(stateObject, title, URL)
 
 * 切换历史状态
-  * 1. history.go(-2) -------> 后退两次
-  * 2. history.go(2) -------> 前进两次
-  * 3. history.back() -------> 后退
-  * 4. history.forward() -------> 前进
+
+  1. history.go(-2) -------> 后退两次
+  2. history.go(2) -------> 前进两次
+  3. history.back() -------> 后退
+  4. history.forward() -------> 前进
 
 ### 区别
 
   * hashchange只能改变`#`后面的url片段。而pushState()设置的新的URL可以式与当前URL同源的任意URL
+
   * history模式则会将URL修改得就和正常请求后端URL一样，如果后端没有配置对应得/user/id的路由处理，则会返回404错误
 
 当刷新页面之类的操作时候，浏览器会给服务器发送请求，所以这个实现需要服务器的支持，需要把所有都重定向到根页面，这也是为什么history模式下面刷新总是会报404的问题
@@ -94,6 +97,7 @@ switch (mode) {
 * $route是从当前跳转对象里面可以获取name、path、query、params等
 
 ## 3. query和params的使用区别(东动态组件传参)
+
 1. `query`参数传递，在跳转的时候是既可以使用`name`跳转也可以是使用`path`跳转的 ，（这个地方也有人说query只能够是path跳转，亲测之后用name也是可以的）
 2. `params`是路由的一部分，必须要在路由后面添加参数名，`query`是直接拼接在url后面的参数，没有也没有关系
 3. `params`一旦设置在路由，`params`就是路由的一部分，如果路由有`params`传参，但是跳转的时候没有这个参数，会导致跳转失败，或者页面没有内容
@@ -134,7 +138,9 @@ router.forEach(( to, from, next ) => {
 ```
 
 ### （2） 单个路由里面的钩子
+
 主要在某个指定路由跳转时候的执行的逻辑，参数和意义和之前的一样
+
 ```js
 {
   path:'/banch',

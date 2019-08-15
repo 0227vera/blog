@@ -102,7 +102,9 @@ module.exports = {
             '/Vue/vue-router的两种mode',
             '/Vue/keep-alive',
             '/Vue/mixins',
-            '/Vue/自定义指令'
+            '/Vue/自定义指令',
+            '/Vue/diff',
+            '/Vue/vue中学习的问题'
           ]
         },
         {
