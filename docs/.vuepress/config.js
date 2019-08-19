@@ -19,6 +19,8 @@ module.exports = {
         {text: 'Lodash', link:'/Lodash/'},
         {text: 'Vue', link:'/Vue/'},
         {text: 'nodeJS', link:'/nodeJS/'},
+        {text: 'TypeScript', link:'/TypeScript/'},
+        {text: 'react', link:'/react/'},
         {text: '网络', link:'/网络/'},
         {text: 'tool', link:'/tool/'},
         
@@ -113,6 +115,20 @@ module.exports = {
           children: [
             '/nodeJS/',
             '/nodeJS/npm'
+          ]
+        },
+        {
+          title: 'TypeScript',
+          collapsable: true,
+          children: [
+            '/TypeScript/',
+          ]
+        },
+        {
+          title: 'react',
+          collapsable: true,
+          children: [
+            '/react/',
           ]
         },
         {

@@ -10,6 +10,22 @@ viewmodel负责把model的数据同步到view显示出来，还负责把view的�
 
 ![图解](../.vuepress/public/img/vue/mvvm.png)
 
+## AMD、CMD、CommonJS、和ES6的对比（模块化开发）
+
+1. AMD --- requireJS（异步模块）
+
+define定义，require引入
+
+2. CMD --- SeaJS（同步模块）
+
+define定义，require引入
+
+3. CommonJS  module.exports（nodeJS）
+
+`exports.DEFAULT_COLOR = '#409eff'`定义，require引入
+
+4. ES6特性 export/import
+
 ## vue优点
 
 mvvm优点就是vue优点：
