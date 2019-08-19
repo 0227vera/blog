@@ -14,6 +14,13 @@
       </li>
     </ul>
     <hr>
+    <ul class="itemHisInfo">
+      <li v-for="(item,index) in itemHisInfo" :key="index">
+        <span>{{item.name}}</span>
+        <span>{{item.time}}</span>
+        <span>{{item.role}}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -33,10 +40,44 @@ export default {
         '熟练掌握HTML5、CSS3、Javascript开发，熟练使用scss，less',
         '能熟练使用第三方组件库，element-ui、vux、vant等',
         '熟练使用vue、vue-cli2、vue-cli3、vue-router、vuex、axios，有复杂应用场景开发经验',
+        '有开发preact经验',
+        '有开源项目维护经验',
         '熟练使用ES6,对ES6相关的知识有一定的理解',
         '熟练使用webpack,npm包管理工具',
         '熟悉nodeJS开发（正在学习）',
         '熟练使用git操作',
+      ],
+      itemHisInfo:[
+        {
+          name:'公文流转移动端', 
+          time:'201906-201907',
+          role:'从0->1'
+        },
+        { 
+          name:'公文流转web端', 
+          time:'201903-201906',
+          role:'从0->1'
+        },
+        { 
+          name:'内控系统', 
+          time:'201901-201903',
+          role:'从0->1'
+        },
+        { 
+          name:'工作流系统移动端', 
+          time:'201811-201812',
+          role:'从0->1'
+        },
+        { 
+          name:'工作流系统web端', 
+          time:'201808-201811',
+          role:'维护者'
+        },
+        { 
+          name:'工作流引擎和表单设计器维护', 
+          time:'20180705-201808',
+          role:'维护者'
+        },
       ]
     };
   },
@@ -102,7 +143,6 @@ export default {
       font-size: 40px;
       text-align: center;
       margin-top:-40px;
-      // line-height: 80px;
       letter-spacing: 80px;
       z-index:-1;
       color: #cccccc;
@@ -110,6 +150,28 @@ export default {
     }
     span:nth-child(1){
       margin-right: 5px;
+    }
+  }
+  .itemHisInfo{
+    margin-top: 10px;
+    width: 960px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    &::after{
+      content: '项目经验';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      font-size: 40px;
+      text-align: center;
+      margin-top:-40px;
+      letter-spacing: 80px;
+      z-index:-1;
+      color: #cccccc;
+      font-style: oblique;
     }
   }
   hr{
