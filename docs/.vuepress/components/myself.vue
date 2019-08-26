@@ -223,7 +223,7 @@ export default {
       margin-top:-40px;
       letter-spacing: 80px;
       z-index:-1;
-      color: #cccccc;
+      color: #eeeeee;
       font-style: oblique;
     }
     span:nth-child(1){
@@ -248,7 +248,7 @@ export default {
       margin-top:-40px;
       letter-spacing: 80px;
       z-index:-1;
-      color: #aaa;
+      color: #eeeeee;
       font-style: oblique;
     }
     &>li{

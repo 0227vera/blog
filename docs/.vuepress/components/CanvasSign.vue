@@ -1,14 +1,19 @@
 <template>
     <div :style="{width:w,height:h}" class="posi">	
         <div class="signature-canvas">
-            <canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
+          <canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
         </div>
         <div class="signature-button">
-              <button v-for="(item,index) in buttons" :key="index" @click="optere(item)" :class="item.class"><span>{{item.name}}</span></button>
+            <button v-for="(item,index) in buttons" :key="index" @click="optere(item)" :class="item.class"><span>{{item.name}}</span></button>
+        </div>
+        <div class="signature-button signature-button-top">
+          <button @click="download">下载</button>
+          <button @click="openImg">新页面打开</button>
         </div>
     </div>
 </template>
 <script>
+import downloadFile from '../public/js/download'
 function Point(x, y, time) {
   this.x = x;
   this.y = y;
@@ -712,6 +717,20 @@ export default {
         self.sig._isEmpty = false;
       }
     },
+    download() {
+      downloadFile('小可爱的签名',this.save())
+    },
+    openImg() {
+      if(this.isEmpty()){
+        alert('请小可爱先画两笔')
+        return
+      }
+      const img = new Image()
+      img.src = this.save()
+      const newWin = window.open("", "_blank")
+      newWin.document.write(img.outerHTML)
+      newWin.document.title = "小可爱的图"
+    },
     // 左侧操作
     optere(item) {
       switch (item.id) {
@@ -796,6 +815,16 @@ canvas {
     top: 5%;
     right: -150%;
     z-index: 10;
+  }
+  &-top{
+    position: absolute;
+    top:0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    button{
+      border:dashed 1px #1abc9c;
+    }
   }
 }
 </style>
