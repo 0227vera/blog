@@ -1,51 +1,59 @@
 <template>
-  <div class="about">
-    <ul class="baseInfo">
-      <li v-for="(item,index) in baseInfo" :key="index">
-        <span>{{item.name}}:</span>
-        <span>{{item.value}}</span>
-      </li>
-    </ul>
-    <hr>
-    <ul class="skillInfo">
-      <li v-for="(item,index) in skillInfo" :key="index">
-        <span>{{index+1}}.</span>
-        <span>{{item}}</span>
-      </li>
-    </ul>
-    <hr>
-    <ul class="itemHisInfo">
-      <li v-for="(item,index) in itemHisInfo" :key="index">
-        <div>
-          <span>项目名称：</span>
-          <span>{{item.name}}</span>
-        </div>
-        <div>
-          <span>项目开发时间：</span>
-          <span>{{item.time}}</span>
-        </div>
-        <div>
-          <span>项目中的角色：</span>
-          <span>{{item.role}}</span>
-        </div>
-        <div>
-          <span>是否前后端分离：</span>
-          <span>{{item.isSeparate ? '是' : '否'}}</span>
-        </div>
-        <div>
-          <span>项目内容和职责：</span>
-          <ul>
-            <li v-for="(du,duIndex) in item.duty" :key="duIndex">
-              <span>{{duIndex+1}}.{{du}}</span>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+  <div>
+    <div class="about" id="printMe">
+      <ul class="baseInfo">
+        <li v-for="(item,index) in baseInfo" :key="index">
+          <span>{{item.name}}:</span>
+          <span>{{item.value}}</span>
+        </li>
+      </ul>
+      <hr>
+      <ul class="skillInfo">
+        <li v-for="(item,index) in skillInfo" :key="index">
+          <span>{{index+1}}.</span>
+          <span>{{item}}</span>
+        </li>
+      </ul>
+      <hr>
+      <ul class="itemHisInfo">
+        <li v-for="(item,index) in itemHisInfo" :key="index">
+          <div>
+            <span>项目名称：</span>
+            <span>{{item.name}}</span>
+          </div>
+          <div>
+            <span>项目开发时间：</span>
+            <span>{{item.time}}</span>
+          </div>
+          <div>
+            <span>项目中的角色：</span>
+            <span>{{item.role}}</span>
+          </div>
+          <div>
+            <span>是否前后端分离：</span>
+            <span>{{item.isSeparate ? '是' : '否'}}</span>
+          </div>
+          <div>
+            <span>项目内容和职责：</span>
+            <ul>
+              <li v-for="(du,duIndex) in item.duty" :key="duIndex">
+                <span>{{duIndex+1}}.{{du}}</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="print">
+      <button v-print="'#printMe'">打印此页面</button>
+    </div>
   </div>
 </template>
 
 <script>
+import Print from 'vue-print-nb'
+import Vue from 'vue'
+Vue.use(Print)
 export default {
   data() {
     return {
@@ -286,6 +294,20 @@ export default {
   }
   hr{
     margin-top: 10px;
+  }
+}
+.print{
+  margin-bottom: 20px;
+  button{
+    height: 40px;
+    line-height: 40px;
+    width: 100px;
+    outline: none;
+    border: none;
+    background: #449eff;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
   }
 }
 </style>
