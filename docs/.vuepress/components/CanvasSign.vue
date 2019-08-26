@@ -729,7 +729,7 @@ export default {
       img.src = this.save()
       const newWin = window.open("", "_blank")
       newWin.document.write(img.outerHTML)
-      newWin.document.title = "小可爱的图"
+      newWin.document.title = "小可爱的签名"
     },
     // 左侧操作
     optere(item) {
