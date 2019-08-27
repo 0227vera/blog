@@ -36,7 +36,7 @@ mvvm优点就是vue优点：
 
 ## vue的生命周期
 
-![图解](../.vuepress/public/img/vue/vue-hook.jpg)
+![图解](../.vuepress/public/img/vue/vue-hook.png)
 
 ## 数据双向绑定原理（自我事项最简单的数据双绑）
 
