@@ -16,13 +16,13 @@ module.exports = {
         {text: 'JavaScript', link:'/JavaScript/'},
         {text: 'webpack', link:'/webpack/'},
         {text: 'ES6', link:'/ES6/'},
-        {text: 'Lodash', link:'/Lodash/'},
         {text: 'Vue', link:'/Vue/'},
         {text: 'nodeJS', link:'/nodeJS/'},
         {text: 'TypeScript', link:'/TypeScript/'},
         {text: 'react', link:'/react/'},
         {text: '网络', link:'/网络/'},
         {text: 'tool', link:'/tool/'},
+        {text: '工作中遇到的问题', link:'/工作中遇到的问题/'},
         
       ] }
     ],
@@ -89,13 +89,6 @@ module.exports = {
           ]
         },
         {
-          title: 'Lodash',
-          collapsable: true,
-          children:[
-            '/Lodash/'
-          ]
-        },
-        {
           title: 'Vue',
           collapsable: true,
           children: [
@@ -129,6 +122,7 @@ module.exports = {
           collapsable: true,
           children: [
             '/react/',
+            '/react/reaxt脚手架',
           ]
         },
         {
@@ -150,6 +144,17 @@ module.exports = {
             '/tool/method',
             '/tool/vscode',
             '/tool/优秀文章'
+          ]
+        },
+        {
+          title:'工作中遇到的问题',
+          collapsable: true,
+          children: [
+            '/工作中遇到的问题/',
+            '/工作中遇到的问题/html问题',
+            '/工作中遇到的问题/css问题',
+            '/工作中遇到的问题/js问题',
+            '/工作中遇到的问题/vue问题',
           ]
         }
       ]
