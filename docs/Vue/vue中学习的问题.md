@@ -1,8 +1,8 @@
 # vue中好的问题
 
-## 什么是MVVM？
+## 什么是MVVM
 
-MVVM最早是由微软提出来，他借鉴了桌面应用程序的MVC思想，在前端页面中，把Model用纯js对象表示，view负责显示，两者做到了最大限度的分离，把Model和view关联起来就是viewmodel。
+MVVM最早是由微软提出来，他借鉴了桌面应用程序的MVC思想，在前端页面中，把Model用纯js对象（data）表示，view负责显示（页面），两者做到了最大限度的分离，把Model和view关联起来就是viewmodel。
 
 viewmodel负责把model的数据同步到view显示出来，还负责把view的修改同步会model，view和model之间的同步工作完全是自动的，无需人为干涉
 

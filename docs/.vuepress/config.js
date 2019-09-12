@@ -72,6 +72,7 @@ module.exports = {
             '/webpack/loader',
             '/webpack/dev-server',
             '/webpack/eslint',
+            '/webpack/vue项目webpack升级笔记',
           ]
         },
         {
@@ -99,7 +100,8 @@ module.exports = {
             '/Vue/mixins',
             '/Vue/自定义指令',
             '/Vue/diff',
-            '/Vue/vue中学习的问题'
+            '/Vue/vue中学习的问题',
+            '/Vue/vue面试问题'
           ]
         },
         {

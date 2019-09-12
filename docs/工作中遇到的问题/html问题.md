@@ -1,5 +1,7 @@
 # html中的问题
 
+## canvas内存问题
+
 1. 前两天做一个H5的项目时候遇到一个canvas的问题，有多个页面使用canvas,ios总是有一些页面的canvas无法加载出来，也没有报错信息，偶尔会报错：`Error: TypeError: null is not an object (evaluating 't.imageSmoothingEnabled') `
 
 问题的原因：[地址](https://stackoverflow.com/questions/40482586/getcontext2d-returns-null-in-safari-10/43482153)
