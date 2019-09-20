@@ -73,6 +73,7 @@ module.exports = {
             '/webpack/dev-server',
             '/webpack/eslint',
             '/webpack/vue项目webpack升级笔记',
+            '/webpack/git提交',
           ]
         },
         {
