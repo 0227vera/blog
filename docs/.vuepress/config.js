@@ -88,6 +88,7 @@ module.exports = {
             '/ES6/class',
             '/ES6/Promise',
             '/ES6/Module',
+            '/ES6/S-W-weekS-weekM'
           ]
         },
         {
@@ -101,6 +102,7 @@ module.exports = {
             '/Vue/mixins',
             '/Vue/自定义指令',
             '/Vue/diff',
+            '/Vue/nextTick',
             '/Vue/vue中学习的问题',
             '/Vue/vue面试问题'
           ]

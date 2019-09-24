@@ -21,15 +21,15 @@
 * 子---->父
   * 子`this.$emit('eventname')`，父`v-on:(@)eventname`，也可以通过ref直接调用自己的方法
 * 兄弟组件
-  * `eventBus`，注意需要`new vue()`，使用完成时候记得off，以免在之后的操作中多次提交
+  * `eventBus`，注意需要`new vue()`，使用完成时候记得off，以免在之后的操作中多次提交，或者在监听的时候用`once`
 
 ## 4. Vue的源码有看过吗？说说vuex工作原理
 
-* vuex工作原理
+* vuex工作原理：vuex中的store本质就是没有template的隐藏着的vue组件
 
 ## 5. 为什么说虚拟 dom会提高性能，解释一下它的工作原理
 
-* 虚拟DOM的工作原理：通过JavaScript对象来描述真是的DOM
+* 虚拟DOM的工作原理：通过JavaScript对象来描述真实的DOM
 * 提高性能，当数据发生变化的时候，只需要局部刷新页面（这也是为什么尽量不要去操作dom的原因，真是的dom操作会引起模块元素的重排/重绘（重新渲染））
 
 ## 6. 请你详细介绍一些 package.json 里面的配置
@@ -67,6 +67,8 @@
 
 ## 11. vue中央事件总线的使用
 
+* Event Bus
+
 ## 12. 你做过的Vue项目有哪些，用到了哪些核心知识点
 
 1. 散装vue，没什么技术可讲的
@@ -82,6 +84,8 @@
 [详解](./vue中学习的问题.html#什么是mvvm)
 
 ## 14. 批量异步更新策略及 nextTick 原理
+
+[详解](./nextTick.html)
 
 ## 15. 说说Vue开发命令 npm run dev 输入后的执行过程
 
