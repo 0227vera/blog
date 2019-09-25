@@ -88,7 +88,7 @@ module.exports = {
             '/ES6/class',
             '/ES6/Promise',
             '/ES6/Module',
-            '/ES6/S-W-weekS-weekM'
+            '/ES6/S-W-WeakS-WeakM'
           ]
         },
         {
@@ -159,7 +159,6 @@ module.exports = {
             '/工作中遇到的问题/html问题',
             '/工作中遇到的问题/css问题',
             '/工作中遇到的问题/js问题',
-            '/工作中遇到的问题/vue问题',
           ]
         }
       ]
