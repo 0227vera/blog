@@ -22,3 +22,18 @@ let request = data => {
   console.log(re)
   console.log('end')
 })()
+
+var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+let a = [...new Set(arr.flat(Infinity))].sort((a,b) => a-b)
+// let a = arr.toString().split(',').sort((a,b) => a-b).map(Number)
+console.log(a)
+
+// 实现一个new
+
+function _new () {
+  let arg =[].slice.call(arguments)
+  let constructor = arg.shift()
+  let context = Object.create(constructor.prototype)
+  let result = context.apply(constructor,arg)
+  return typeof request !== object && request !== null ? result : context
+}
