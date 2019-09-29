@@ -60,6 +60,7 @@ module.exports = {
             '/JavaScript/面向对象',
             '/JavaScript/正则',
             '/JavaScript/基本算法',
+            '/JavaScript/task-jobs',
             '/JavaScript/js开发常用的工具函数',
             '/JavaScript/js中一些比较好的问题',
           ]
