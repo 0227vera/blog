@@ -97,6 +97,7 @@ module.exports = {
           collapsable: true,
           children: [
             '/Vue/',
+            '/Vue/vue初始化项目',
             '/Vue/axios',
             '/Vue/vue-router的两种mode',
             '/Vue/keep-alive',

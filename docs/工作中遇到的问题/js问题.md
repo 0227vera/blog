@@ -23,4 +23,8 @@ js，vue，react的问题就都写在这个地方了，因为vue和react也是�
 
 ![图解如下](../.vuepress/public/img/event-position.png)
 
+## 3. html2canvas还是canvas的所占内存的问题，在转化为canvas的时候有一个最大的宽高的问题
+
+![图解](../.vuepress/public/img/canvas.jpg)
+
 <back-to-top />
