@@ -18,7 +18,7 @@ export default {
     const gitalk = new Gitalk({
       clientID: '04d6cd9fea245bed44dd',
       clientSecret: '678d5db4c2e5db3200238b18fcc787f4e0bac398',
-      repo: 'https://0227vera.github.io/',
+      repo: 'blog',
       owner: '0227vera',
       admin: ['0227vera'],
       id: location.pathname,      // Ensure uniqueness and length less than 50
