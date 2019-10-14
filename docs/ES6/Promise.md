@@ -53,4 +53,6 @@ async/await函数---能够“暂停”
 
 [详细文档](http://es6.ruanyifeng.com/#docs/promise)
 
+<gitask />
+
 <back-to-top />

@@ -93,4 +93,6 @@ export default {
 
 此处只做一个简单的demo使用，在之后的项目中如果又需要我会继续使用
 
+<gitask />
+
 <back-to-top />

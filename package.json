@@ -19,6 +19,7 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "canvas-nest.js": "^2.0.4",
+    "gitalk": "^1.5.0",
     "jsonwebtoken": "^8.5.1",
     "vue-print-nb": "^1.4.0",
     "vuedraggable": "^2.23.0",

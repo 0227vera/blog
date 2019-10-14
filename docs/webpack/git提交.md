@@ -47,4 +47,6 @@ module.exports = {
 * perf: 项目优化
 * ci: 进行ci
 
+<gitask />
+
 <back-to-top />

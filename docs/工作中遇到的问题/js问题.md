@@ -27,4 +27,6 @@ js，vue，react的问题就都写在这个地方了，因为vue和react也是�
 
 ![图解](../.vuepress/public/img/canvas.jpg)
 
+<gitask />
+
 <back-to-top />

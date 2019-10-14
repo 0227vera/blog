@@ -305,6 +305,8 @@ let objToStrMap = obj => {
 ```
 
 [文档详情](http://es6.ruanyifeng.com/#docs/set-map)
+<gitask />
+
 <back-to-top />
 
 

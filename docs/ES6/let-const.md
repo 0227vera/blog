@@ -48,5 +48,7 @@ obj.a = 3
 obj = {} // error
 ```
 
+<gitask />
+
 <back-to-top />
 
