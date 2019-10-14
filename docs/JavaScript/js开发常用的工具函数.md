@@ -394,6 +394,6 @@ window.onload = function(){
 }
 ```
 
-<gitask />
-
 <back-to-top />
+
+<gitask />

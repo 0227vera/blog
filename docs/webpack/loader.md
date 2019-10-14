@@ -114,7 +114,6 @@
 
   * babel-loader      将es6，es7等转es5
 
-  <gitask />
+<back-to-top />
 
-<back-to-top />  
-
+<gitask />

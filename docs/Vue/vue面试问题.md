@@ -157,7 +157,6 @@ component1.data.a = 5
 component2.data.a // ---->1
 ```
 
+<back-to-top />
 
 <gitask />
-
-<back-to-top />

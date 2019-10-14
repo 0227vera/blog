@@ -187,7 +187,6 @@ module.exports = {
 ```
 这个还是比较秀的，可以反杀一波
 
+<back-to-top />
 
 <gitask />
-
-<back-to-top />

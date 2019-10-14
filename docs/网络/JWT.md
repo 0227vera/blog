@@ -130,6 +130,6 @@ Authorization: Bearer
 
 6、为了减少盗用和窃取，JWT不建议使用HTTP协议来传输代码，而是使用加密的HTTPS协议进行传输。
 
-<gitask />
-
 <back-to-top />
+
+<gitask />

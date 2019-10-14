@@ -62,6 +62,6 @@ setTimeout(function() {
 这个时候，我们发现宏任务中，只有在setTimeout队列中还要一个timeout1的任务等待执行。因此就直接执行即可。
 ![end](../.vuepress/public/img/stepend.png)
 
-<gitask />
-
 <back-to-top />
+
+<gitask />

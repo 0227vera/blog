@@ -85,3 +85,5 @@ import {LS,SS} from './storage.js'
 LS.setItem()
 SS.getItem()
 ```
+
+<gitask />

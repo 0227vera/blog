@@ -24,6 +24,7 @@
   3. production --- 最高级别的优化，启用压缩，忽略错误
 
   [webpack官网](https://www.webpackjs.com/)
-  <gitask />
 
 <back-to-top />
+
+<gitask />

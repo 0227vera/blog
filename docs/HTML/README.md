@@ -130,6 +130,6 @@ user-scalable: 用户是否允许手动缩放
 
 在移动端开发的过程中需要注意这上面的值
 
-<gitask />
-
 <back-to-top />
+
+<gitask />

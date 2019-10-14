@@ -183,6 +183,6 @@ let mergeSortAB = (arrA, ArrB) => {
 }
 ```
 
-<gitask />
-
 <back-to-top />
+
+<gitask />

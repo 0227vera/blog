@@ -10,7 +10,7 @@ features:
   details: 北京，求职中
 ---
 ---
+
 <myself />
- <gitask />
 
 <back-to-top />

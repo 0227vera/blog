@@ -174,6 +174,6 @@ boforeRouteLeave: (to, from, next) => { // 离开组件之前
 },
 ```
 
-<gitask />
-
 <back-to-top />
+
+<gitask />

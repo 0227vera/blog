@@ -15,3 +15,5 @@
 2. fabric的canvas渲染改成两个canvas，解决了部分ios机型的问题，但在iphoneX上面还是加载不出来
 
 3. 相当内存问题，canvas的宽高大小直接影响所占内存，fabric这个插件会根据屏幕的dpr重新计算canvas的高度，导致每个canvas的宽高都乘以了一个dpr系数，这样相当每次渲染canvas的时候canvas所占内存是原来的9倍修改方案：<font color=red>不再乘以ratina屏的dpr系数，在高清屏里面，手动设置fabric.devicePixelRatio = 1</font>
+
+<gitask />

@@ -30,6 +30,6 @@
 
 14. Auto Rename Tag
 
-<gitask />
-
 <back-to-top />
+
+<gitask />

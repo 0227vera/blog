@@ -83,6 +83,6 @@ module.exports = {
 
 3,4和第一种方法是一样的
 
-<gitask />
-
 <back-to-top />
+
+<gitask />
