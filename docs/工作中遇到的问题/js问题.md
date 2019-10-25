@@ -37,6 +37,15 @@ js，vue，react的问题就都写在这个地方了，因为vue和react也是�
 
 3. `git config --global   http.sslVerify "false"` 这个是干嘛的，我还真不知道，反正他生效了
 
+## 5. `git push` 403 权限问题
+
+1. `ssh-keygen -t rsa -C "1066788870@qq.com"` 生成ssh
+
+2. 将`.ssh/id_rsa.pub`里面的内容添加到github中的ssh中
+
+3. 修改项目内的`.git/config`中的url为：`url = https://用户名:密码@github.com/0227vera/blog.git`
+
+可以先按照这三步试一下
 
 <back-to-top />
 
