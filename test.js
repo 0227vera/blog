@@ -577,3 +577,25 @@ let mergeSortAB = (arrA, ArrB) => {
 let uni = arr => arr.filter((item,index) => arr.indexOf(item) === index)
 
 console.log(uni([1,1,1,1,1,1,1,1]))
+
+let type = 'a'
+switch (type) {
+  case 'a':
+    break
+  case 'b':
+      break
+  case 'c':
+      break
+  case 'd':
+      break
+  default:
+  break
+}
+
+let action = {
+  a(){},
+  b(){},
+  c(){},
+  d(){}
+}
+action[type] && action[type]()

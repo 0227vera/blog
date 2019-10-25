@@ -130,6 +130,8 @@ module.exports = {
           children: [
             '/react/',
             '/react/reaxt脚手架',
+            '/react/eventbus',
+            'react/HTML-DOM事件对象',
           ]
         },
         {
