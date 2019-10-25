@@ -29,6 +29,15 @@ js，vue，react的问题就都写在这个地方了，因为vue和react也是�
 
 针对这个问题在打印的时候做了分段打印的改变，开始做的是每一页调用一次html2canvas，但是发现了另一个问题，html2canvas没调用一次都会请求页面上所有的静态资源（除了js），所以减小颗粒度，每次在不超多最大宽高的时候调用一次，但是在调用超过3次的时候，需要等待的时间很长，整个生成的时候就到20秒左右，因为是图片系统打印的时间有还需要一段时间，大概也是10s左右，这个是无法忍受的，所以最后我选择弃用了这种方案
 
+## 4. `git push 10054` git提交的时候因为提交文件过大，报错（按照道理来讲不该把git的问题放在这的，但是又懒得单独去开一个tab）
+
+1. `git config http.postBuffer 524288000` 默认只有1M的上传大小，在这先设成500M
+
+2. `git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch <file/dir>' HEAD` 把缓存清一下
+
+3. `git config --global   http.sslVerify "false"` 这个是干嘛的，我还真不知道，反正他生效了
+
+
 <back-to-top />
 
 <gitask />
