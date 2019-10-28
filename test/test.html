@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+    }
+    .img{
+      width: 100%;
+    }
+    .img1{
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <img 
+  class="img"
+    src="./kang.jpg" 
+    srcset="./kang.jpg 1x,./du.jpg 2x,./lab.jpg 3x"
+  >
+  <img 
+  class="img1"
+    src="./kang.jpg"
+    sizes="(min-width: 600px) 600px, 300px"
+    srcset="./kang.jpg 300w,./du.jpg 600w,./lab.jpg 1200w"
+  >
+</body>
+</html>
