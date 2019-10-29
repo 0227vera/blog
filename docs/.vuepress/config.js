@@ -131,6 +131,7 @@ module.exports = {
             '/react/',
             '/react/reaxt脚手架',
             '/react/eventbus',
+            '/react/refs知识点',
             'react/HTML-DOM事件对象',
           ]
         },

@@ -37,3 +37,6 @@ function _new () {
   let result = context.apply(constructor,arg)
   return typeof request !== object && request !== null ? result : context
 }
+
+let a = (a,b) => a+b
+let b = a(1,2)
