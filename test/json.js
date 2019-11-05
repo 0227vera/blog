@@ -1,7 +1,3 @@
-let data = require('./json.json')
-const fs = require('fs')
-// export 
-// data = { version:'1.0.0', objects=[] } 
 
 const keys = [
   [0, 'type'],
@@ -42,104 +38,113 @@ const keys = [
     textbox: ['text', 'fontSize', 'fontWeight', 'fontFamily', 'fontStyle', 'lineHeight', 'underline', 'overline', 'linethrough', 'textAlign', 'textBackgroundColor', 'charSpacing', 'minWidth', 'styles'] // 文字
   }]
 ]
+const transNum = [16, 6, 3, 19, 14, 15, 28, 29, 13, 9, 4, 5]
 const map = new Map(keys)
 const values = [
   [false, '_0'],
   [true, '_1'],
-  ['top','_t'],
-  ['bottom','_b'],
-  ['left','_l'],
-  ['right','_r'],
-  ['center','_c'],
-  [null,'_n'],
-  ['path','_p'],
+  ['top', '_t'],
+  ['bottom', '_b'],
+  ['left', '_l'],
+  ['right', '_r'],
+  ['center', '_c'],
+  [null, '_n'],
+  ['path', '_p'],
   ['ellipse', '_e'],
   ['line', '_li'],
   ['textbox', '_te'],
-  ['source-over','_O'],
-  ['fill','_F'],
-  ['nonzero','_E'],
-  ['miter','_M'],
-  ['butt','_B'],
-  ['round','_R'],
-  ['STXingkai','_S'],
-  ['normal','_N'],
+  ['source-over', '_O'],
+  ['fill', '_F'],
+  ['nonzero', '_E'],
+  ['miter', '_M'],
+  ['butt', '_B'],
+  ['round', '_R'],
+  ['STXingkai', '_S'],
+  ['normal', '_N']
 
 ]
 const valueMap = new Map(values) // 前面的map可以用数组代替的，但是这个地方的valueMap一定要是Map类型的数据结构
-const seg_symbol = '@'
-const seg_symbol_first = '&_$'
+const segSymbol = '@'
+const segSymbolFirst = '&_$'
 // 压缩函数
-function compress(data) {
+// object ---> string
+function compress (data) {
   // 常规的31种key值，这是每一个类型都会有的基础数据类型
-  let result = data.version
   let arr = []
   // 提取主题数据并将根据映射关系简写
-  data.objects.forEach((item,index) => {
+  data.objects.forEach((item, index) => {
     arr[index] = []
-    for (let [key,value] of map) {
+    for (let [key, value] of map) {
       if (key <= 30) { // 常规数据的改变
         arr[index][key] = valueMap.get(item[value]) || item[value]
       } else {
         arr[index][key] = []
-        value[item.type].forEach(vaule_key => {
-          arr[index][key].push(valueMap.get(item[vaule_key]) || item[vaule_key])
+        value[item.type].forEach(vauleKey => {
+          arr[index][key].push(valueMap.get(item[vauleKey]) || item[vauleKey])
         })
       }
     }
   })
-  
-  // 不要让常规数据是数组的形式，可以把[]两个字符的控件，转化为@一个字符，省下空间
-  arr.forEach((item,index) => {
-      let pop = item.pop()
-      if (item[0] === '_p') { // 找出所有为path类型的数据，还可以再优化一次
-        pop.forEach((item,index) => {
-          pop[index] = item.join(seg_symbol)
-        })
-      }
-      arr[index] = [item.join(seg_symbol)]
-      arr[index].push(pop)
-  })
-  return `${data.version}${seg_symbol_first}${JSON.stringify(arr)}`
-}
 
-let compress_data = compress(data)
-// 解压函数
-const de_values = values.map(item => [item[1],item[0]])
-const deValueMap = new Map(de_values)
-// export 
-function decompression (data) {
-  let arr = data.split(seg_symbol_first)
-  const version = arr[0]
-  const objects_origin = JSON.parse(arr[1])
-  const objects = []
-  objects_origin.forEach(item => {
-    let obj_item = {}
-    obj_item.version = version
-    let base = item[0].split(seg_symbol) // 基础数据
-    base.forEach((obj,index) => {
-      obj_item[map.get(index)] = deValueMap.get(obj) || obj
-    })
-    let special = item[1] // 每个类型特有的数据
-    if (obj_item.type === 'path') {
-      let path = special[0].split(seg_symbol).map(item => item.split(','))
-      objects.path = path
-    } else if (obj_item.type === 'ellipse') {
-      obj_item.rx = special[0]
-      obj_item.ry = special[1]
-    } else  if (obj_item.type === 'line') {
-      obj_item.x1 = special[0]
-      obj_item.x2 = special[1]
-      obj_item.y1 = special[2]
-      obj_item.y2 = special[3]
-    } else if (obj_item.type === 'textbox') {
-      let keys = map.get(31).textbox
-      keys.forEach((item,index) => {
-        obj_item[item] = deValueMap.get(special[index]) || special[index]
+  // 不要让常规数据是数组的形式，可以把[]两个字符的控件，转化为@一个字符，省下空间
+  arr.forEach((item, index) => {
+    let pop = item.pop()
+    if (item[0] === '_p') { // 找出所有为path类型的数据，还可以再优化一次
+      pop.forEach((item, index) => {
+        pop[index] = item.join(segSymbol)
       })
     }
-    objects.push(obj_item)
+    arr[index] = [item.join(segSymbol)]
+    arr[index].push(pop)
+  })
+  return `${data.version}${segSymbolFirst}${JSON.stringify(arr)}`
+}
+
+// 解压函数
+// string ---> object
+const deValues = values.map(item => [item[1], item[0]])
+const deValueMap = new Map(deValues)
+function decompression (data) {
+  let arr = data.split(segSymbolFirst)
+  const version = arr[0]
+  const objectsOrigin = JSON.parse(arr[1])
+  const objects = []
+  objectsOrigin.forEach((item, index) => {
+    let objItem = {}
+    objItem.version = version
+    let base = item[0].split(segSymbol) // 基础数据
+    base.forEach((obj, index) => {
+      let value = deValueMap.get(obj) === undefined ? obj : deValueMap.get(obj)
+      objItem[map.get(index)] = !~transNum.indexOf(index) ? value : +value
+    })
+    let special = item[1] // 每个类型特有的数据
+    if (objItem.type === 'path') {
+      let path = special[0].split(segSymbol).map(item => {
+        return item.split(',').map(num => isNaN(+num) ? num : +num)
+      })
+      objItem.path = path
+    } else if (objItem.type === 'ellipse') {
+      objItem.rx = +special[0]
+      objItem.ry = +special[1]
+    } else if (objItem.type === 'line') {
+      objItem.x1 = +special[0]
+      objItem.x2 = +special[1]
+      objItem.y1 = +special[2]
+      objItem.y2 = +special[3]
+    } else if (objItem.type === 'textbox') {
+      let keys = map.get(31).textbox
+      keys.forEach((item, index) => {
+        objItem[item] = deValueMap.get(special[index]) === undefined ? special[index] : deValueMap.get(special[index])
+      })
+    }
+    objects.push(objItem)
   })
 
-  return {version,objects}
+  return { version, objects }
 }
+
+
+
+let str = "2.3.6&_$[[\"_p@_l@_t@430@548@362@161@rgba(255, 255, 255, 0)@#F56C6C@2@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"M,430,548@L,792,548@L,792,709@L,430,709@L,430,548@z\"]],[\"_e@_l@_c@213@864@267@108@rgba(255, 255, 255, 0)@#F56C6C@2@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[133.5,54]],[\"_li@_l@_t@202@443@288@56@rgb(0,0,0)@#F56C6C@2@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[-144,144,28,-28]],[\"_p@_l@_t@240@580@112@100@rgba(255,255,255,0)@#F56C6C@2@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"M,240,580@L,352,680@M,342.53677385360004,662.3804838062423@L,352,680@L,333.4251414985533,672.5855120438946\"]],[\"_p@_l@_t@736.5@824@146@141@_n@#F56C6C@2@_n@_R@_R@10@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"M,804.5,826.002@Q,804.5,826,804.5,825.5@Q,804.5,825,804,825@Q,803.5,825,803,825@Q,802.5,825,802,825@Q,801.5,825,800,825@Q,798.5,825,797.5,825@Q,796.5,825,795,825.5@Q,793.5,826,792,826.5@Q,790.5,827,789,827.5@Q,787.5,828,786,828.5@Q,784.5,829,782,829.5@Q,779.5,830,778,831@Q,776.5,832,775,833@Q,773.5,834,771.5,835@Q,769.5,836,768,837@Q,766.5,838,765,839@Q,763.5,840,762,841@Q,760.5,842,759.5,843@Q,758.5,844,757,845.5@Q,755.5,847,754,848@Q,752.5,849,751.5,850@Q,750.5,851,749.5,852.5@Q,748.5,854,747,854.5@Q,745.5,855,745,856@Q,744.5,857,743.5,858.5@Q,742.5,860,742,861@Q,741.5,862,740.5,862.5@Q,739.5,863,739.5,864.5@Q,739.5,866,739,867@Q,738.5,868,738,869@Q,737.5,870,737.5,870.5@Q,737.5,871,737.5,872@Q,737.5,873,737.5,873.5@Q,737.5,874,737.5,875@Q,737.5,876,737.5,876.5@Q,737.5,877,738,878@Q,738.5,879,739.5,879.5@Q,740.5,880,741,881@Q,741.5,882,742,883@Q,742.5,884,743,884.5@Q,743.5,885,745,886@Q,746.5,887,747,887.5@Q,747.5,888,748,888.5@Q,748.5,889,749.5,889.5@Q,750.5,890,751.5,890.5@Q,752.5,891,753,891.5@Q,753.5,892,755,892.5@Q,756.5,893,757.5,893.5@Q,758.5,894,759.5,894.5@Q,760.5,895,762,895@Q,763.5,895,764.5,895@Q,765.5,895,767,895.5@Q,768.5,896,769.5,896@Q,770.5,896,772,896@Q,773.5,896,775,896@Q,776.5,896,778,896@Q,779.5,896,781,896@Q,782.5,896,785,895.5@Q,787.5,895,789,895@Q,790.5,895,792,894@Q,793.5,893,795,892.5@Q,796.5,892,799,890.5@Q,801.5,889,803,888.5@Q,804.5,888,807,886.5@Q,809.5,885,811,883.5@Q,812.5,882,814.5,881@Q,816.5,880,818,878@Q,819.5,876,821.5,874.5@Q,823.5,873,825.5,871@Q,827.5,869,829,867.5@Q,830.5,866,832.5,865@Q,834.5,864,835.5,862.5@Q,836.5,861,837.5,859.5@Q,838.5,858,839,857@Q,839.5,856,840,855@Q,840.5,854,841,853@Q,841.5,852,841.5,851.5@Q,841.5,851,841.5,850.5@Q,841.5,850,841.5,849@Q,841.5,848,841.5,847.5@Q,841.5,847,841.5,846.5@Q,841.5,846,841.5,845.5@Q,841.5,845,841.5,844.5@Q,841.5,844,841,844@Q,840.5,844,840,844@Q,839.5,844,839,844@Q,838.5,844,838,844@Q,837.5,844,837,844@Q,836.5,844,835.5,844@Q,834.5,844,833.5,844@Q,832.5,844,831.5,844.5@Q,830.5,845,829.5,845@Q,828.5,845,827.5,846@Q,826.5,847,824.5,848@Q,822.5,849,821,849.5@Q,819.5,850,818.5,851@Q,817.5,852,816,853.5@Q,814.5,855,813.5,856@Q,812.5,857,811.5,858@Q,810.5,859,809,860.5@Q,807.5,862,807,863@Q,806.5,864,805.5,865@Q,804.5,866,804.5,867@Q,804.5,868,804,869@Q,803.5,870,803,870.5@Q,802.5,871,802.5,872@Q,802.5,873,802.5,874.5@Q,802.5,876,802.5,876.5@Q,802.5,877,802.5,877.5@Q,802.5,878,802.5,878.5@Q,802.5,879,802.5,880@Q,802.5,881,803,882@Q,803.5,883,804,883.5@Q,804.5,884,805.5,885@Q,806.5,886,807,887@Q,807.5,888,808.5,889@Q,809.5,890,810.5,890.5@Q,811.5,891,812.5,892@Q,813.5,893,814.5,894@Q,815.5,895,817.5,895.5@Q,819.5,896,820.5,897@Q,821.5,898,823,898.5@Q,824.5,899,826,900@Q,827.5,901,829.5,902@Q,831.5,903,832.5,904@Q,833.5,905,835,906@Q,836.5,907,838,907.5@Q,839.5,908,841.5,909@Q,843.5,910,845,911@Q,846.5,912,848,912.5@Q,849.5,913,851,913.5@Q,852.5,914,854.5,914.5@Q,856.5,915,858.5,915.5@Q,860.5,916,862,916.5@Q,863.5,917,864.5,917@Q,865.5,917,867,917@Q,868.5,917,870,917@Q,871.5,917,872.5,917@Q,873.5,917,874.5,916.5@Q,875.5,916,877,916@Q,878.5,916,879,915.5@Q,879.5,915,880,915@Q,880.5,915,881.5,914.5@Q,882.5,914,882.5,913.5@Q,882.5,913,883,913@Q,883.5,913,883.5,912.5@Q,883.5,912,883.5,911.5@Q,883.5,911,883,910.5@Q,882.5,910,882.5,909.5@Q,882.5,909,882,908.5@Q,881.5,908,881,908@Q,880.5,908,879.5,907.5@Q,878.5,907,878,907@Q,877.5,907,876.5,906.5@Q,875.5,906,874,906@Q,872.5,906,871,906@Q,869.5,906,867.5,906@Q,865.5,906,862.5,906@Q,859.5,906,857,906.5@Q,854.5,907,852,908@Q,849.5,909,847.5,910@Q,845.5,911,843,912@Q,840.5,913,839,913.5@Q,837.5,914,835,915.5@Q,832.5,917,831,918.5@Q,829.5,920,828,920.5@Q,826.5,921,825.5,922@Q,824.5,923,823,924.5@Q,821.5,926,820,927@Q,818.5,928,817.5,930@Q,816.5,932,815,933@Q,813.5,934,813,935@Q,812.5,936,811.5,937.5@Q,810.5,939,810.5,940@Q,810.5,941,810,941.5@Q,809.5,942,809,943@Q,808.5,944,808.5,945@Q,808.5,946,808.5,946.5@Q,808.5,947,808.5,947.5@Q,808.5,948,808.5,949@Q,808.5,950,808.5,950.5@Q,808.5,951,808.5,951.5@Q,808.5,952,809.5,952.5@Q,810.5,953,811,953.5@Q,811.5,954,812,954.5@Q,812.5,955,814,955.5@Q,815.5,956,816.5,956.5@Q,817.5,957,818,957@Q,818.5,957,819.5,958@Q,820.5,959,821.5,959.5@Q,822.5,960,823.5,960@Q,824.5,960,826,960.5@Q,827.5,961,828.5,961.5@Q,829.5,962,830.5,962.5@Q,831.5,963,833.5,963@Q,835.5,963,836.5,963@Q,837.5,963,838.5,963.5@Q,839.5,964,840.5,964@Q,841.5,964,842.5,964@Q,843.5,964,844.5,964@Q,845.5,964,846.5,964@Q,847.5,964,848,964@Q,848.5,964,849,964@Q,849.5,964,850,964@Q,850.5,964,851.5,964@Q,852.5,964,853,964@Q,853.5,964,854,964.5@Q,854.5,965,855,965@Q,855.5,965,855.5,965.5@L,855.5,966.002\"]],[\"_te@_l@_t@264@1051@100@27.12@#F56C6C@_n@1@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"\U6d4b\U8bd5\",24,\"_N\",\"_S\",\"_N\",1.16,\"_0\",\"_0\",\"_0\",\"_l\",\"\",0,20,{}]],[\"_te@_l@_t@499@1038@100@40.68@#F56C6C@_n@1@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"\",36,\"_N\",\"_S\",\"_N\",1.16,\"_0\",\"_0\",\"_0\",\"_l\",\"\",0,20,{}]],[\"_te@_l@_t@499@1038@415.51@87.87@#F56C6C@_n@1@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"\U6d4b\U8bd5\U6587\U5b57\U9644\U4ef6\\n\U6709\U6ca1\U6709\U6548\U679c\",36,\"_N\",\"_S\",\"_N\",1.16,\"_0\",\"_0\",\"_0\",\"_l\",\"\",0,20,{}]],[\"_te@_l@_t@581@929@100@40.68@#F56C6C@_n@1@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"\",36,\"_N\",\"_S\",\"_N\",1.16,\"_0\",\"_0\",\"_0\",\"_l\",\"\",0,20,{}]],[\"_te@_l@_t@581@929@100@40.68@#F56C6C@_n@1@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"\",36,\"_N\",\"_S\",\"_N\",1.16,\"_0\",\"_0\",\"_0\",\"_l\",\"\",0,20,{}]],[\"_te@_l@_t@581@929@100@40.68@#F56C6C@_n@1@_n@_B@_M@4@1@1@0@_0@_0@1@_n@_1@_n@@_E@_F@_O@_n@0@0@qjg3193\U57282019-11-04 11:06:53\U5bf9\U6b64\U5904\U8fdb\U884c\U4fee\U6539\",[\"\",36,\"_N\",\"_S\",\"_N\",1.16,\"_0\",\"_0\",\"_0\",\"_l\",\"\",0,20,{}]]]"
+
+console.log('----------->', decompression(str))

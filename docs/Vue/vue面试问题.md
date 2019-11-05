@@ -51,6 +51,15 @@
 
 ## 8. vue-cli提供的几种脚手架模板有哪些，区别是什么
 
+* 这个问题可以查看脚手架模板的[网站](https://github.com/vuejs-templates)
+
+1. `webpack`：使用最多的vue-cli的模板
+2. `pwa`：因为没有使用，了解的不是很多，有一次要是用缓存的时候，在选择使用`pwa`或者`keep-alive`的时候,选择了后者
+3. `webpack-simple`：低配版webpack
+4. `simple`
+5. `browserify`
+6. `browserify-simple`
+
 ## 9. 计算属性的缓存和方法调用的区别
 
 * 两者返回的最终的结果是完全一样的
