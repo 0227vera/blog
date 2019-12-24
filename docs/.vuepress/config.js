@@ -114,7 +114,8 @@ module.exports = {
           collapsable: true,
           children: [
             '/nodeJS/',
-            '/nodeJS/npm'
+            '/nodeJS/npm',
+            '/nodeJS/video'
           ]
         },
         {
