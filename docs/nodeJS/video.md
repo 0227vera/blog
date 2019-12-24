@@ -206,6 +206,26 @@ server.listen(8080)
 
 ## SQL的问题
 
+```js
+const mysql = require('mysql');
+let db = mysql.createConnection({ // 连接
+  host:'localhost',
+  port:'3306',
+  user:'root',
+  password:'root',
+  database:'newtest'
+});
+// mysql.createPool() 连接池
+// 2，查询 (curd) 非常典型的异步操作，肯定会有回调函数
+db.query('SELECT * FROM `user_table`;', (err, data) => {
+  if (err) {
+    throw err
+  } else {
+    console.log('--------->', JSON.stringify(data))
+  }
+});
+```
+
 [资料跳转](https://github.com/0227vera/node-study/tree/master/MySql)
 
 ## 学习完成的项目地址
