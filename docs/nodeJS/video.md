@@ -204,6 +204,30 @@ server.listen(8080)
 
 ## route路由的问题
 
+```js
+// server.js
+const express = require('express')
+const userRouter = require('./userRouter')
+let server = express()
+server.listen(8080)
+server.use('/user', userRouter)
+```
+
+```js
+// userRouter.js
+const express = require('express')
+module.exports = () => {
+  const router = express.Router()
+  router.get('/login', (req, res) => {
+    // 做登陆的操作
+  })
+  router.get('/register', (req, res) => {
+    // 做注册的操作
+  })
+  return router
+}
+```
+
 ## SQL的问题
 
 ```js
