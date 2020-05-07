@@ -6,9 +6,10 @@ heroImage: /icon/icon0.jpg
 footer: MIT Licensed | Copyright © 2019-present salvatore
 ---
 
-<nest />
+<!-- <nest /> -->
 
 <script>
+
 export default {
   mounted () {
     this.rotateImg()

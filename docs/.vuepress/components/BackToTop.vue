@@ -1,12 +1,13 @@
 <template>
-  <section class="back-to-top">
+  <section class="back-to-top" :class="{show:showRocket}">
     <div 
-      :class="{'rocket': true, 'show': showRocket}"
+      class="rocket"
       @click="BackToTop"
+      :class="{rotateRocket}"
     >
       <img 
         :class="{'rotate': rotateRocket}"
-        src="../public/img/rocket.jpg"
+        src="../public/img/backtotop.svg"
         @mousemove="rotateRocket = true"
         @mouseleave="rotateRocket = false"
       >
@@ -15,6 +16,7 @@
 </template>
 
 <script>
+
 export default {
   name: "BackToTop",
   data() {
@@ -24,31 +26,18 @@ export default {
     };
   },
   mounted() {
-    this.showRocketIcon();
-    window.test = () => {};
+    this.showRocketIcon()
   },
   methods: {
     BackToTop() {
-      // js 新出的动画模式不用定时器
-      let scrollT =
-        document.documentElement.scrollTop || document.body.scrollTop;
-        document.documentElement.scrollTop -= scrollT/10;
+      this.showRocket = false
+      let scrollT = document.documentElement.scrollTop || document.body.scrollTop
+        document.documentElement.scrollTop -= scrollT/5
       if (scrollT > 0) {
         window.requestAnimationFrame(() => {
           this.BackToTop()
         })
       }
-
-      // let scrollT =
-      //   document.documentElement.scrollTop || document.body.scrollTop;
-      // let step = scrollT / 20;
-      // let timer = setInterval(() => {
-      //   scrollT -= step;
-      //   window.scrollTo(0, scrollT);
-      //   if (scrollT <= 0) {
-      //     clearInterval(timer);
-      //   }
-      // }, 10);
     },
     showRocketIcon() {
       let that = this;
@@ -65,34 +54,44 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-// html, body { scroll-behavior:smooth; }
+<style lang="scss">
 .back-to-top {
   width: auto;
   height: auto;
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: -135px;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: all .3s;
+  bottom: 150px;
   .rocket {
-    display: none;
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    border: 1px solid #EBEBEB;
+    box-shadow: 0 2px 5px #bfbfbf;
+    transition: transform 0.3s;
+    transform: scale(1) rotate(0deg);
+     background: #fff;
     & > img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+      color: #EBEBEB;
       cursor: pointer;
       transition: transform 0.5s;
-      transform: rotate(-60deg);
     }
   }
 }
-
 .show {
-  display: block !important;
-}
-.rotate {
-  transform: rotate(0) !important;
+  right: 35px;
+  opacity: 1;
+  transition: all .3s;
+  z-index: 99999;
+  transform: rotate(360deg);
+  .rotateRocket{
+    transition: transform 0.3s;
+    transform: scale(1.1) rotate(360deg);
+  }
 }
 </style>
