@@ -1,6 +1,6 @@
 {
   "name": "salvatore-blog",
-  "version": "1.0.46",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "repository": "https://github.com/0227vera",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "publish": "npm version patch && bash deploy.sh",
+    "publish": "bash deploy.sh",
     "start": "npm run docs:dev"
   },
   "keywords": [],
