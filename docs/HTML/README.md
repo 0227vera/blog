@@ -10,7 +10,7 @@
 2. 块级标签
 
   占据一整行，高度、行高、内边距和外边距都可以改变，可以容纳块级标签和其他内联标签
-  eg: div、p、h1-h6、ul、li、dl（定义列表、跟ul…li类似）、dt（定义了定义列表中的项目）、dd（定义描述项目的内容、跟dt一起搭配）
+  eg: div、p、h1-h6、ul、li、dl（定义列表、跟ul…li类似）、dt（定义列表中的项目）、dd（定义描述项目的内容、跟dt一起搭配）
 
 3. 行内块标签 （这一类标签比较特殊，即具有行内标签的特性，又可以设置宽高）
   eg: img input （最典型的两个）
@@ -44,9 +44,9 @@
 
 3. [标注功能事件demo](http://fabricjs.com/events)
 
-4. [网上优秀使用和讲解](https://blog.csdn.net/sufu1065/article/details/80116758) 
+4. [网上优秀使用和讲解](https://blog.csdn.net/sufu1065/article/details/80116758)
 
-5. [](https://vipstone.github.io/drawingboard/drawingboard/index.html)
+5. [画板](https://vipstone.github.io/drawingboard/drawingboard/index.html)
 
 6. [vue生成canvas海报图](https://segmentfault.com/a/1190000019975772)
 
