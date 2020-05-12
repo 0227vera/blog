@@ -15,12 +15,46 @@
         </li>
       </ul>
       <hr>
+      <ul class="itemHisWorkInfo">
+        <h2>工作经历</h2>
+        <li v-for="(item,index) in itemHisWorkInfo" :key="index" :data-content="itemHisWorkInfo.length-index">
+          <div>
+            <span>公司名称：</span>
+            <span>{{getCompany(item.type)}}</span>
+          </div>
+          <div>
+            <span>所属行业：</span>
+            <span>{{item.industry}}</span>
+          </div>
+          <div>
+            <span>在职时间：</span>
+            <span>{{item.time}}</span>
+          </div>
+          <div>
+            <span>职位类别：</span>
+            <span>{{item.ca}}</span>
+          </div>
+          <div>
+            <span>薪资待遇：</span>
+            <span>{{item.money}}</span>
+          </div>
+          <div>
+            <span>主要工作：</span>
+            <ul>
+              <li v-for="(du,duIndex) in item.work" :key="duIndex">
+                <span>{{duIndex+1}}.{{du}}</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <hr>
       <ul class="itemHisInfo">
         <h2>项目经验</h2>
         <li v-for="(item,index) in itemHisInfo" :key="index" :data-content="itemHisInfo.length-index">
           <div>
             <span>所在公司：</span>
-            <span>{{getCompany(itemHisInfo.length-index)}}</span>
+            <span>{{getCompany(item.type)}}</span>
           </div>
           <div>
             <span>项目名称：</span>
@@ -50,7 +84,7 @@
       </ul>
     </div>
     <div class="print">
-      <button v-print="'#printMe'">打印此页面</button>
+      <button v-print="printObj" title="点击可直接打印此页面或保存为pdf">点击可直接打印此页面</button>
     </div>
   </div>
 </template>
@@ -60,29 +94,25 @@ import Print from 'vue-print-nb'
 import Vue from 'vue'
 Vue.use(Print)
 import itemHisInfo from '../public/json/itemHisInfo'
+import itemHisWorkInfo from '../public/json/itemHisWorkInfo'
 import skillInfo from '../public/json/skillInfo'
+import baseInfo from '../public/json/baseInfo'
 export default {
   data() {
     return {
-      baseInfo: [
-        { name: "出生日期", value: "1994/03/25" },
-        { name: "手机", value: "18331588738" },
-        { name: "邮箱", value: "1066788870@qq.com" },
-        { name: "国籍", value: "中国" },
-        { name: "户口", value: "湖北天门" },
-        { name: "状态", value: "求职中" }
-      ],
+      printObj:{
+        id: 'printMe',
+        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2017}年`
+      },
+      baseInfo,
       skillInfo,
-      itemHisInfo
+      itemHisInfo,
+      itemHisWorkInfo
     };
   },
   methods:{
     getCompany(num){
-      if (num === 1) {
-        return '北京乐步教育科技有限公司(NoBook)'
-      } else {
-        return '北京讯飞乐知行软件有限公司'
-      }
+      return ['北京乐步教育科技有限公司(NoBook)','北京讯飞乐知行软件有限公司'][num]
     }
   }
 };
@@ -153,6 +183,81 @@ export default {
       margin-right: 5px;
     }
   }
+  .itemHisWorkInfo{
+    margin-top: 10px;
+    width: 960px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    h2{
+      text-align: center;
+      padding: 20px 0;
+      letter-spacing: 20px;
+    }
+    &>li{
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      margin-top: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      &::after{
+        content: "";
+        width: 100%;
+        border-bottom: dashed 1px #000;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+      }
+      &:last-child{
+        &::after{
+          display: none;
+        }
+      }
+      &::before{
+        content: attr(data-content);
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        line-height: 60px;
+        background: #e7f4ff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 20px;
+        text-align: center;
+        color: #409eff;
+      }
+      div{
+        width: 100%;
+        float: left;
+        line-height: 40px;
+        &>span{
+          display: inline-block;
+          vertical-align: top;
+          &:first-child{
+            width: 130px;
+            text-align: right;
+          }
+          &:last-child{
+            font-weight: 600;
+          }
+        }
+        &:first-child{
+          width:100%;
+        }
+        &:last-child{
+          width: 100%;
+          ul{
+            display: inline-block;
+            vertical-align: top;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
   .itemHisInfo{
     margin-top: 10px;
     width: 960px;
@@ -180,30 +285,30 @@ export default {
         position: absolute;
       }
       &::before{
-      content: attr(data-content);
-      overflow: hidden;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      line-height: 60px;
-      background: #e7f4ff;
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 20px;
-      text-align: center;
-      color: #409eff;
-    }
+        content: attr(data-content);
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        line-height: 60px;
+        background: #e7f4ff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 20px;
+        text-align: center;
+        color: #409eff;
+      }
       div{
         width: 50%;
         float: left;
         line-height: 40px;
         &>span{
           display: inline-block;
+          vertical-align: top;
           &:first-child{
             width: 130px;
             text-align: right;
-            vertical-align: middle;
           }
           &:last-child{
             font-weight: 600;
@@ -216,7 +321,7 @@ export default {
           width: 100%;
           ul{
             display: inline-block;
-            vertical-align: middle;
+            vertical-align: top;
             font-weight: 600;
           }
         }
@@ -229,10 +334,13 @@ export default {
 }
 .print{
   margin: 20px 0;
+  position: fixed;
+  top: 60px;
+  right: 20px;
   button{
     height: 40px;
     line-height: 40px;
-    width: 100px;
+    width: 160px;
     outline: none;
     border: none;
     background: #449eff;
