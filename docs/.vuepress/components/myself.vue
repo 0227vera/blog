@@ -84,7 +84,7 @@
       </ul>
     </div>
     <div class="print">
-      <button v-print="printObj" title="点击可直接打印此页面或保存为pdf">点击可直接打印此页面</button>
+      <button v-print="printObj" title="点击可直接打印此页面或保存为pdf,为保证效果,请尽量使用Google Chrome或者Safari访问">点击可直接打印此页面</button>
     </div>
   </div>
 </template>
