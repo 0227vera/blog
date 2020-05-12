@@ -1,3 +1,8 @@
+---
+sidebarDepth: 2
+collapsable: true
+---
+
 # JS开发中常用的工具函数
 
 ## 1. isStatic：检测数据是不是除了symbol外的原始数据
@@ -65,6 +70,7 @@ let isArrayLike = value =>
   isLength(value.length) && // 长度必须先满足
   getRawType(value) !== 'function' // 函数肯定不能当作类数组的，在这里，字符串是当作类数组的
 ```
+
 ## 9. isEmpty：检查value是不是为空
 
 ```js
@@ -98,6 +104,7 @@ let hyphenate = value =>
 ```
 
 ## 12. extend：将属性混合到目标对象中
+
 有Object.assign() 这个玩意真的没什么用
 
 ```js
@@ -188,7 +195,7 @@ export default {
 }
 ```
 
-##  16. 获取浏览器信息
+## 16. 获取浏览器信息
 
 ```js
 export default function getExplorerInfo() {
@@ -239,6 +246,7 @@ export default function isPCBroswer() {
 ```
 
 ## 18: 简单的实现Set
+
 ```js
 window.Set = window.Set || function () {
   function Set (arr) {
@@ -282,7 +290,6 @@ function unique(arr){
     let result = []
     let objarr = []
     let obj = Object.create(null)
-    
     arr.forEach(item => {
         if(isStatic(item)){//是除了symbol外的原始数据
             let key = item + '_' + getRawType(item);
@@ -297,12 +304,12 @@ function unique(arr){
             }
         }
     })
-    
     return result
 }
 ```
 
 ## 19. cached记忆函数：缓存函数的运算结果
+
 ```js
 function cached (fn) {
   let cache= = Object.create(null)

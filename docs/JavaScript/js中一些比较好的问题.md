@@ -1,3 +1,8 @@
+---
+sidebarDepth: 2
+collapsable: true
+---
+
 # js中一些比较好的问题
 
 ## target和currentTarget区别
@@ -199,7 +204,6 @@ try {
   arr.forEach(item => {
     if (item > 3) throw '循环终止'
     else console.log(item)
-    
   })
 } catch (error) {
     console.log(error)
