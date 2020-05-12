@@ -53,8 +53,7 @@ module.exports = {
           title: 'JavaScript',
           collapsable: true,
           children: [
-            // '/JavaScript/',
-            '/JavaScript/变量',
+            '/JavaScript/',
             '/JavaScript/数组',
             '/JavaScript/对象',
             '/JavaScript/面向对象',
