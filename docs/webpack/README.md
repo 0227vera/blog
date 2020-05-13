@@ -4,19 +4,20 @@
 
 * 安装
   npm i -g webpack-cli
+  
   webpack init -y
 
 * webpack.config.js (最简单的配置)
 
 ```js
-  module.exports = {
-    mode : '', // none | development | production
-    entry: '', // 单入口---SPA | 多入口---MPA 多入口的话是一个对象
-    output: { // 输出 配置必须是一个对象
-      path:'', // 文件路径， 推荐使用 path.resolve(__dirname,'')
-      filename:'' // 文件名
-    }
+module.exports = {
+  mode : '', // none | development | production
+  entry: '', // 单入口---SPA | 多入口---MPA 多入口的话是一个对象
+  output: { // 输出 配置必须是一个对象
+    path:'', // 文件路径， 推荐使用 path.resolve(__dirname,'')
+    filename:'' // 文件名
   }
+}
 ```
 
 说一下mode的三个选项

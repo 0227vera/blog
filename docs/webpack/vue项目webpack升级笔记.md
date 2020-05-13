@@ -36,7 +36,7 @@ module.exports = {
 
 Tree-shaking是在build的时候去掉多余的代码，在webpack 4.0的时候，在`package.json`增加`sideEffects`。在4.39.1版本，mode: production的时候，就是没有配置sideEffects，项目中的代码也会触发tree-shaking（可能是文档还没有更新）。
 
-## process.env.NODE_ENV不能再webpack的config中使用
+## process.env.NODE_ENV不能在webpack的config中使用
 
 DefinePlugin 在原始的源码中执行查找和替换操作，在导入的代码中，任何出现 process.env.NODE_ENV的地方都会被替换为"production"。
 

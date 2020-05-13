@@ -101,7 +101,7 @@
   ```
   或者在pageage.json里面加一项
   ```json
-  "borserslist" : [
+  "borwserslist" : [
     "last 5 version",
     ">1%"
   ]
