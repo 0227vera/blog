@@ -53,6 +53,8 @@ let isNative = value =>
   /native code/.test(value.toString())
 ```
 
+备注：这个地方不是很准的，比如说`let b = function(){return 'native code'}`, `b.toString() ---> 'native code'`
+
 ## 7. isLength：检查value是不是有效的类数组长度
 
 ```js
@@ -283,28 +285,28 @@ window.Set = window.Set || function () {
   }
 }
 
-function unique(arr){
-    if(!isArrayLink(arr)){ //不是类数组对象
-        return arr
-    }
-    let result = []
-    let objarr = []
-    let obj = Object.create(null)
-    arr.forEach(item => {
-        if(isStatic(item)){//是除了symbol外的原始数据
-            let key = item + '_' + getRawType(item);
-            if(!obj[key]){
-                obj[key] = true
-                result.push(item)
-            }
-        }else{//引用类型及symbol
-            if(!objarr.includes(item)){
-                objarr.push(item)
-                result.push(item)
-            }
+function unique(arr) {
+  if(!isArrayLink(arr)) { //不是类数组对象
+      return arr
+  }
+  let result = []
+  let objarr = []
+  let obj = Object.create(null)
+  arr.forEach(item => {
+    if(isStatic(item)) { // 是除了symbol外的原始数据
+        let key = item + '_' + getRawType(item);
+        if(!obj[key]){
+          obj[key] = true
+          result.push(item)
         }
-    })
-    return result
+    } else { // 引用类型及symbol
+        if(!objarr.includes(item)) {
+          objarr.push(item)
+          result.push(item)
+        }
+    }
+  })
+  return result
 }
 ```
 

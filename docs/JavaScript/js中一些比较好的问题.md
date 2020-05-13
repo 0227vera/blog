@@ -17,13 +17,13 @@ collapsable: true
 
 ## 事件循环
 
-事件循环式一个单线程的循环，用于监视调用堆栈并检查是否有工作即将在任务队列中完成。如果调用堆栈为空并且任务中有回调函数，则将回调函数出堆并推送到调用堆栈中执行
+事件循环是一个单线程的循环，用于监视调用堆栈并检查是否有工作即将在任务队列中完成。如果调用堆栈为空并且任务中有回调函数，则将回调函数出堆并推送到调用堆栈中执行
 
 [详情+例子](./task-jobs.html)
 
 ## 如何自定义事件（原生js提供的事件）
 
-1. createEvent，设置事件类型，式html事件还是鼠标事件
+1. createEvent，设置事件类型，是html事件还是鼠标事件
 2. initEvent，初始化事件，事件名称，是否允许冒泡，是否阻止自定义事件
 3. dispatchEvent，触发事件
 
@@ -96,7 +96,7 @@ bind也是改变this指向，不过不是在调用时生效，而是返回一个
 
 ## Ajax
 
-Ajax是使用客户端上的许多web技术，创建一部web应用的一种web开发技术，借助Ajax，web应用可以异步（在后台）向服务器发送数据和从服务器检索数据，而不会干扰现有页面的显示和行为，将数据交换与表示层分离，Ajax允许网页和扩展web应用程序动态更改内容，而无需重新加载整个页面，实际上，现在通常将json替换为xml，因为js对json有原生优势
+Ajax是使用客户端上的许多web技术，创建一个web应用的一种web开发技术，借助Ajax，web应用可以异步（在后台）向服务器发送数据和从服务器检索数据，而不会干扰现有页面的显示和行为，将数据交换与表示层分离，Ajax允许网页和扩展web应用程序动态更改内容，而无需重新加载整个页面，实际上，现在通常将json替换为xml，因为js对json有原生优势
 
 使用xml如何封装
 
@@ -166,27 +166,6 @@ ajax中的post提交数据
 ## 基本算法
 
 [跳转](./基本算法.html#_1-排序算法)
-
-两个有序数组的合并
-
-```js
-let arrA = [0,1,2,3,4,5,6,55]
-let arrB = [2,3,4,5,6,7,8,9,10]
-
-let mergeSortAB = (arrA, ArrB) => {
-  let arr = []
-  while (arrA.length * arrB.length !== 0) {
-    if (arrA[0] > arrB[0]) {
-      arr.push(arrB[0])
-      arrB.shift()
-    } else {
-      arr.push(arrA[0])
-      arrA.shift()
-    }
-  }
-  return arrA.length ? arr.concat(arrA) : arr.concat(arrB)
-}
-```
 
 ## forEach return 的问题
 
