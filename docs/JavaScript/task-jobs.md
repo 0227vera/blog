@@ -1,10 +1,10 @@
 # 事件循环机制之宏任务(队列)和微任务(队列)
 
-1. macro-task)(task) --- 宏任务---script（整体代码），setTimeout，setInterval,setImmediate，I/O，UI rendering
+1. macro-task(task) --- 宏任务---script（整体代码），setTimeout，setInterval,setImmediate，I/O，UI rendering
 2. micro-task(jobs) --- 微任务--- process.nextTick，Promise，Object.observe，MutationObserver
 ![队列数据结构](../.vuepress/public/img/event-loop.png)
 
-* 来之不同任务源的任务会进入到不同的任务队列，其中setTimeout与setInterval是同源
+* 来自不同任务源的任务会进入到不同的任务队列，其中setTimeout与setInterval是同源
 
 * 事件循环的顺序，决定了JavaScript代码的执行顺序。它从script（整体代码）开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空（只剩全局），然后执行所有的micro-task。当所有可执行的micro-task执行完毕之后。循环再次从macro-task开始，找到其中一个队列执行完毕，然后在执行所有的micro-task，这样一直循环下去
 
@@ -31,17 +31,20 @@ console.log('global1');
 
 // 结果 promise1--->promise2--->global1--->then1--->timeout1
 ```
+
 首先，事件循环从宏任务开始，这个时候，宏任务队列中，只有一个script（整体代码）任务。每一个任务的执行顺序，都依靠函数调用栈来搞定，而当遇到任务源时，则会分发任务到对应的队列中，所以
 
 (一)图解
 ![第一步](../.vuepress/public/img/step1.png)
 
 第二步：script任务执行时首先遇到了setTimeout，setTimeout为一个宏任务源，那么他的作用就是将任务分发到它对应的队列中。
+
 ```js
 setTimeout(function() {
     console.log('timeout1');
 })
 ```
+
 (二)图解
 ![第二步](../.vuepress/public/img/step2.png)
 
