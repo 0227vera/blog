@@ -88,7 +88,8 @@ module.exports = {
             '/ES6/class',
             '/ES6/Promise',
             '/ES6/Module',
-            '/ES6/S-W-WeakS-WeakM'
+            '/ES6/S-W-WeakS-WeakM',
+            '/ES6/ES6-interview'
           ]
         },
         {

@@ -51,7 +51,7 @@ js，vue，react的问题就都写在这个地方了，因为vue和react也是�
 
 1. 先说一下收获吧
 
-① `keep-alive`的使用，因为自己平常写代码，习惯不是很好，在写组件的时候不喜欢加上`name`属性，在文档中有明显的说明 
+① `keep-alive`的使用，因为自己平常写代码，习惯不是很好，在写组件的时候不喜欢加上`name`属性，在文档中有明显的说明
 <font color=red>匹配首先检查组件自身的`name`选项，如果`name`选项不可用，
 则匹配它的局部注册名称 (父组件`components`选项的键值)。匿名组件不能被匹配。</font>也即是说我自己写的组件是匿名组件，
 `keep-alive`不会识别，也不会缓存，<font color=red> `include`中的name为组件内部的name而非router中的name</font>
