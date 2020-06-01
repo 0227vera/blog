@@ -10,6 +10,12 @@ viewmodel负责把model的数据同步到view显示出来，还负责把view的�
 
 ![图解](../.vuepress/public/img/vue/mvvm.png)
 
+## MVVM与MVC的区别
+
+MVC----有一个Controller（C），使用Model通过控制Controller去控制view的更新，只是做到了Model层级的变化去实时改变view层的变化
+
+MVVM---就是Model层和View层只互通的，两者任何一个修改都会试对方发生变化，并且两者做到了最大限度的分离
+
 ## AMD、CMD、CommonJS、和ES6的对比（模块化开发）
 
 1. AMD --- requireJS（异步模块）
