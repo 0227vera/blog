@@ -23,7 +23,6 @@ module.exports = {
         {text: '网络', link:'/网络/'},
         {text: 'tool', link:'/tool/'},
         {text: '工作中遇到的问题', link:'/工作中遇到的问题/'},
-        
       ] }
     ],
     sidebarDepth: 0,
@@ -135,6 +134,7 @@ module.exports = {
             '/react/eventbus',
             '/react/refs知识点',
             'react/HTML-DOM事件对象',
+            'react/study',
           ]
         },
         {
