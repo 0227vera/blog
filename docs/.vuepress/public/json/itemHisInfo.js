@@ -1,7 +1,7 @@
 export default [
   {
     name:'前端规划', 
-    time:'202002-至今',
+    time:'202002-202006',
     role:'优化过程',
     isSeparate:true,
     duty:[
