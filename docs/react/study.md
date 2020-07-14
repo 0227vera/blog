@@ -169,7 +169,11 @@ Hook 是能让你在函数组件中“钩入” React 特性的函数。它们�
 
 >Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
 
-## 19. useEffect
+## 19. useState
+
+作用可以相当于class中的state和setState
+
+## 20. useEffect
 
 它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途
 
@@ -201,3 +205,17 @@ useEffect(() => {
     };
   });
 ```
+
+## 21. useContext
+
+`const value = useContext(MyContext)`
+
+在数据传递过程中使用，如果出入的MyContext(可能是父组件传递过来的，也可能是store里面的数据)发生变化，那么也会导致当前组件的数据更新
+
+## 22. useCallback
+
+useCallback 的作用在于利用 memoize 减少无效的 re-render，来达到性能优化的作用。还是那句老生常谈的话，“不要过早的性能优化”。从实际开发的经验来看，在做这类性能优化时，一定得观察比较优化的结果，因为某个小角落的 callback 就可能导致优化前功尽弃，甚至是适得其反。
+
+## 23. useRef
+
+通过ref拿到相关的数据，ref的作用相比于class的时候作用大了很多
