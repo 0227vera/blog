@@ -162,3 +162,42 @@ HOC 不会修改传入的组件，也不会使用继承来复制其行为。相�
 纠正一点自己的想法：
 
 以前总觉得vue和react一个是声明式的一个是命令式的，其实：vue和react都是声明式的编程，通过操作model去改变view，底层如何实现的mv不用去管
+
+## 18. 什么是Hook
+
+Hook 是能让你在函数组件中“钩入” React 特性的函数。它们名字通常都以 use 开始
+
+>Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
+
+## 19. useEffect
+
+它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途
+
+如果想只调用componentDidMount
+
+```js
+useEffect(() => {},[])
+```
+
+在某种条件下进行update
+
+```js
+useEffect(() => {},[count])
+```
+
+如果想只调用 componentWillUnmount
+
+每个 effect 都可以返回一个清除函数。如此可以将添加和移除订阅的逻辑放在一起。它们都属于 effect 的一部分。React 会在组件卸载的时候执行清除操作而不是componentWillUnmount？
+
+```js
+useEffect(() => {
+    function handleStatusChange(status) {
+      setIsOnline(status.isOnline);
+    }
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    // Specify how to clean up after this effect:
+    return function cleanup() {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+```
