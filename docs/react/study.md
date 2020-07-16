@@ -219,3 +219,11 @@ useCallback 的作用在于利用 memoize 减少无效的 re-render，来达到�
 ## 23. useRef
 
 通过ref拿到相关的数据，ref的作用相比于class的时候作用大了很多
+
+## 24. 如何理解依赖注入（DI）
+
+## 25. 使用过的前端代理的方式
+
+1. webpack中的proxy，添加jwt验证的验证规则
+
+2. 使用node的模块(`whistle`)+chrome的插件(`SwitchyOmega`)共同实现
