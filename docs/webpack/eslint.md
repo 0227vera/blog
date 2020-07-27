@@ -8,6 +8,7 @@ eslint 代码规范，之前开发的时候挺不喜欢用的，感觉总是喜�
 2. eslint-loader
 
 附上我喜欢的一个.eslintrc.js 并不是标准的
+
 ```js
 // https://eslint.org/docs/user-guide/configuring
 
@@ -69,11 +70,21 @@ module.exports = {
         requirePragma: false, //Prettier可以严格按照按照文件顶部的一些特殊的注释格式化代码，这些注释称为“require pragma”(必须杂注)
       }
     ],
-    "no-undef":"off" 
+    "no-undef":"off"
   }
 }
 
 ```
+
+除了以上的配置以外，还需要vscode下载插件eslint，以及对编辑器的setting.json配置
+
+```json
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+}
+```
+
 [eslint官网](https://eslint.org/)
 
 <gitask />
