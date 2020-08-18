@@ -13,3 +13,32 @@
 表单里的默认数据 -- `initialValue` --- 通过options里面的initialValue去设置
 
 把父组件的属性映射到表单项上 -- `mapPropsToFields` --- 方便父组件控制
+
+父级元素给自己传入表单的值的时候
+
+```js
+@Form.create({
+  mapPropsToFields(props) {
+    // 使用上层组件的scope的值作为表单的数据
+    const { scope } = props;
+
+    return {
+      nickname: Form.createFormField({
+        value: scope.nickname,
+      }),
+      phone: Form.createFormField({
+        value: scope.phone,
+      }),
+      address: Form.createFormField({
+        value: scope.address,
+      }),
+      agreement: Form.createFormField({
+        value: scope.agreement,
+      }),
+    };
+  },
+  name: 'base_form'
+})
+```
+
+诸如有些默认值设置不上的时候，其实是在初始化的时候还没有对应的值，而是通过接口拿到之后给set的这个时候对于tab，tree给默认值的时候可能不会生效，修改方式，在请求的时候不去加载dom而是使用spin去添加loading解决初始化没值的问题
