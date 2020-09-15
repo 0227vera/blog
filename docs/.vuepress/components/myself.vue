@@ -7,17 +7,21 @@
           <span>{{item.value}}</span>
         </li>
       </ul>
-      <hr>
+      <hr />
       <ul class="skillInfo">
         <li v-for="(item,index) in skillInfo" :key="index">
           <span>{{index+1}}.</span>
           <span>{{item}}</span>
         </li>
       </ul>
-      <hr>
+      <hr />
       <ul class="itemHisWorkInfo">
         <h2>工作经历</h2>
-        <li v-for="(item,index) in itemHisWorkInfo" :key="index" :data-content="itemHisWorkInfo.length-index">
+        <li
+          v-for="(item,index) in itemHisWorkInfo"
+          :key="index"
+          :data-content="itemHisWorkInfo.length-index"
+        >
           <div>
             <span>公司名称：</span>
             <span>{{getCompany(item.type)}}</span>
@@ -48,10 +52,14 @@
           </div>
         </li>
       </ul>
-      <hr>
+      <hr />
       <ul class="itemHisInfo">
         <h2>项目经验</h2>
-        <li v-for="(item,index) in itemHisInfo" :key="index" :data-content="itemHisInfo.length-index">
+        <li
+          v-for="(item,index) in itemHisInfo"
+          :key="index"
+          :data-content="itemHisInfo.length-index"
+        >
           <div>
             <span>所在公司：</span>
             <span>{{getCompany(item.type)}}</span>
@@ -84,24 +92,27 @@
       </ul>
     </div>
     <div class="print">
-      <button v-print="printObj" title="点击可直接打印此页面或保存为pdf,为保证效果,请尽量使用Google Chrome或者Safari访问">点击可直接打印此页面</button>
+      <button
+        v-print="printObj"
+        title="点击可直接打印此页面或保存为pdf,为保证效果,请尽量使用Google Chrome或者Safari访问"
+      >点击可直接打印此页面</button>
     </div>
   </div>
 </template>
 
 <script>
-import Print from 'vue-print-nb'
-import Vue from 'vue'
-Vue.use(Print)
-import itemHisInfo from '../public/json/itemHisInfo'
-import itemHisWorkInfo from '../public/json/itemHisWorkInfo'
-import skillInfo from '../public/json/skillInfo'
-import baseInfo from '../public/json/baseInfo'
+import Print from "vue-print-nb";
+import Vue from "vue";
+Vue.use(Print);
+import itemHisInfo from "../public/json/itemHisInfo";
+import itemHisWorkInfo from "../public/json/itemHisWorkInfo";
+import skillInfo from "../public/json/skillInfo";
+import baseInfo from "../public/json/baseInfo";
 export default {
   data() {
     return {
-      printObj:{
-        id: 'printMe',
+      printObj: {
+        id: "printMe",
         popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2017}年`
       },
       baseInfo,
@@ -110,9 +121,13 @@ export default {
       itemHisWorkInfo
     };
   },
-  methods:{
-    getCompany(num){
-      return ['北京乐步教育科技有限公司(NoBook)','北京讯飞乐知行软件有限公司'][num]
+  methods: {
+    getCompany(num) {
+      return [
+        "北京乐步教育科技有限公司(NoBook)",
+        "北京讯飞乐知行软件有限公司",
+        "北京搜狗"
+      ][num];
     }
   }
 };
@@ -130,8 +145,8 @@ export default {
     width: 960px;
     overflow: hidden;
     position: relative;
-    &::after{
-      content: '基础信息';
+    &::after {
+      content: "基础信息";
       width: 100%;
       height: 100%;
       position: absolute;
@@ -141,7 +156,7 @@ export default {
       text-align: center;
       line-height: 80px;
       letter-spacing: 80px;
-      z-index:-1;
+      z-index: -1;
       color: #eeeeee;
       font-style: oblique;
     }
@@ -151,21 +166,21 @@ export default {
       font-size: 18px;
       height: 40px;
       line-height: 40px;
-      span:nth-child(2){
+      span:nth-child(2) {
         font-weight: 600;
       }
-      span:nth-child(1){
+      span:nth-child(1) {
         display: inline-block;
         width: 80px;
         text-align: right;
       }
     }
   }
-  .skillInfo{
+  .skillInfo {
     margin-top: 10px;
     position: relative;
-    &::after{
-      content: '专业技能';
+    &::after {
+      content: "专业技能";
       width: 100%;
       height: 100%;
       position: absolute;
@@ -173,35 +188,35 @@ export default {
       left: 0;
       font-size: 40px;
       text-align: center;
-      margin-top:-40px;
+      margin-top: -40px;
       letter-spacing: 80px;
-      z-index:-1;
+      z-index: -1;
       color: #eeeeee;
       font-style: oblique;
     }
-    span:nth-child(1){
+    span:nth-child(1) {
       margin-right: 5px;
     }
   }
-  .itemHisWorkInfo{
+  .itemHisWorkInfo {
     margin-top: 10px;
     width: 960px;
     height: auto;
     overflow: hidden;
     position: relative;
-    h2{
+    h2 {
       text-align: center;
       padding: 20px 0;
       letter-spacing: 20px;
     }
-    &>li{
+    & > li {
       width: 100%;
       height: auto;
       overflow: hidden;
       margin-top: 20px;
       padding-bottom: 20px;
       position: relative;
-      &::after{
+      &::after {
         content: "";
         width: 100%;
         border-bottom: dashed 1px #000;
@@ -209,12 +224,12 @@ export default {
         left: 0;
         position: absolute;
       }
-      &:last-child{
-        &::after{
+      &:last-child {
+        &::after {
           display: none;
         }
       }
-      &::before{
+      &::before {
         content: attr(data-content);
         overflow: hidden;
         width: 60px;
@@ -229,27 +244,27 @@ export default {
         text-align: center;
         color: #409eff;
       }
-      div{
+      div {
         width: 100%;
         float: left;
         line-height: 40px;
-        &>span{
+        & > span {
           display: inline-block;
           vertical-align: top;
-          &:first-child{
+          &:first-child {
             width: 130px;
             text-align: right;
           }
-          &:last-child{
+          &:last-child {
             font-weight: 600;
           }
         }
-        &:first-child{
-          width:100%;
-        }
-        &:last-child{
+        &:first-child {
           width: 100%;
-          ul{
+        }
+        &:last-child {
+          width: 100%;
+          ul {
             display: inline-block;
             vertical-align: top;
             font-weight: 600;
@@ -258,25 +273,25 @@ export default {
       }
     }
   }
-  .itemHisInfo{
+  .itemHisInfo {
     margin-top: 10px;
     width: 960px;
     height: auto;
     overflow: hidden;
     position: relative;
-    h2{
+    h2 {
       text-align: center;
       padding: 20px 0;
       letter-spacing: 20px;
     }
-    &>li{
+    & > li {
       width: 100%;
       height: auto;
       overflow: hidden;
       margin-top: 20px;
       padding-bottom: 20px;
       position: relative;
-      &::after{
+      &::after {
         content: "";
         width: 100%;
         border-bottom: dashed 1px #000;
@@ -284,7 +299,7 @@ export default {
         left: 0;
         position: absolute;
       }
-      &::before{
+      &::before {
         content: attr(data-content);
         overflow: hidden;
         width: 60px;
@@ -299,27 +314,27 @@ export default {
         text-align: center;
         color: #409eff;
       }
-      div{
+      div {
         width: 50%;
         float: left;
         line-height: 40px;
-        &>span{
+        & > span {
           display: inline-block;
           vertical-align: top;
-          &:first-child{
+          &:first-child {
             width: 130px;
             text-align: right;
           }
-          &:last-child{
+          &:last-child {
             font-weight: 600;
           }
         }
-        &:first-child{
-          width:100%;
-        }
-        &:last-child{
+        &:first-child {
           width: 100%;
-          ul{
+        }
+        &:last-child {
+          width: 100%;
+          ul {
             display: inline-block;
             vertical-align: top;
             font-weight: 600;
@@ -328,16 +343,16 @@ export default {
       }
     }
   }
-  hr{
+  hr {
     margin-top: 10px;
   }
 }
-.print{
+.print {
   margin: 20px 0;
   position: fixed;
   top: 60px;
   right: 20px;
-  button{
+  button {
     height: 40px;
     line-height: 40px;
     width: 160px;
