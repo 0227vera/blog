@@ -2,6 +2,8 @@
 
 eslint 代码规范，之前开发的时候挺不喜欢用的，感觉总是喜欢报一些书写习惯的问题，但后来一次偶然的机会使用了一次之后，发现真的很好用，对于代码的规范有很大的帮助，用完之后发现腰不酸了腿不疼了，一口气可以爬上5楼了
 
+## vue中
+
 使用eslint 需要安装
 
 1. eslint
@@ -84,6 +86,16 @@ module.exports = {
     "source.fixAll.eslint": true
 }
 ```
+
+------
+
+以上是在vue中使用的eslint的配置，亲测认为还是很好用的，但是在react+mobx的开发模式中，需要有些es7的属性，配合babel做一些eslint的更新
+
+-----
+
+## react中
+
+
 
 [eslint官网](https://eslint.org/)
 
