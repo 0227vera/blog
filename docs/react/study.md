@@ -232,4 +232,4 @@ useCallback 的作用在于利用 memoize 减少无效的 re-render，来达到�
 
 ## 26. hook中的useState
 
-如果useState的前后两次不变的话，页面不会更新，所以注意在数组时候的处理
+如果useState的前后两次不变的话，页面不会更新，所以注意在数组时候的处理，也就是关于拷贝和引用的问题
