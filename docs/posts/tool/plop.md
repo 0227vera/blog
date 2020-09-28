@@ -18,3 +18,5 @@ npm i --save-dev plop
 请直接使用[脚手架](https://www.npmjs.com/package/nic-cli)
 
 详细可看 readme 说明
+
+<!-- [掘金优秀文章](https://juejin.im/post/6854573217446084616) -->
