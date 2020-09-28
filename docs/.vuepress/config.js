@@ -167,6 +167,7 @@ module.exports = {
             "/posts/tool/method",
             "/posts/tool/vscode",
             "/posts/tool/优秀文章",
+            "/posts/tool/plop",
           ],
         },
         {
