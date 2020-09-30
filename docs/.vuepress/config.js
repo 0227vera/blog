@@ -168,6 +168,7 @@ module.exports = {
             "/posts/tool/vscode",
             "/posts/tool/优秀文章",
             "/posts/tool/plop",
+            "/posts/tool/注释",
           ],
         },
         {
