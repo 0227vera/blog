@@ -23,9 +23,9 @@ module.exports = {
           { text: "nodeJS", link: "/posts/nodeJS/" },
           { text: "TypeScript", link: "/posts/TypeScript/" },
           { text: "react", link: "/posts/react/" },
-          { text: "网络", link: "/posts/网络/" },
+          { text: "internet", link: "/posts/internet/" },
           { text: "tool", link: "/posts/tool/" },
-          { text: "工作中遇到的问题", link: "/posts/工作中遇到的问题/" },
+          { text: "question", link: "/posts/question/" },
         ],
       },
       {
@@ -124,8 +124,8 @@ module.exports = {
           collapsable: true,
           children: [
             "/posts/nodeJS/",
-            "/posts/nodeJS/npm",
             "/posts/nodeJS/video",
+            "/posts/nodeJS/webDevalopment",
           ],
         },
         {
@@ -147,14 +147,14 @@ module.exports = {
           ],
         },
         {
-          title: "网络",
+          title: "internet",
           collapsable: true,
           children: [
-            "/posts/网络/",
-            "/posts/网络/JWT",
-            "/posts/网络/多个请求如何书写",
-            "/posts/网络/TCP的3次握手",
-            "/posts/网络/常见的状态码",
+            "/posts/internet/",
+            "/posts/internet/JWT",
+            "/posts/internet/多个请求如何书写",
+            "/posts/internet/TCP的3次握手",
+            "/posts/internet/常见的状态码",
           ],
         },
         {
@@ -162,7 +162,6 @@ module.exports = {
           collapsable: true,
           children: [
             "/posts/tool/",
-            "/posts/tool/设别设备类型",
             "/posts/tool/ES6封装LS，SS",
             "/posts/tool/method",
             "/posts/tool/vscode",
@@ -172,14 +171,13 @@ module.exports = {
           ],
         },
         {
-          title: "工作中遇到的问题",
+          title: "question",
           collapsable: true,
           children: [
-            "/posts/工作中遇到的问题/",
-            "/posts/工作中遇到的问题/html问题",
-            "/posts/工作中遇到的问题/css问题",
-            "/posts/工作中遇到的问题/js问题",
-            "/posts/工作中遇到的问题/H5中遇到的问题",
+            "/posts/question/",
+            "/posts/question/css问题",
+            "/posts/question/js问题",
+            "/posts/question/H5中遇到的问题",
           ],
         },
       ],
