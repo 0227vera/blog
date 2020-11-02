@@ -35,7 +35,7 @@ module.exports = {
     ],
     sidebarDepth: 0,
     sidebar: {
-      "/essay/": ["/essay/", "20200925", "20201015"],
+      "/essay/": ["/essay/", "20200925", "20201015", "20201102"],
       "/posts/": [
         {
           title: "HTML",
