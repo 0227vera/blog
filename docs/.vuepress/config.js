@@ -134,17 +134,17 @@ module.exports = {
           collapsable: true,
           children: [
             "/posts/MySql/",
+            "/posts/MySql/基本数据库知识",
             "/posts/MySql/有哪些数据库管理系统",
             "/posts/MySql/储存引擎",
-            "/posts/MySql/基本数据库知识",
             "/posts/MySql/三范式",
-            "/posts/MySql/事务",
-            "/posts/MySql/索引",
             "/posts/MySql/外连接查询",
-            "/posts/MySql/约束",
             "/posts/MySql/增删改",
-            "/posts/MySql/子查询",
             "/posts/MySql/limit",
+            "/posts/MySql/约束",
+            "/posts/MySql/子查询",
+            "/posts/MySql/索引",
+            "/posts/MySql/事务",
           ]
         },
         {
