@@ -31,13 +31,14 @@ export default {
   methods: {
     BackToTop() {
       this.showRocket = false
-      let scrollT = document.documentElement.scrollTop || document.body.scrollTop
-        document.documentElement.scrollTop -= scrollT/5
-      if (scrollT > 0) {
-        window.requestAnimationFrame(() => {
-          this.BackToTop()
-        })
-      }
+      document.documentElement.scrollTop = 0
+      // let scrollT = document.documentElement.scrollTop || document.body.scrollTop
+      //   document.documentElement.scrollTop -= scrollT/5
+      // if (scrollT > 0) {
+      //   window.requestAnimationFrame(() => {
+      //     this.BackToTop()
+      //   })
+      // }
     },
     showRocketIcon() {
       let that = this;
