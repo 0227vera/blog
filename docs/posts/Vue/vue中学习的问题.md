@@ -44,7 +44,7 @@ mvvm 优点就是 vue 优点：
 
 ![图解](../../.vuepress/public/img/vue/vue-hook.png)
 
-## 数据双向绑定原理（自我事项最简单的数据双绑）
+## 数据双向绑定原理（自我实现最简单的数据双绑）
 
 [跳转](/JavaScript/对象.html#其他方法)
 

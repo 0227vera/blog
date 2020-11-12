@@ -1,8 +1,8 @@
 # vue-router
 
-前后端分离的项目 利用 Ajax 可以在不刷新浏览器的情况下异步数据请求交互
+前后端不分离的项目 利用 Ajax 可以在不刷新浏览器的情况下异步数据请求交互
 
-SPA --- 单页面应用（只有一个 html 文件，真个网站的所有内容都这一个 html 里，通过 js 来处理）
+SPA --- 单页面应用（只有一个 html 文件，整个网站的所有内容都这一个 html 里，通过 js 来处理）
 
 页面交互式是无刷新的，<font color=red>页面跳转也是无刷新的</font>
 
@@ -94,15 +94,13 @@ switch (mode) {
 
 - $router式vue-router的实例，想要导航到不同URL，则使用$router.push 或者$router.replace()或者$router.go()
 
-- \$route 是从当前跳转对象里面可以获取 name、path、query、params 等
+- $route 是从当前跳转对象里面可以获取 name、path、query、params 等
 
-## 3. query 和 params 的使用区别(东动态组件传参)
+## 3. query 和 params 的使用区别(动态组件传参)
 
-1. `query`参数传递，在跳转的时候是既可以使用`name`跳转也可以是使用`path`跳转的 ，（这个地方也有人说 query 只能够是 path 跳转，亲测之后用 name 也是可以的）
+1. `query`参数传递，在跳转的时候是既可以使用`name`跳转也可以是使用`path`跳转的 ，（这个地方也有人说 query 只能够是 path 跳转，亲测之后用 name 也是可以的），不会在url上显示参数信息
 2. `params`是路由的一部分，必须要在路由后面添加参数名，`query`是直接拼接在 url 后面的参数，没有也没有关系
 3. `params`一旦设置在路由，`params`就是路由的一部分，如果路由有`params`传参，但是跳转的时候没有这个参数，会导致跳转失败，或者页面没有内容
-
-- 现在网上有一种我不是很同意的说法，但是又能够说明一些道理，`query`相当于`get`请求，页面跳转的时候可以在地址栏看到请求参数，而`params`相当于`post`请求，参数不会再地址栏显示
 
 ## 4. vue-router 的钩子函数
 
@@ -116,12 +114,12 @@ switch (mode) {
   - from：当前导航即将离开的的路由
   - next：Function，进行管道中的一个钩子，如果执行完了，则导航的状态就是 confirmed（确认的），否则为 false，终止导航
 
-- afterEach 函数不用传 next（）参数
+- afterEach 函数不用传 next()参数
 
 这类钩子只要作用于全局，一般来判断权限，以及页面丢失的操作
 
 ```js
-router.forEach(( to, from, next ) => {
+router.afterEach(( to, from, next ) => {
   const role = window.sessionStorage.getItem('querystring)
   if (!role && to.path !== '/login' ) {
     next('./login') // 如果没有身份认证则会跳到登陆页面

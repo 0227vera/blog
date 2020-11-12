@@ -21,7 +21,7 @@ sidebarDepth: 3
 * 父---->子
   * 父属性绑定，子props接收
 * 父---->子孙
-  * 父`provide:{}`，后代`inject:{}`
+  * 父`provide:{}`，后代`inject:{}`，注意当父中的属性为Object的时候变化的时候，后代组件不会跟随变化，还有vue官网不推荐这样去做传参
 * 子---->父
   * 子`this.$emit('eventname')`，父`v-on:(@)eventname`，也可以通过ref直接调用自己的方法
 * 兄弟组件
@@ -156,6 +156,7 @@ component2.data.a // ---->5
 ```
 
 Function
+
 ```js
 const MyComponent = function(){}
 MyComponent.prototype.data = function(){
@@ -176,12 +177,12 @@ component2.data.a // ---->1
 
 ### 21.1 说说vue如何实现mv模型的
 
-vue提供了一个方法叫做`defineReactive`, 这个方法就是把对象的某个属性（也就是vue的data）实现成响应式的。
+vue提供了一个方法叫做`defineReactive`的方法, 这个方法就是把对象的某个属性（也就是vue的data）实现成响应式的。
 
 在defineReactive中做了如下几件事：
 
-1. 在`defineReactive`里面，首先创建了`Dep`对象，改对象是一个可观察对象(`observable`)。
-2. 然后使用`Object.defineProperty`定义这个属性`get`和`set`方法(PS:还设置了configurable和enumerable为true)
+1. 在`defineReactive`里面，首先创建了一个可观察的对象(`observable: true`)---`Dep`。
+2. 然后使用`Object.defineProperty`定义这个属性`get`和`set`方法(ps:还设置了configurable和enumerable为true)
 3. 在get中，使用`dep.depend()`将当前的watcher（`Dep.target`）添加到dep的subs里面（添加的过程在有一个去重的操作）
 4. 在set中，首先会调用get获取value(这里也会触发get)，比较value发生了变化之后，调用`dep.notify()`,是可观察对象通知观察者发生变更。
 5. `dep.notify`会通知其所有的watcher触发update方法，执行watcher对象创建的时候的回调方法`cb`, 这个`cb`方法会执行`vm._update(vm._render(), hydrating)`

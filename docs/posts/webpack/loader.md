@@ -26,7 +26,7 @@
                 ]
               }
             }
-            ] 
+            ]
           },
           /* {
             test:/\.(png|jpg|gif)$/i,
@@ -77,42 +77,48 @@
   ```
 
   ## loader
-  作用---帮助解析js以外的东西
 
-  * css-loader        读取css,输出成js字符成
+作用---帮助解析js以外的文件
 
-  * style-loader      输出字符串style标签
+* css-loader        读取css,输出成js字符成
+* style-loader      输出字符串style标签
+* postcss-loader    给浏览器加前缀（需要配置）
 
-  * postcss-loader    给浏览器加前缀（需要配置）
-  postcss.config.js
-  ```js
-  module.exports = {
-    plugins: [
-      require('autoprefixer')
-    ]
-  }
-  ```
-  .browserslistrc 文件 (其中的一种)
-  ``` json
-  {
-    last 5 version
-    >1%
-  }
-  ```
-  或者在pageage.json里面加一项
-  ```json
-  "borwserslist" : [
-    "last 5 version",
-    ">1%"
+postcss.config.js
+
+```js
+module.exports = {
+  plugins: [
+    require('autoprefixer')
   ]
-  ```
-  * autoprefixer      内置浏览器的表，什么样式应该加前缀什么不该加前缀（5%原则）
+}
+```
 
-  * file-loader 和 url-loader 这两哥们是配合使用的，url利用limit调用file
+.browserslistrc 文件 (其中的一种)
 
-  * less-loader (less-loader less)css预编译
+``` json
+{
+  last 5 version
+  >1%
+}
+```
 
-  * babel-loader      将es6，es7等转es5
+或者在pageage.json里面加一项
+
+```json
+"borwserslist" : [
+  "last 5 version",
+  ">1%"
+]
+```
+
+* autoprefixer      内置浏览器的表，什么样式应该加前缀什么不该加前缀（5%原则）
+
+* file-loader 和 url-loader 这两哥们是配合使用的，url利用limit调用file
+
+* less-loader (less-loader less)css预编译
+
+* babel-loader      将es6，es7等转es5
 
 <back-to-top />
 

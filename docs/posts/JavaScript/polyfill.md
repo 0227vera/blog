@@ -118,6 +118,7 @@ if (!Function.prototypt.bind) {
   return fBound
 }
 ```
+
 这样就可以兼容到所有的情况了，这里面一些比较绕的东西，我觉得我在不记得时候应该好好看一下
 
 ## 手动实现一个new关键字
