@@ -7,5 +7,8 @@ export default [
 	{ name: '现居', value: '北京市海淀区' },
 	{ name: '籍贯', value: '湖北天门' },
 	{ name: '工作年限', value: `${new Date().getFullYear() - 2017}年` },
-	{ name: '状态', value: '在职' }
+	{ name: '状态', value: '在职' },
+	{ name: '学校', value: '华北理工大学' },
+	{ name: '专业', value: '数学--计算机信息科学' },
+	{ name: '是否统招', value: '是' },
 ];
