@@ -213,6 +213,10 @@ module.exports = {
 
 这个还是比较秀的，可以反杀一波
 
+## 13. mac上面npm权限的问题
+
+`sudo chown -R $USER /usr/local`
+
 <back-to-top />
 
 <gitask />
