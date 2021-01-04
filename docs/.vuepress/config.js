@@ -25,6 +25,7 @@ module.exports = {
           { text: "TypeScript", link: "/posts/TypeScript/" },
           { text: "react", link: "/posts/react/" },
           { text: "internet", link: "/posts/internet/" },
+          { text: "MicroFrontends", link: "/posts/MicroFE/"},
           { text: "tool", link: "/posts/tool/" },
           { text: "question", link: "/posts/question/" },
         ],
@@ -174,6 +175,15 @@ module.exports = {
             "/posts/internet/多个请求如何书写",
             "/posts/internet/TCP的3次握手",
             "/posts/internet/常见的状态码",
+          ],
+        },
+        { 
+          title: "MicroFrontends",
+          collapsable: true,
+          children: [
+            "/posts/MicroFE/",
+            "/posts/MicroFE/qiankun",
+            "/posts/MicroFE/EMP微前端",
           ],
         },
         {
