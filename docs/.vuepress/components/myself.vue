@@ -113,7 +113,7 @@ export default {
     return {
       printObj: {
         id: "printMe",
-        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2017}年`
+        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2018}年`
       },
       baseInfo,
       skillInfo,
