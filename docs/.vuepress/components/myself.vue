@@ -95,7 +95,7 @@
       <button
         v-print="printObj"
         title="点击可直接打印此页面或保存为pdf,为保证效果,请尽量使用Google Chrome或者Safari访问"
-      >点击可直接打印此页面</button>
+      >打印此页面</button>
     </div>
   </div>
 </template>
@@ -113,7 +113,7 @@ export default {
     return {
       printObj: {
         id: "printMe",
-        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2017}年`
+        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2018}年`
       },
       baseInfo,
       skillInfo,

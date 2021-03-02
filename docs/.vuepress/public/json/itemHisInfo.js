@@ -117,18 +117,4 @@ export default [
     ],
     type: 1,
   },
-  {
-    name: "小学科学课件开发",
-    time: "2017011-201807",
-    role: "维护者",
-    isSeparate: false,
-    duty: [
-      "主要负责js编程，高度还原设计flash设计以及动画还原",
-      "熟悉并使用PIXI，使用框架jQuery-UI进行页面渲染",
-      "使用BabylonJS进行3D实验设计和实现",
-      "封装高复用，可维护性的组件",
-      "使用nodeJS，git，webpack，对项目进行管理",
-    ],
-    type: 0,
-  },
 ];

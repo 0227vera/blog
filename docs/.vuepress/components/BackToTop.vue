@@ -32,19 +32,12 @@ export default {
     BackToTop() {
       this.showRocket = false
       document.documentElement.scrollTop = 0
-      // let scrollT = document.documentElement.scrollTop || document.body.scrollTop
-      //   document.documentElement.scrollTop -= scrollT/5
-      // if (scrollT > 0) {
-      //   window.requestAnimationFrame(() => {
-      //     this.BackToTop()
-      //   })
-      // }
     },
     showRocketIcon() {
       let that = this;
       window.addEventListener("scroll", function() {
         let scrollTop = document.documentElement.scrollTop;
-        if (scrollTop >= 50) {
+        if (scrollTop >= 60) {
           that.showRocket = true;
         } else {
           that.showRocket = false;
@@ -87,12 +80,12 @@ export default {
 .show {
   right: 35px;
   opacity: 1;
-  transition: all .3s;
+  transition: all 0.5s;
   z-index: 99999;
   transform: rotate(360deg);
   .rotateRocket{
-    transition: transform 0.3s;
-    transform: scale(1.1) rotate(360deg);
+    transition: transform 0.5s;
+    transform: scale(1.1);
   }
 }
 </style>

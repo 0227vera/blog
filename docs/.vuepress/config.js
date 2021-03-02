@@ -1,6 +1,6 @@
 module.exports = {
   // 可以理解为路由的配置文件
-  title: "salvatore and vera",
+  title: "salvatore's blog",
   description: "Live is what? Get busy living, Or get busy dying",
   themeConfig: {
     lastUpdated: true,
@@ -37,7 +37,19 @@ module.exports = {
     ],
     sidebarDepth: 0,
     sidebar: {
-      "/essay/": ["/essay/", "20200925", "20201015", "20201102", "20201125", "20201207", "20201218","20210122"],
+      "/essay/": [
+        // 需要置顶的内容
+        "/essay/",
+        "20210122", 
+      ].concat(['---------']).concat([
+        "20200925", 
+        "20201015", 
+        "20201102", 
+        "20201125", 
+        "20201207", 
+        "20201218", 
+        "20210220"
+      ].reverse()),
       "/posts/": [
         {
           title: "HTML",

@@ -1,7 +1,7 @@
 ---
 home: true
 lang: zh-CN
-heroText: salvatore and vera
+heroText: salvatore's blog
 heroImage: /icon/icon0.jpg
 footer: MIT Licensed | Copyright © 2019-present salvatore
 ---
