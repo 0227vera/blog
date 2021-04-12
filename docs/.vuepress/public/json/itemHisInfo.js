@@ -1,5 +1,19 @@
 export default [
   {
+    name: "快的新出租小程序",
+    time: "202012-至今",
+    hide: true,
+    role: "功能交付",
+    isSeparate: true,
+    duty: [
+      "功能交付",
+      "项目优化（体积、组件、组件库）",
+      "推动进度",
+      "营销增长",
+    ],
+    type: 3,
+  },
+  {
     name: "财务报销移动端",
     time: "202008-202010",
     role: "从0-->1",
