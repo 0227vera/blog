@@ -1,4 +1,22 @@
+const getMonthLength = (date) => {
+  return parseInt((new Date().getTime() - new Date(date).getTime())/(1000 * 60 * 60 * 24 * 30)) + 1
+}
+
 export default [
+  {
+    type: 3,
+    industry: "高级研发工程师",
+    time: `20201203-至今(${getMonthLength('2020/12/03')}个月)`,
+    ca: "互联网/出行类",
+    hide: true,
+    work: [
+      "负责快的新出租小程序的维护以及日常功能交付",
+      "快的新出租小程序整体优化（代码体积、组件、组件库等）",
+      "推动项目进度，把控研发风险",
+      "开发团队使用脚手架",
+    ],
+    money: "保密",
+  },
   {
     type: 2,
     industry: "开发工程师",

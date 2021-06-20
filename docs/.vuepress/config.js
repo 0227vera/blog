@@ -20,6 +20,7 @@ module.exports = {
           { text: "webpack", link: "/posts/webpack/" },
           { text: "ES6", link: "/posts/ES6/" },
           { text: "Vue", link: "/posts/Vue/" },
+          { text: "MiniProgrem", link: "/posts/MP/" },
           { text: "nodeJS", link: "/posts/nodeJS/" },
           { text: "mysql", link: "/posts/MySql/" },
           { text: "TypeScript", link: "/posts/TypeScript/" },
@@ -48,7 +49,8 @@ module.exports = {
         "20201125", 
         "20201207", 
         "20201218", 
-        "20210220"
+        "20210220",
+        "20210409",
       ].reverse()),
       "/posts/": [
         {
@@ -132,6 +134,13 @@ module.exports = {
             "/posts/Vue/vue中学习的问题",
             "/posts/Vue/vue面试问题",
           ],
+        },
+        {
+          title: "MiniProgrem",
+          collapsable: true,
+          children:[
+            "/posts/MP/",
+          ]
         },
         {
           title: "nodeJS",

@@ -117,8 +117,8 @@ export default {
       },
       baseInfo,
       skillInfo,
-      itemHisInfo,
-      itemHisWorkInfo
+      itemHisInfo: itemHisInfo.filter(item => !item.hide),
+      itemHisWorkInfo: itemHisWorkInfo.filter(item => !item.hide)
     };
   },
   methods: {
@@ -126,7 +126,8 @@ export default {
       return [
         "北京乐步教育科技有限公司(NoBook)",
         "北京讯飞乐知行软件有限公司",
-        "北京搜狗科技发展有限公司"
+        "北京搜狗科技发展有限公司",
+        "滴滴出行"
       ][num];
     }
   }
