@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 module.exports = {
   // 可以理解为路由的配置文件
   title: "salvatore's blog",
@@ -51,6 +53,7 @@ module.exports = {
         "20201218", 
         "20210220",
         "20210409",
+        "20210620",
       ].reverse()),
       "/posts/": [
         {
