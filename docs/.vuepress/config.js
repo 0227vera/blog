@@ -175,7 +175,10 @@ module.exports = {
         {
           title: "TypeScript",
           collapsable: true,
-          children: ["/posts/TypeScript/"],
+          children: [
+            "/posts/TypeScript/",
+            "/posts/TypeScript/style",
+          ],
         },
         {
           title: "react",
@@ -241,4 +244,14 @@ module.exports = {
   markdown: {
     lineNumbers: true, // 显示代码块行号
   },
+  // NOTE: plugins
+  plugins:[
+    '@vuepress/pwa', 
+    '@vuepress/active-header-links',
+    '@vuepress/blog',
+    {
+      serviceWorker: true,
+      updatePopup: true
+    }
+  ]
 };
