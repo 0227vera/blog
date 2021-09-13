@@ -94,3 +94,21 @@ const func = () => {
 		};
 	}
 };
+
+setTimeout(() => {
+	console.log(4)
+}, 0);
+
+new Promise((resolve, reject) => {
+	console.log(1)
+	for(let i = 0; i < 100; i++) {
+		if (i === 99) {
+			resolve()
+		}
+	}
+	console.log(2)
+}).then(() => {
+	console.log(5)
+})
+
+console.log(3)

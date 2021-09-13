@@ -2,21 +2,22 @@ export default [
   {
     name: "快的新出租小程序",
     time: "202012-至今",
-    hide: true,
-    role: "功能交付",
+    // hide: true,
+    role: "项目owner",
     isSeparate: true,
     duty: [
-      "功能交付",
-      "项目优化（体积、组件、组件库）",
-      "推动进度",
-      "营销增长",
+      "使用mpx（类vue语法）开发，兼容支付宝、微信等小程序",
+      "风险管理、功能交付",
+      "在体积、组件、组件等方面项目优化",
+      "裂变增长（乘推乘）",
+      "扬招渗透（扫码付插件方面其他小程序即插即用）"
     ],
     type: 3,
   },
   {
     name: "财务报销移动端",
     time: "202008-202010",
-    role: "从0-->1",
+    role: "项目owner",
     isSeparate: true,
     duty: [
       "react+mobx+less(module)",
@@ -29,15 +30,15 @@ export default [
   {
     name: "前端开发",
     time: "202007-202008",
-    role: "优化过程",
+    role: "项目优化",
     isSeparate: true,
-    duty: ["优化考勤项目", "熟悉差旅项目", "熟悉和学习使用react相关技术栈"],
+    duty: ["优化考勤项目", "优化差旅项目", "熟悉和学习使用react相关技术栈"],
     type: 2,
   },
   {
     name: "前端规划",
     time: "202002-202006",
-    role: "优化过程",
+    role: "项目owner",
     isSeparate: true,
     duty: [
       "前端H5转发代理服务器维护",
@@ -50,7 +51,7 @@ export default [
   {
     name: "多级公文流转移动端V1.1.0",
     time: "201909-201911",
-    role: "从0->1",
+    role: "项目owner",
     isSeparate: true,
     duty: [
       "vue2+vue-cli3+vant项目构建和研发",
@@ -62,7 +63,7 @@ export default [
   {
     name: "多级公文流转移动端V1.0.0",
     time: "201906-201909",
-    role: "从0->1",
+    role: "项目owner",
     isSeparate: true,
     duty: [
       "vue2+vue-cli3+vant项目构建和研发",
@@ -74,7 +75,7 @@ export default [
   {
     name: "多级公文流转web端V1.0.0",
     time: "201903-201906",
-    role: "从0->1",
+    role: "项目owner",
     isSeparate: true,
     duty: [
       "vue2+vue-cli2+elementUI构建和研发",
@@ -87,11 +88,10 @@ export default [
   {
     name: "内控系统V8.3.0+",
     time: "201901-201903",
-    role: "从0->1",
+    role: "项目owner",
     isSeparate: false,
     duty: [
-      "很老的办公应用项目的更新修改，前后端未分离",
-      "使用cdn的方式，vue+elementUI+jq的形式畸形研发",
+      "使用cdn的方式，vue+elementUI+jq的形式研发",
       "为什么没有使用前后端分离？因为产品版本需求不一样，每次修改的页面是部分而非一次全部迭代",
     ],
     type: 1,
@@ -99,11 +99,10 @@ export default [
   {
     name: "工作流系统移动端V2.0.0",
     time: "201811-201812",
-    role: "从0->1",
+    role: "项目owner",
     isSeparate: true,
     duty: [
       "移动端工作流系统，使用vue2+vue-cli+vux研发",
-      "从0->1搭建",
       "使用nodeJS+webpack自动生成相关需要的补丁文件",
     ],
     type: 1,

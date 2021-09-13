@@ -8,7 +8,7 @@ export default [
     industry: "高级研发工程师",
     time: `20201203-至今(${getMonthLength('2020/12/03')}个月)`,
     ca: "互联网/出行类",
-    hide: true,
+    // hide: true,
     work: [
       "负责快的新出租小程序的维护以及日常功能交付",
       "快的新出租小程序整体优化（代码体积、组件、组件库等）",

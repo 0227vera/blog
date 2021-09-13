@@ -27,21 +27,21 @@
             <span>{{getCompany(item.type)}}</span>
           </div>
           <div>
-            <span>所属行业：</span>
+            <span>职位类别：</span>
             <span>{{item.industry}}</span>
           </div>
           <div>
             <span>在职时间：</span>
             <span>{{item.time}}</span>
           </div>
-          <div>
+          <!-- <div>
             <span>职位类别：</span>
             <span>{{item.ca}}</span>
-          </div>
-          <div>
+          </div> -->
+          <!-- <div>
             <span>薪资待遇：</span>
             <span>{{item.money}}</span>
-          </div>
+          </div> -->
           <div>
             <span>主要工作：</span>
             <ul>
