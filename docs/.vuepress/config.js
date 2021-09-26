@@ -91,6 +91,7 @@ module.exports = {
             "/posts/JavaScript/polyfill",
             "/posts/JavaScript/js开发常用的工具函数",
             "/posts/JavaScript/js中一些比较好的问题",
+            "/posts/JavaScript/面试",
           ],
         },
         {
