@@ -217,6 +217,7 @@ module.exports = {
           title: "tool",
           collapsable: true,
           children: [
+            "/posts/tool/常见效果",
             "/posts/tool/",
             "/posts/tool/ES6封装LS，SS",
             "/posts/tool/method",
