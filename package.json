@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "gitalk": "^1.5.0",
+    "loadsh": "0.0.4",
     "vue-print-nb": "^1.4.0",
     "vuedraggable": "^2.23.0",
     "xy-ui": "^1.4.2"
