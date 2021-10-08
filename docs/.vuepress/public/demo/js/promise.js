@@ -1,7 +1,7 @@
 const STATUS = {
   PENDING: 'pending',
   RESOLVED: 'resolved',
-  REJECT: 'reject'
+  REJECT: 'rejected'
 }
 
 class MyPromise {
