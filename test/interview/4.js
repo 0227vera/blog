@@ -10,3 +10,15 @@ const func = arr => arr.reduce((newArr, item, index) => {
   }, [])
 
 console.log(func([2,6,3,8,10,9]))
+
+
+new Promise(function(resolve, reject){reject(1)}).then((res) => {
+  console.log('res ======>', res)
+}).catch(err => {
+  console.log('err=====+>', err)
+  return new Promise(function(resolve, reject){reject(1)})
+}).then(res => {
+  console.log(222)
+}, (e) => {
+  console.log(e, 333333)
+})
