@@ -1,11 +1,53 @@
-const sum10 = arr => arr.reduce((sum, item) => item <= 10 ? (sum + +item) : sum, 0)
-console.log(sum10([1,2,3,4,5,11]))
+/**
+ * Proxy
+ * 两个参数:
+ * target: 目标对象
+ * handle: 钩子的拦截处理，如果为空则对proxy所有操作直接给target
+ */
 
-const str = 'kuai-shou-front-end'
+const targetObj = {
+  name: 'salvatore',
+  role: 'admin'
+}
 
-// NOTE: 横线转驼峰
-const lineToW = str => str.replace(/(-\w)/g, $1 => $1[1].toUpperCase())
-// NOTE: 驼峰转横线
-const wToLine = str => str.replace(/[A-Z]/g, $1 => `-${$1.toLowerCase()}`)
+const handle = {
+  /**
+   * 
+   * @param {*} target 是目标对象，该对象作为第一个参数传递给 new Proxy，
+   * @param {*} property 目标属性名
+   * @param {*} receiver 
+   * @returns 
+   */
+  get(target, property, receiver) {
+    // NOTE: receiver基本上不会被使用
+    if(property === 'name') {
+      target[property] = 'nic'
+    }
+    return target[property] || property
+  },
+  /**
+   * 
+   * @param {*} target 是目标对象，该对象作为第一个参数传递给 new Proxy
+   * @param {*} property 目标属性名称
+   * @param {*} value 目标属性要设置的值
+   * @param {*} receiver 与 get 钩子类似，仅与 setter 访问器相关
+   */
+  set(target, property, value, receiver) {
+    if (property !== 'danger' && value) {
+      target[property] = value
+      return true
+    } else {
+      throw new Error('key can not danger')
+    }
+  }
+}
 
-console.log(wToLine(lineToW(str)))
+let proxy = new Proxy(targetObj, handle)
+
+console.log(proxy.name)
+
+proxy.age = 25
+
+proxy.danger = true
+
+console.log(proxy.age, proxy.danger)
