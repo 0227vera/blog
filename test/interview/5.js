@@ -51,3 +51,5 @@ proxy.age = 25
 proxy.danger = true
 
 console.log(proxy.age, proxy.danger)
+
+// 封装一个网络库，限制最大在途请求数不超过Max。
