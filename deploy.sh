@@ -11,7 +11,7 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'updatae'
+git commit -m 'update'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f "https://github.com/0227vera/0227vera.github.io.git" master

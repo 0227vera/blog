@@ -243,10 +243,10 @@ arr.some((item) => {
 
 缓存分为强制缓存和协商缓存
 
-- 强制缓存
+* 强制缓存
 
-  - HTTP 响应报文中的 expires--`expires: Wed, 21 Oct 2020 03:25:41 GMT`，这个是一个绝对时间，在指定的时间前请求缓存生效
-  - HTTP 响应报文中的 Cache-Control--`cache-control: max-age=600`，这是一个相对值，单位 s，也就是 600s 之内再次请求会直接使用缓存，强制缓存生效
+  * HTTP 响应报文中的 expires--`expires: Wed, 21 Oct 2020 03:25:41 GMT`，这个是一个绝对时间，在指定的时间前请求缓存生效
+  * HTTP 响应报文中的 Cache-Control--`cache-control: max-age=600`，这是一个相对值，单位 s，也就是 600s 之内再次请求会直接使用缓存，强制缓存生效
     > 在无法确定客户端的时间是否与服务端的时间同步的情况下，Cache-Control 相比于 expires 是更好的选择，所以同时存在时，只有 Cache-Control 生效
 
   强制缓存的返回状态码为： 200
@@ -257,13 +257,13 @@ arr.some((item) => {
 
   2. 直接将缓存写入硬盘文件中，读取缓存需要对硬盘文件进行 I/O 操作，读取是复杂的，速度也是比内存慢的
 
-- 协商缓存(协商缓存就是强制缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程)
-  - 协商缓存生效，返回 304
-  - 协商缓存失效，返回 200 和请求结果结果
+* 协商缓存(协商缓存就是强制缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程)
+  * 协商缓存生效，返回 304
+  * 协商缓存失效，返回 200 和请求结果结果
 
 协商缓存的表示在响应的报文中为：`Last-Modified / If-Modified-Since` 和 `Etag / If-None-Match`， 其中 `Etag / If-None-Match` > `Last-Modified / If-Modified-Since`
 
-- 也就是说： 强制缓存优先于协商缓存进行，若强制缓存(Expires 和 Cache-Control)生效则直接使用缓存，若不生效则进行协商缓存(Last-Modified / If-Modified-Since 和 Etag / If-None-Match)，协商缓存由服务器决定是否使用缓存，若协商缓存失效，那么代表该请求的缓存失效，重新获取请求结果，再存入浏览器缓存中；生效则返回 304，继续使用缓存
+* 也就是说： 强制缓存优先于协商缓存进行，若强制缓存(Expires 和 Cache-Control)生效则直接使用缓存，若不生效则进行协商缓存(Last-Modified / If-Modified-Since 和 Etag / If-None-Match)，协商缓存由服务器决定是否使用缓存，若协商缓存失效，那么代表该请求的缓存失效，重新获取请求结果，再存入浏览器缓存中；生效则返回 304，继续使用缓存
 
 ![图解](../../.vuepress/public/img/cache.png)
 
@@ -336,16 +336,16 @@ window.onload = function outerFunction() {
 
 2. 合理的 GC 方案
 
-- 基本方案
+* 基本方案
   Javascript 引擎基础 GC 方案是（simple GC）：mark and sweep（标记清除），即：
 
   1. 遍历所有可访问的对象。
   2. 回收已不可访问的对象。
 
-- GC 缺陷
+* GC 缺陷
   和其他语言一样，javascript 的 GC 策略也无法避免一个问题：GC 时，停止响应其他操作，这是为了安全考虑。而 Javascript 的 GC 在 100ms 甚至以上，对一般的应用还好，但对于 JS 游戏，动画对连贯性要求比较高的应用，就麻烦了。这就是新引擎需要优化的点：避免 GC 造成的长时间停止响应。
 
-- GC 优化策略
+* GC 优化策略
 
   1. 分代回收：区分“临时”与“持久”对象，多回收“临时对象”区（young generation），少回收“持久对象”区（tenured generation），减少每次需要遍历的对象
   2. 增量 GC：增加回收次数，牺牲的是中断次数

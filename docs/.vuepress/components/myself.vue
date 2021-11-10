@@ -9,6 +9,7 @@
       </ul>
       <hr />
       <ul class="skillInfo">
+        <h2>技术能力</h2>
         <li v-for="(item,index) in skillInfo" :key="index">
           <span>{{index+1}}.</span>
           <span>{{item}}</span>
@@ -27,20 +28,12 @@
             <span>{{getCompany(item.type)}}</span>
           </div>
           <div>
-            <span>所属行业：</span>
+            <span>职位类别：</span>
             <span>{{item.industry}}</span>
           </div>
           <div>
             <span>在职时间：</span>
             <span>{{item.time}}</span>
-          </div>
-          <div>
-            <span>职位类别：</span>
-            <span>{{item.ca}}</span>
-          </div>
-          <div>
-            <span>薪资待遇：</span>
-            <span>{{item.money}}</span>
           </div>
           <div>
             <span>主要工作：</span>
@@ -76,14 +69,18 @@
             <span>项目中的角色：</span>
             <span>{{item.role}}</span>
           </div>
-          <div>
-            <span>是否前后端分离：</span>
-            <span>{{item.isSeparate ? '是' : '否'}}</span>
-          </div>
-          <div>
+          <div class="mutil">
             <span>项目内容和职责：</span>
             <ul>
               <li v-for="(du,duIndex) in item.duty" :key="duIndex">
+                <span>{{duIndex+1}}.{{du}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mutil" v-if="item.result && item.result.length">
+            <span>工作成果：</span>
+            <ul>
+              <li v-for="(du,duIndex) in item.result" :key="duIndex">
                 <span>{{duIndex+1}}.{{du}}</span>
               </li>
             </ul>
@@ -113,7 +110,7 @@ export default {
     return {
       printObj: {
         id: "printMe",
-        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2018}年`
+        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2017}年`
       },
       baseInfo,
       skillInfo,
@@ -124,9 +121,8 @@ export default {
   methods: {
     getCompany(num) {
       return [
-        "北京乐步教育科技有限公司(NoBook)",
-        "北京讯飞乐知行软件有限公司",
-        "北京搜狗科技发展有限公司",
+        "",
+        "科大讯飞-北京乐知行软件有限公司",
         "滴滴出行"
       ][num];
     }
@@ -178,6 +174,11 @@ export default {
     }
   }
   .skillInfo {
+    h2 {
+      text-align: center;
+      padding: 20px 0;
+      letter-spacing: 20px;
+    }
     margin-top: 10px;
     position: relative;
     &::after {
@@ -197,6 +198,9 @@ export default {
     }
     span:nth-child(1) {
       margin-right: 5px;
+    }
+    li{
+      margin-top: 10px;
     }
   }
   .itemHisWorkInfo {
@@ -316,12 +320,11 @@ export default {
         color: #409eff;
       }
       div {
-        width: 50%;
-        float: left;
+        width: 100%;
         line-height: 40px;
+        display: flex;
+        align-items: center;
         & > span {
-          display: inline-block;
-          vertical-align: top;
           &:first-child {
             width: 130px;
             text-align: right;
@@ -330,15 +333,16 @@ export default {
             font-weight: 600;
           }
         }
-        &:first-child {
+        &.mutil {
           width: 100%;
-        }
-        &:last-child {
-          width: 100%;
+          margin-bottom: 10px;
           ul {
-            display: inline-block;
             vertical-align: top;
             font-weight: 600;
+            border: 1px #eeeeee solid;
+            padding: 10px;
+            flex: 1;
+            border-radius: 8px
           }
         }
       }
