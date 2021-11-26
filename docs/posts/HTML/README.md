@@ -1,6 +1,6 @@
 # 标签
 
-### 行内标签（内联标签） 和 块级标签
+## 行内标签（内联标签） 和 块级标签
 
 1. 行内标签（内联标签）
 
@@ -15,7 +15,7 @@ eg: div、p、h1-h6、ul、li、dl（定义列表、跟 ul…li 类似）、dt�
 3. 行内块标签 （这一类标签比较特殊，即具有行内标签的特性，又可以设置宽高）
    eg: img input （最典型的两个）
 
-### h5 新增的一些标签
+## h5 新增的一些标签
 
 1. 布局类
 
@@ -36,7 +36,7 @@ eg: div、p、h1-h6、ul、li、dl（定义列表、跟 ul…li 类似）、dt�
 
 <canvas-sign />
 
-### 网上的一些资料
+## 网上的一些资料
 
 1. [SignaturePad 源码和 demo](https://codepen.io/theonelucas/pen/PjzYeg)
 
@@ -50,7 +50,7 @@ eg: div、p、h1-h6、ul、li、dl（定义列表、跟 ul…li 类似）、dt�
 
 6. [vue 生成 canvas 海报图](https://segmentfault.com/a/1190000019975772)
 
-### 容易忽视的标签
+## 容易忽视的标签
 
 1. meta 元素可提供有关页面的元信息
 
