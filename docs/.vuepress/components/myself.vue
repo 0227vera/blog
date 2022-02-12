@@ -111,6 +111,7 @@ import baseInfo from "../public/json/baseInfo";
 export default {
   data() {
     return {
+      isPCBroswer: false,
       printObj: {
         id: "printMe",
         popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2017}年`
@@ -121,19 +122,10 @@ export default {
       itemHisWorkInfo: itemHisWorkInfo.filter(item => !item.hide)
     };
   },
-  computed: {
-    isPCBroswer() {
-      const e = navigator.userAgent.toLowerCase()
-      const t = "ipad" == e.match(/ipad/i)
-      const i = "iphone" == e.match(/iphone/i)
-      const r = "midp" == e.match(/midp/i)
-      const n = "rv:1.2.3.4" == e.match(/rv:1.2.3.4/i)
-      const a = "ucweb" == e.match(/ucweb/i)
-      const o = "android" == e.match(/android/i)
-      const s = "windows ce" == e.match(/windows ce/i)
-      const l = "windows mobile" == e.match(/windows mobile/i);
-      return !(t || i || r || n || a || o || s || l)
-    }
+  mounted(){
+    import('../public/js/utils').then(m => {
+      this.isPCBroswer = m.default()
+    })
   },
   methods: {
     getCompany(num) {
