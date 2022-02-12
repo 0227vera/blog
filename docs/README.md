@@ -43,6 +43,9 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
+    font-size: 1vw;
     width: 100vw;
+    padding: 2.5rem 0 !important;
+
   }
 </style>

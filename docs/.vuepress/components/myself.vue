@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isPCBroswer">
     <div class="about" id="printMe">
       <ul class="baseInfo">
         <li v-for="(item,index) in baseInfo" :key="index">
@@ -95,6 +95,9 @@
       >打印此页面</button>
     </div>
   </div>
+  <div v-else class="phone">
+    为了打印方便，请在PC端打开https://0227vera.github.io/about/
+  </div>
 </template>
 
 <script>
@@ -118,6 +121,20 @@ export default {
       itemHisWorkInfo: itemHisWorkInfo.filter(item => !item.hide)
     };
   },
+  computed: {
+    isPCBroswer() {
+      const e = navigator.userAgent.toLowerCase()
+      const t = "ipad" == e.match(/ipad/i)
+      const i = "iphone" == e.match(/iphone/i)
+      const r = "midp" == e.match(/midp/i)
+      const n = "rv:1.2.3.4" == e.match(/rv:1.2.3.4/i)
+      const a = "ucweb" == e.match(/ucweb/i)
+      const o = "android" == e.match(/android/i)
+      const s = "windows ce" == e.match(/windows ce/i)
+      const l = "windows mobile" == e.match(/windows mobile/i);
+      return !(t || i || r || n || a || o || s || l)
+    }
+  },
   methods: {
     getCompany(num) {
       return [
@@ -135,6 +152,9 @@ export default {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.phone{
+  white-space: pre-line;
 }
 .about {
   width: 960px;

@@ -594,7 +594,7 @@ export default {
           backgroundColor: "rgba(255,255,255,1)",
           penColor: "rgb(0, 0, 0)"
       },
-      w: '740px',
+      w: 'auto',
       h: '300px',
       clearOnResize: false,
       waterMark: {},
