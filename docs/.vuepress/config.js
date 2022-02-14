@@ -38,7 +38,6 @@ module.exports = {
         link: "/essay/",
       },
     ],
-    sidebarDepth: 0,
     sidebar: {
       "/essay/": [
         // 需要置顶的内容
