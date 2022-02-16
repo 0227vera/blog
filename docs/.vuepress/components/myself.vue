@@ -35,7 +35,7 @@
             <span>在职时间：</span>
             <span>{{item.time}}</span>
           </div>
-          <div>
+          <div class="mutil">
             <span>主要工作：</span>
             <ul>
               <li v-for="(du,duIndex) in item.work" :key="duIndex">
@@ -114,7 +114,7 @@ export default {
       isPCBroswer: false,
       printObj: {
         id: "printMe",
-        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2017}年`
+        popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2018}年`
       },
       baseInfo,
       skillInfo,
@@ -213,6 +213,8 @@ export default {
     }
     li{
       margin-top: 10px;
+      margin-left: 40px;
+      font-weight: bold;
     }
   }
   .itemHisWorkInfo {
@@ -263,7 +265,8 @@ export default {
       }
       div {
         width: 100%;
-        float: left;
+        display: flex;
+        align-items: center;
         line-height: 40px;
         & > span {
           display: inline-block;
@@ -285,6 +288,18 @@ export default {
             display: inline-block;
             vertical-align: top;
             font-weight: 600;
+          }
+        }
+        &.mutil {
+          width: 100%;
+          margin-bottom: 10px;
+          ul {
+            vertical-align: top;
+            font-weight: 600;
+            border: 1px #eeeeee solid;
+            padding: 10px;
+            flex: 1;
+            border-radius: 8px
           }
         }
       }

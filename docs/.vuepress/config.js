@@ -61,8 +61,8 @@ module.exports = {
           collapsable: true,
           children: [
             "/posts/HTML/",
-            "/posts/HTML/常见布局",
-            "/posts/HTML/问题",
+            "/posts/HTML/常见案例",
+            "/posts/HTML/面试题",
           ],
         },
         {
