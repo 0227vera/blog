@@ -122,6 +122,8 @@ Flexible Box 模型，通常被称为 flexbox，是一种**一维的布局模型
 
 **子元素设置简写： `flex: <flex-grow> <flex-shrink> <flex-basis>;`**
 
+[更多讲解](https://www.runoob.com/w3cnote/flex-grammar.html)
+
 ### grid
 
 ## 盒模型

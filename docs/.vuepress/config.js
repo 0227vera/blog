@@ -70,11 +70,9 @@ module.exports = {
           collapsable: true,
           children: [
             "/posts/CSS/",
-            "/posts/CSS/弹性盒",
-            "/posts/CSS/浮动和定位",
-            "/posts/CSS/玻璃磨砂效果",
-            "/posts/CSS/伪类",
-            "/posts/CSS/问题",
+            "/posts/CSS/常见案例",
+            "/posts/CSS/面试题",
+            "/posts/CSS/炫酷效果",
           ],
         },
         {
