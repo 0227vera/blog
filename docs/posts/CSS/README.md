@@ -122,9 +122,66 @@ Flexible Box 模型，通常被称为 flexbox，是一种**一维的布局模型
 
 **子元素设置简写： `flex: <flex-grow> <flex-shrink> <flex-basis>;`**
 
-[更多讲解](https://www.runoob.com/w3cnote/flex-grammar.html)
+[Flex 布局语法教程](https://www.runoob.com/w3cnote/flex-grammar.html)
+[MDN-flex](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout)
 
 ### grid
+
+CSS 网格布局擅长于将一个页面划分为几个主要区域，以及定义这些区域的大小、位置、层次等关系（前提是HTML生成了这些区域）。
+
+像表格一样，网格布局让我们能够按行或列来对齐元素。 然而在布局上，网格比表格更可能做到或更简单。 例如，网格容器的子元素可以自己定位，以便它们像CSS定位的元素一样，真正的有重叠和层次。
+
+设置网格布局： `display: grid;`
+
+设置列数：
+
+1. `grid-template-columns:  <width> <width> <width> ……` 根据数值不同声明不同的列数
+
+2. `grid-template-columns: repeat(x, 50px)` x列，而且行高都为 50px
+
+3. `grid-template-columns: repeat(auto-fill, 200px);`列宽是 200 px，但列的数量是不固定的，只要浏览器能够容纳得下，就可以放置元素
+
+4. `grid-template-columns: 200px 1fr 2fr;`第一个列宽设置为 200px，后面剩余的宽度分为两部分，宽度分别为剩余宽度的 1/3 和 2/3
+
+设置行数：
+
+1. `grid-template-rows: <height> <height> ……`根据数值声明不同的行数
+
+2、3、4 行数同列数
+
+设置间距： `grid-gap: <number>px <number>px;` 行列之间的间距，如果只有一个值，则行列相同
+
+关于子元素：
+
+设置垮占几行： `grid-column-start: span <number>` 占number行
+
+设置垮占几行： `grid-row-start: span <number>` 占number列
+
+以上可以满足基本的日常大部分开发需求，[了解更多](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Grid_Layout)
+
+demo：
+
+```css
+.container{
+  display: grid;
+  // 声明3列并且每一列的宽度设置
+  grid-template-columns: 100px 200px 300px;
+  // 声明2行，并设置每一行的高度
+  grid-template-rows: 30px 40px;
+  /*  2行，而且行高都为 50px  */
+  grid-template-rows: repeat(2, 50px);
+  /*  表示列宽是 200 px，但列的数量是不固定的，只要浏览器能够容纳得下，就可以放置元素  */
+  grid-template-columns: repeat(auto-fill, 200px);
+  /* fr 单位代表网格容器中可用空间的一等份 */
+  /* 表示第一个列宽设置为 200px，后面剩余的宽度分为两部分，宽度分别为剩余宽度的 1/3 和 2/3 */
+  grid-template-columns: 200px 1fr 2fr;
+}
+/* item占2行3列 */
+.item{
+  grid-column-start: span 2;
+  grid-row-start: span 3;
+}
+```
 
 ## 盒模型
 
