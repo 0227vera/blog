@@ -99,12 +99,7 @@ module.exports = config({
           icon: 'react',
           children: [
             "/posts/React/",
-            "/posts/React/reaxt脚手架",
-            "/posts/React/eventbus",
-            "/posts/React/refs知识点",
-            "/posts/React/HTML-DOM事件对象",
-            "/posts/React/study",
-            "/posts/React/antd",
+            "/posts/React/面试",
           ],
         },
         {
@@ -112,7 +107,7 @@ module.exports = config({
           icon: 'typescript',
           children: [
             "/posts/TypeScript/",
-            "/posts/TypeScript/style",
+            "/posts/TypeScript/面试",
           ],
         },
         {
@@ -120,8 +115,7 @@ module.exports = config({
           icon: 'node',
           children: [
             "/posts/nodeJS/",
-            "/posts/nodeJS/video",
-            "/posts/nodeJS/webDevalopment",
+            "/posts/nodeJS/面试",
           ],
         },
         {
