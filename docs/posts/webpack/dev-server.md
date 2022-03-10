@@ -396,6 +396,6 @@ module.exports = webpackConfig
 
   ```
 
-<back-to-top />
+
 
 <gitask />

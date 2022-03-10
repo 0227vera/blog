@@ -1,40 +1,44 @@
-const fs = require('fs')
+const { config } = require("vuepress-theme-hope");
 
-module.exports = {
+module.exports = config({
   // 可以理解为路由的配置文件
   title: "salvatore's blog",
   description: "Live is what? Get busy living, Or get busy dying",
+  // theme: 'mini',
   themeConfig: {
     lastUpdated: true,
-    lastUpdated: "最后更新时间",
+    // lastUpdated: "最后更新时间",
     // repo: 'https://github.com/0227vera',
     // repoLabel: 'Github',
+    iconPrefix: 'icon-',
     nav: [
-      { text: "Home", link: "/" },
-      { text: "About", link: "/about/" },
+      { text: "Home", link: "/", icon: 'homefill' },
+      { text: "About", link: "/about/", icon: 'wode' },
       {
         text: "Posts",
         link: "/posts/",
+        icon: 'zhishidian',
         items: [
-          { text: "HTML", link: "/posts/HTML/" },
-          { text: "CSS", link: "/posts/CSS/" },
-          { text: "JavaScript", link: "/posts/JavaScript/" },
-          { text: "webpack", link: "/posts/webpack/" },
-          { text: "Vue", link: "/posts/Vue/" },
-          { text: "MiniProgrem", link: "/posts/MP/" },
-          { text: "nodeJS", link: "/posts/nodeJS/" },
-          { text: "mysql", link: "/posts/MySql/" },
-          { text: "TypeScript", link: "/posts/TypeScript/" },
-          { text: "react", link: "/posts/react/" },
-          { text: "internet", link: "/posts/internet/" },
-          { text: "MicroFrontends", link: "/posts/MicroFE/"},
-          { text: "tool", link: "/posts/tool/" },
-          { text: "question", link: "/posts/question/" },
+          { text: "HTML", link: "/posts/HTML/", icon: 'html5' },
+          { text: "CSS", link: "/posts/CSS/", icon: 'css' },
+          { text: "JavaScript", link: "/posts/JavaScript/", icon: 'javascript' },
+          { text: "webpack", link: "/posts/webpack/", icon: 'webpack' },
+          { text: "Vue", link: "/posts/Vue/", icon: 'vue' },
+          { text: "MiniProgrem", link: "/posts/MP/", icon: 'xiaochengxu' },
+          { text: "nodeJS", link: "/posts/nodeJS/", icon: 'node' },
+          { text: "mysql", link: "/posts/MySql/", icon: '16' },
+          { text: "TypeScript", link: "/posts/TypeScript/", icon: 'typescript' },
+          { text: "react", link: "/posts/react/", icon: 'react' },
+          { text: "internet", link: "/posts/internet/", icon: 'wangluo' },
+          { text: "MicroFrontends", link: "/posts/MicroFE/", icon: 'wode' },
+          { text: "tool", link: "/posts/tool/", icon: 'gongju' },
+          { text: "question", link: "/posts/question/", icon: 'changjianwentixiangguanwenti2' },
         ],
       },
       {
         text: "Essay",
         link: "/essay/",
+        icon: '16'
       },
     ],
     sidebar: {
@@ -42,7 +46,8 @@ module.exports = {
         // 需要置顶的内容
         "/essay/",
         "20210122", 
-      ].concat(['---------']).concat([
+      ].concat([
+        // .concat(['---------'])
         "20200925", 
         "20201015", 
         "20201102", 
@@ -219,17 +224,7 @@ module.exports = {
       "/": [""],
     },
   },
-  markdown: {
-    lineNumbers: true, // 显示代码块行号
-  },
-  // NOTE: plugins
-  plugins:[
-    '@vuepress/pwa', 
-    '@vuepress/active-header-links',
-    '@vuepress/blog',
-    {
-      serviceWorker: true,
-      updatePopup: true
-    }
-  ]
-};
+  // markdown: {
+  //   lineNumbers: true, // 显示代码块行号
+  // }
+});

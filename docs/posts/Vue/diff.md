@@ -270,6 +270,6 @@ oldS > oldE;
 
 ![图解](../../.vuepress/public/img/vue/diff7.png)
 
-<back-to-top />
+
 
 <gitask />

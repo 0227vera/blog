@@ -221,6 +221,4 @@ eg: div、p、h1-h6、ul、li、dl（定义列表、跟 ul…li 类似）、dt�
 
 1. [HTML（超文本标记语言）](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 
-<back-to-top />
-
 <gitask />

@@ -111,7 +111,7 @@ import baseInfo from "../public/json/baseInfo";
 export default {
   data() {
     return {
-      isPCBroswer: false,
+      isPCBroswer: true,
       printObj: {
         id: "printMe",
         popTitle: `廖轩-高级前端工程师-${new Date().getFullYear() - 2018}年`
@@ -123,9 +123,9 @@ export default {
     };
   },
   mounted(){
-    import('../public/js/utils').then(m => {
-      this.isPCBroswer = m.default()
-    })
+    // import('../public/js/utils').then(m => {
+    //   this.isPCBroswer = m.default()
+    // })
   },
   methods: {
     getCompany(num) {
@@ -381,9 +381,6 @@ export default {
 }
 .print {
   margin: 20px 0;
-  position: fixed;
-  top: 60px;
-  right: 20px;
   button {
     height: 40px;
     line-height: 40px;

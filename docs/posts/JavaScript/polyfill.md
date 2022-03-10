@@ -133,6 +133,6 @@ function _new () {
 }
 ```
 
-<back-to-top />
+
 
 <gitask />

@@ -39,6 +39,6 @@ export default eventBus
 
 > 在没有使用mobx之前觉得这个还是可以的，但是在使用mobx之后，这个在项目中确实是没有必要的，但是考虑到使用场景，如果是需要写一个小的sdk的方法可以去做，减小库的大小
 
-<back-to-top />
+
 
 <gitask />

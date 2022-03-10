@@ -317,6 +317,6 @@ todo: RxJS和设计模式中详细学习
 
 `Observer`，又被称为*观察者*
 
-<back-to-top />
+
 
 <gitask />

@@ -7,6 +7,6 @@
 
 <drag />
 
-<back-to-top />
+
 
 <gitask />

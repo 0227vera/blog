@@ -78,6 +78,6 @@ beforeRouteEnter: (to, from, next) => {
 
 上面的业务代码不用管，只需要知道先后顺序就好
 
-<back-to-top />
+
 
 <gitask />

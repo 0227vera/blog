@@ -48,6 +48,6 @@ onsubmit | 表单提交时触发
 
 [更多事件](https://www.runoob.com/jsref/dom-obj-event.html)
 
-<back-to-top />
+
 
 <gitask/>

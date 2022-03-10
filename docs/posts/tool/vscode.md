@@ -30,6 +30,6 @@
 | 23   | Simple React Snippets                         |                                |
 | 24   | Project tree                                  | 自动生成项目目录结构                               |
 
-<back-to-top />
+
 
 <gitask />

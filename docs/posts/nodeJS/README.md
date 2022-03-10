@@ -217,6 +217,6 @@ module.exports = {
 
 `sudo chown -R $USER /usr/local`
 
-<back-to-top />
+
 
 <gitask />

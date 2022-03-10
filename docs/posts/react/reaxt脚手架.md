@@ -61,6 +61,6 @@
 
 > [脚手架使用地址](https://www.npmjs.com/package/nic-cli)
 
-<back-to-top />
+
 
 <gitask />

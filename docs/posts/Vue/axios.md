@@ -243,6 +243,6 @@ this.$api.user.login();
 
 [](https://segmentfault.com/a/1190000019964344)
 
-<back-to-top />
+
 
 <gitask />
