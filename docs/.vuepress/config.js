@@ -4,12 +4,8 @@ module.exports = config({
   // 可以理解为路由的配置文件
   title: "salvatore's blog",
   description: "Live is what? Get busy living, Or get busy dying",
-  // theme: 'mini',
   themeConfig: {
     lastUpdated: true,
-    // lastUpdated: "最后更新时间",
-    // repo: 'https://github.com/0227vera',
-    // repoLabel: 'Github',
     iconPrefix: 'icon-',
     sidebarDepth: 5,
     nav: [
@@ -23,8 +19,8 @@ module.exports = config({
           { text: "HTML", link: "/posts/HTML/", icon: 'html5' },
           { text: "CSS", link: "/posts/CSS/", icon: 'css' },
           { text: "JavaScript", link: "/posts/JavaScript/", icon: 'javascript' },
-          { text: "webpack", link: "/posts/webpack/", icon: 'webpack' },
           { text: "Vue", link: "/posts/Vue/", icon: 'vue' },
+          { text: "webpack", link: "/posts/webpack/", icon: 'webpack' },
           { text: "MiniProgrem", link: "/posts/MP/", icon: 'xiaochengxu' },
           { text: "nodeJS", link: "/posts/nodeJS/", icon: 'node' },
           { text: "mysql", link: "/posts/MySql/", icon: '16' },
@@ -93,6 +89,15 @@ module.exports = config({
           ],
         },
         {
+          title: "Vue",
+          collapsable: true,
+          children: [
+            "/posts/Vue/",
+            "/posts/Vue/axios",
+            "/posts/Vue/面试",
+          ],
+        },
+        {
           title: "webpack",
           collapsable: true,
           children: [
@@ -102,23 +107,6 @@ module.exports = config({
             "/posts/webpack/eslint",
             "/posts/webpack/vue项目webpack升级笔记",
             "/posts/webpack/git提交",
-          ],
-        },
-        {
-          title: "Vue",
-          collapsable: true,
-          children: [
-            "/posts/Vue/",
-            "/posts/Vue/vue初始化项目",
-            "/posts/Vue/axios",
-            "/posts/Vue/vue-router的两种mode",
-            "/posts/Vue/keep-alive",
-            "/posts/Vue/mixins",
-            "/posts/Vue/自定义指令",
-            "/posts/Vue/diff",
-            "/posts/Vue/nextTick",
-            "/posts/Vue/vue中学习的问题",
-            "/posts/Vue/vue面试问题",
           ],
         },
         {
