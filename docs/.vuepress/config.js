@@ -20,16 +20,14 @@ module.exports = config({
           { text: "CSS", link: "/posts/CSS/", icon: 'css' },
           { text: "JavaScript", link: "/posts/JavaScript/", icon: 'javascript' },
           { text: "Vue", link: "/posts/Vue/", icon: 'vue' },
-          { text: "webpack", link: "/posts/webpack/", icon: 'webpack' },
-          { text: "MiniProgrem", link: "/posts/MP/", icon: 'xiaochengxu' },
-          { text: "nodeJS", link: "/posts/nodeJS/", icon: 'node' },
-          { text: "mysql", link: "/posts/MySql/", icon: '16' },
+          { text: "React", link: "/posts/React/", icon: 'react' },
           { text: "TypeScript", link: "/posts/TypeScript/", icon: 'typescript' },
-          { text: "react", link: "/posts/react/", icon: 'react' },
-          { text: "internet", link: "/posts/internet/", icon: 'wangluo' },
-          { text: "MicroFrontends", link: "/posts/MicroFE/", icon: 'wode' },
-          { text: "tool", link: "/posts/tool/", icon: 'gongju' },
-          { text: "question", link: "/posts/question/", icon: 'changjianwentixiangguanwenti2' },
+          { text: "nodeJS", link: "/posts/nodeJS/", icon: 'node' },
+          { text: "快应用和微前端", link: "/posts/快应用和微前端/", icon: 'xiaochengxu' },
+          { text: "工程化", link: "/posts/工程化/", icon: 'webpack' },
+          { text: "前端工具", link: "/posts/tool/", icon: 'gongju' },
+          { text: "网络相关", link: "/posts/internet/", icon: 'wangluo' },
+          { text: "常见问题", link: "/posts/question/", icon: 'changjianwentixiangguanwenti2' },
         ],
       },
       {
@@ -59,7 +57,7 @@ module.exports = config({
       "/posts/": [
         {
           title: "HTML",
-          collapsable: true,
+          icon: 'html5',
           children: [
             "/posts/HTML/",
             "/posts/HTML/常见案例",
@@ -68,7 +66,7 @@ module.exports = config({
         },
         {
           title: "CSS",
-          collapsable: true,
+          icon: 'css',
           children: [
             "/posts/CSS/",
             "/posts/CSS/常见案例",
@@ -78,7 +76,7 @@ module.exports = config({
         },
         {
           title: "JavaScript",
-          collapsable: true,
+          icon: 'javascript',
           children: [
             "/posts/JavaScript/",
             "/posts/JavaScript/es6",
@@ -90,35 +88,36 @@ module.exports = config({
         },
         {
           title: "Vue",
-          collapsable: true,
+          icon: 'vue',
           children: [
             "/posts/Vue/",
-            "/posts/Vue/axios",
             "/posts/Vue/面试",
           ],
         },
         {
-          title: "webpack",
-          collapsable: true,
+          title: "React",
+          icon: 'react',
           children: [
-            "/posts/webpack/",
-            "/posts/webpack/loader",
-            "/posts/webpack/dev-server",
-            "/posts/webpack/eslint",
-            "/posts/webpack/vue项目webpack升级笔记",
-            "/posts/webpack/git提交",
+            "/posts/React/",
+            "/posts/React/reaxt脚手架",
+            "/posts/React/eventbus",
+            "/posts/React/refs知识点",
+            "/posts/React/HTML-DOM事件对象",
+            "/posts/React/study",
+            "/posts/React/antd",
           ],
         },
         {
-          title: "MiniProgrem",
-          collapsable: true,
-          children:[
-            "/posts/MP/",
-          ]
+          title: "TypeScript",
+          icon: 'typescript',
+          children: [
+            "/posts/TypeScript/",
+            "/posts/TypeScript/style",
+          ],
         },
         {
           title: "nodeJS",
-          collapsable: true,
+          icon: 'node',
           children: [
             "/posts/nodeJS/",
             "/posts/nodeJS/video",
@@ -126,70 +125,25 @@ module.exports = config({
           ],
         },
         {
-          title: "mysql",
-          collapsable: true,
+          title: '快应用和微前端',
+          icon: 'xiaochengxu',
           children: [
-            "/posts/MySql/",
-            "/posts/MySql/基本数据库知识",
-            "/posts/MySql/有哪些数据库管理系统",
-            "/posts/MySql/储存引擎",
-            "/posts/MySql/三范式",
-            "/posts/MySql/外连接查询",
-            "/posts/MySql/增删改",
-            "/posts/MySql/limit",
-            "/posts/MySql/约束",
-            "/posts/MySql/子查询",
-            "/posts/MySql/索引",
-            "/posts/MySql/事务",
-          ]
-        },
-        {
-          title: "TypeScript",
-          collapsable: true,
-          children: [
-            "/posts/TypeScript/",
-            "/posts/TypeScript/style",
+            "/posts/快应用和微前端/",
           ],
         },
         {
-          title: "react",
-          collapsable: true,
+          title: '工程化',
+          icon: 'webpack',
           children: [
-            "/posts/react/",
-            "/posts/react/reaxt脚手架",
-            "/posts/react/eventbus",
-            "/posts/react/refs知识点",
-            "/posts/react/HTML-DOM事件对象",
-            "/posts/react/study",
-            "/posts/react/antd",
+            "/posts/工程化/",
           ],
         },
         {
-          title: "internet",
-          collapsable: true,
+          title: "前端工具",
+          icon: 'gongju',
           children: [
-            "/posts/internet/",
-            "/posts/internet/JWT",
-            "/posts/internet/多个请求如何书写",
-            "/posts/internet/TCP的3次握手",
-            "/posts/internet/常见的状态码",
-          ],
-        },
-        { 
-          title: "MicroFrontends",
-          collapsable: true,
-          children: [
-            "/posts/MicroFE/",
-            "/posts/MicroFE/qiankun",
-            "/posts/MicroFE/EMP微前端",
-          ],
-        },
-        {
-          title: "tool",
-          collapsable: true,
-          children: [
-            "/posts/tool/常见效果",
             "/posts/tool/",
+            "/posts/tool/常见效果",
             "/posts/tool/ES6封装LS，SS",
             "/posts/tool/method",
             "/posts/tool/vscode",
@@ -199,21 +153,29 @@ module.exports = config({
           ],
         },
         {
-          title: "question",
-          collapsable: true,
+          title: "网络相关",
+          icon: 'wangluo',
+          children: [
+            "/posts/internet/",
+            "/posts/internet/JWT",
+            "/posts/internet/多个请求如何书写",
+            "/posts/internet/TCP的3次握手",
+            "/posts/internet/常见的状态码",
+          ],
+        },
+        {
+          title: "常见问题",
+          icon: 'changjianwentixiangguanwenti2',
           children: [
             "/posts/question/",
             "/posts/question/css问题",
             "/posts/question/js问题",
             "/posts/question/H5中遇到的问题",
           ],
-        },
+        }
       ],
       "/about/": [""],
       "/": [""],
     },
-  },
-  // markdown: {
-  //   lineNumbers: true, // 显示代码块行号
-  // }
+  }
 });

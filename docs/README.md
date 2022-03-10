@@ -6,8 +6,10 @@ heroImage: /icon/icon0.jpg
 heroText: salvatore's blog
 action:
   - text: 关于我的
+    icon: wode
     link: /about/
-  - text: 我的
+  - text: 心路历程
+    icon: 16
     link: /essay/
 features:
   - title: HTML
@@ -28,15 +30,15 @@ features:
   - title: TYPESCRIPT
     details: 包含ts基础知识，相关应用的的ts使用
     link: /posts/TypeScript/
-  - title: 快应用和微前端
-    details: 包含小程序、桌面应用，搭建过程，相关框架，开发工具
-    link: /posts/MP/
   - title: NODEJS
     details: 包含nodejs、npm基础知识，数据库相关知识，网站开发流程相关
     link: /posts/nodeJS/
+  - title: 快应用和微前端
+    details: 包含小程序、桌面应用，搭建过程，相关框架，开发工具
+    link: /posts/快应用和微前端/
   - title: 工程化
     details: 包含webpack、vite、Rollup基础知识，对比，和相关demo
-    link: /posts/webpack/
+    link: /posts/工程化/
   - title: 前端工具
     details: 包含常见前端效果，常见的js工具函数，相关css效果和代码
     link: /posts/tool/
