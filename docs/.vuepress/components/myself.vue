@@ -149,9 +149,9 @@ export default {
   white-space: pre-line;
 }
 .about {
-  width: 960px;
+  width: 100%;
   .baseInfo {
-    width: 960px;
+    width: 100%;
     overflow: hidden;
     position: relative;
     &::after {
@@ -162,26 +162,25 @@ export default {
       top: 0;
       left: 0;
       font-size: 40px;
-      text-align: center;
-      line-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       letter-spacing: 80px;
       z-index: -1;
-      color: #eeeeee;
+      color: #eeefff;
       font-style: oblique;
     }
+    display: flex;
+    flex-wrap: wrap;
     li {
-      width: 320px;
-      float: left;
+      width: 50%;
       font-size: 18px;
       height: 40px;
       line-height: 40px;
+      display: flex;
       span:nth-child(2) {
         font-weight: 600;
-      }
-      span:nth-child(1) {
-        display: inline-block;
-        width: 80px;
-        text-align: right;
+        margin-left: 10px;
       }
     }
   }
@@ -198,15 +197,16 @@ export default {
       width: 100%;
       height: 100%;
       position: absolute;
-      top: 50%;
+      top: 0;
       left: 0;
       font-size: 40px;
-      text-align: center;
-      margin-top: -40px;
       letter-spacing: 80px;
       z-index: -1;
-      color: #eeeeee;
+      color: #eeefff;
       font-style: oblique;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     span:nth-child(1) {
       margin-right: 5px;
@@ -219,7 +219,7 @@ export default {
   }
   .itemHisWorkInfo {
     margin-top: 10px;
-    width: 960px;
+    width: 100%;
     height: auto;
     overflow: hidden;
     position: relative;
@@ -307,7 +307,7 @@ export default {
   }
   .itemHisInfo {
     margin-top: 10px;
-    width: 960px;
+    width: 100%;
     height: auto;
     overflow: hidden;
     position: relative;

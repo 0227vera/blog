@@ -11,6 +11,7 @@ module.exports = config({
     // repo: 'https://github.com/0227vera',
     // repoLabel: 'Github',
     iconPrefix: 'icon-',
+    sidebarDepth: 5,
     nav: [
       { text: "Home", link: "/", icon: 'homefill' },
       { text: "About", link: "/about/", icon: 'wode' },
