@@ -115,6 +115,7 @@ module.exports = config({
           icon: 'node',
           children: [
             "/posts/nodeJS/",
+            "/posts/nodeJS/cli",
             "/posts/nodeJS/面试",
           ],
         },
@@ -130,6 +131,7 @@ module.exports = config({
           icon: 'webpack',
           children: [
             "/posts/工程化/",
+            "/posts/工程化/plop",
           ],
         },
         {
@@ -137,13 +139,10 @@ module.exports = config({
           icon: 'gongju',
           children: [
             "/posts/tool/",
-            "/posts/tool/常见效果",
-            "/posts/tool/ES6封装LS，SS",
-            "/posts/tool/method",
-            "/posts/tool/vscode",
-            "/posts/tool/优秀文章",
-            "/posts/tool/plop",
+            "/posts/tool/git",
+            "/posts/tool/vim",
             "/posts/tool/注释",
+            "/posts/tool/vscode",
           ],
         },
         {
