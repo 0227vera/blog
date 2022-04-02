@@ -1,16 +1,16 @@
 <template>
-    <div :style="{width:w,height:h}" class="posi">	
-        <div class="signature-canvas">
-          <canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
-        </div>
-        <div class="signature-button">
-            <button v-for="(item,index) in buttons" :key="index" @click="optere(item)" :class="item.class"><span>{{item.name}}</span></button>
-        </div>
-        <div class="signature-button signature-button-top">
-          <button @click="download">下载</button>
-          <button @click="openImg">新页面打开</button>
-        </div>
+  <div :style="{width:w,height:h}" class="posi">	
+    <div class="signature-canvas">
+      <canvas :id="uid" class="canvas" :data-uid="uid"></canvas>
     </div>
+    <div class="signature-button">
+      <button v-for="(item,index) in buttons" :key="index" @click="optere(item)" :class="item.class"><span>{{item.name}}</span></button>
+    </div>
+    <div class="signature-button signature-button-top">
+      <button @click="download">下载</button>
+      <button @click="openImg">新页面打开</button>
+    </div>
+  </div>
 </template>
 <script>
 import downloadFile from '../public/js/download'
@@ -591,8 +591,8 @@ export default {
   data() {
     return {
       sigOption:{
-          backgroundColor: "rgba(255,255,255,1)",
-          penColor: "rgb(0, 0, 0)"
+        backgroundColor: "rgba(255,255,255,0)",
+        penColor: "rgb(0, 0, 0)"
       },
       w: 'auto',
       h: '300px',
@@ -601,7 +601,7 @@ export default {
       change: false,
       sig: () => {},
       option: {
-        backgroundColor: "rgba(255,255,255,1)",
+        backgroundColor: "rgba(255,255,255,0)",
         penColor: "rgb(0, 0, 0)",
         minWidth: penWeight[1][0],
         maxWidth: penWeight[1][1]
@@ -768,14 +768,14 @@ canvas {
 .posi{
   position: relative;
   overflow: hidden;
-  border: 1px solid #eee;
+  // border: 1px solid #eee;
 }
 .signature-canvas {
   width: 100%;
   height: 90%;
   z-index: 5;
   position: relative;
-  background: #fff;
+  // background: #fff;
 }
 .signature-button {
   width: 100%;

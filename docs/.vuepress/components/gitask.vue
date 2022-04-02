@@ -1,6 +1,5 @@
 <template>
   <div class="gitask" id="gitalk-container">
-
   </div>
 </template>
 

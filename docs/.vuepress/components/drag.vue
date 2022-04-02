@@ -1,12 +1,12 @@
 <template>
   <div class='drag'>
-      <draggable v-model="items" id="dragFather" :options="options">
-          <li v-for="(item,index) in items" :key="index">              
-              <span>{{item.name}}</span>  
-              <span>{{item.lotStatus}}</span>
-              <span>{{index + 1}}级审批</span>            
-          </li>
-      </draggable>
+    <draggable v-model="items" id="dragFather" :options="options">
+      <li v-for="(item,index) in items" :key="index">              
+        <span>{{item.name}}</span>  
+        <span>{{item.lotStatus}}</span>
+        <span>{{index + 1}}级审批</span>            
+      </li>
+    </draggable>
   </div>
 </template>
 

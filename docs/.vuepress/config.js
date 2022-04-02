@@ -71,7 +71,6 @@ module.exports = config({
             "/posts/CSS/",
             "/posts/CSS/常见案例",
             "/posts/CSS/面试题",
-            "/posts/CSS/炫酷效果",
           ],
         },
         {
@@ -124,6 +123,10 @@ module.exports = config({
           icon: 'xiaochengxu',
           children: [
             "/posts/快应用和微前端/",
+            "/posts/快应用和微前端/mp",
+            "/posts/快应用和微前端/electron",
+            "/posts/快应用和微前端/RN",
+            "/posts/快应用和微前端/微前端",
           ],
         },
         {
@@ -132,6 +135,9 @@ module.exports = config({
           children: [
             "/posts/工程化/",
             "/posts/工程化/plop",
+            "/posts/工程化/webpack",
+            "/posts/工程化/rollup",
+            "/posts/工程化/vite",
           ],
         },
         {
