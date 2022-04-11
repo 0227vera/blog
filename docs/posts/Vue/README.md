@@ -1165,4 +1165,249 @@ this.$api.user.login();
 
 ## vue3.x
 
+vue3是可以完全兼容vue2的写法的，我们说一下vue3的一些新的特性吧，以及和vue2有差异点的地方
+
+### setup的使用
+
+#### 1. `ref`为我们的值创建了一个**响应式引用**
+
+```js
+import { ref } from 'vue'
+const counter = ref(0)
+```
+
+#### 2. 暴露`watch`的方法来侦听响应式的改变
+
+```js
+import { watch } from 'vue'
+watch(counter, (newValue, oldValue) => {
+  console.log(newValue, oldValue)
+})
+```
+
+#### 3. 暴露`computed`提供技术属性
+
+```js
+import { ref, computed } from 'vue'
+const counter = ref(0)
+const double = computed(() => counter.value * 2)
+```
+
+#### 4. 提供相关的钩子函数
+
+```js
+import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onErrorCaptured, onRenderTracked, onRenderTriggered, onActivated, onDeactivated } from 'vue'
+
+onBeforeMount(() => {
+  console.log('onBeforeMount')
+})
+```
+
+#### 5. 提供`toRefs`来使变量接受的时候变成响应式
+
+```js
+import { toRefs } from 'vue'
+const { user } = toRefs(props)
+```
+
+### html模板问题
+
+在vue2.0中template里面的html必须要存在一个根元素来包住其他的dom结构，但是在vue3中不再有这个限制
+
+### 自定义事件的使用问题
+
+提供defineEmits方法来emit事件
+
+```js
+const emit = defineEmits(['update:modelValue'])
+emit('update:modelValue', newValue)
+```
+
+### 单文件的语法糖
+
+#### 1. 基本用法
+
+```js
+<script setup>
+  console.log('hello script setup')
+</script>
+```
+
+#### 2. 响应式
+
+```js
+<script setup>
+  import { ref } from 'vue'
+  const count = ref(0)
+</script>
+<template>
+  <button @click="count++">{{ count }}</button>
+</template>
+```
+
+#### 3. 组件使用
+
+```js
+<script setup>
+  import MyComponent from './MyComponent.vue'
+</script>
+<template>
+  <MyComponent />
+</template>
+```
+
+#### 4. 动态组件的使用
+
+```js
+<script setup>
+import Foo from './Foo.vue'
+import Bar from './Bar.vue'
+</script>
+<template>
+  <component :is="Foo" />
+  <component :is="someCondition ? Foo : Bar" />
+</template>
+```
+
+#### 5. 获取`props`和`emit`事件
+
+```js
+<script setup>
+const props = defineProps({
+  foo: String
+})
+
+const emit = defineEmits(['change', 'delete'])
+// setup code
+</script>
+```
+
+#### 6. 父组件通过`ref`获取到子组件的方法或者变量
+
+子组件
+
+```js
+<script setup>
+import { ref } from 'vue'
+
+const a = 1
+const b = ref(2)
+
+defineExpose({
+  a,
+  b
+})
+</script>
+```
+
+#### 7. 顶层`await`
+
+```js
+<script setup>
+const post = await fetch(`/api/post/1`).then(r => r.json())
+</script>
+```
+
+#### 8. 不可导入Src
+
+在单文件的编写中，vue3不允许使用`script`导入js或者ts
+
+### 单文件组件样式特性
+
+#### 1. `<style scoped>`
+
+关于scoped和vue2.0是一样的
+
+#### 2. 子组件的根元素
+
+在带有 `scoped` 的时候，父组件的样式将不会泄露到子组件当中。不过，子组件的根节点会同时被父组件的作用域样式和子组件的作用域样式影响。这是有意为之的，这样父组件就可以设置子组件根节点的样式，以达到调整布局的目的。
+
+#### 3. 深度选择器
+
+修改第三方组件库的样式的时候的方式
+
+```vue
+<style scoped>
+.a :deep(.b) {
+  /* ... */
+}
+</style>
+```
+
+#### 4. 修改全局的样式
+
+```vue
+<style scoped>
+:global(.red) {
+  color: red;
+}
+</style>
+```
+
+#### 4. `<style module>`和自定义名称注入
+
+module方式
+
+```vue
+<template>
+  <p :class="$style.red">
+    This should be red
+  </p>
+</template>
+
+<style module>
+.red {
+  color: red;
+}
+</style>
+```
+
+自定义module名称
+
+```vue
+<template>
+  <p :class="classes.red">red</p>
+</template>
+
+<style module="classes">
+.red {
+  color: red;
+}
+</style>
+```
+
+#### 5. 通过js修改css的值，方便做主题的方法
+
+```vue
+<script setup>
+const theme = {
+  color: 'red'
+}
+</script>
+
+<template>
+  <p>hello</p>
+</template>
+
+<style scoped>
+p {
+  color: v-bind('theme.color');
+}
+</style>
+```
+
+### 不兼容vue2.0的变化
+
+#### 组件上的v-model的变化
+
+#### 关于v-for中key的用法
+
+#### v-if和v-for的优先级
+
+#### 组件时间的声明方式
+
+#### 异步组件的创建方式
+
+#### 插槽的问题$slots
+
 <gitask />
