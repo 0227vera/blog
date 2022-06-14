@@ -1400,6 +1400,11 @@ p {
 
 #### 组件上的v-model的变化
 
+- 在自定义组件的时候，`v-model` prop和事件默认名称已更改：
+  - prop：`value`----> `modelValue`
+  - 事件：`input`----> `update: modelValue`
+- `v-bind`的`.sync`修饰符和组件的model选项已移除，可在v-model上加一个参数代替
+
 #### 关于v-for中key的用法
 
 #### v-if和v-for的优先级
