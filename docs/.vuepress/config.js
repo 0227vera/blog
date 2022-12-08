@@ -28,6 +28,7 @@ module.exports = config({
           { text: "前端工具", link: "/posts/tool/", icon: 'gongju' },
           { text: "网络相关", link: "/posts/internet/", icon: 'wangluo' },
           { text: "常见问题", link: "/posts/question/", icon: 'changjianwentixiangguanwenti2' },
+          { text: "算法扫盲", link: "/posts/算法扫盲/", icon: 'changjianwentixiangguanwenti2' },
         ],
       },
       {
@@ -171,6 +172,14 @@ module.exports = config({
             "/posts/question/css问题",
             "/posts/question/js问题",
             "/posts/question/H5中遇到的问题",
+          ],
+        },
+        {
+          title: "算法扫盲",
+          icon: 'changjianwentixiangguanwenti2',
+          children: [
+            "/posts/算法扫盲/",
+            "/posts/算法扫盲/链表",
           ],
         }
       ],
