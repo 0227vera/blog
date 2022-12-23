@@ -2,7 +2,7 @@
 
 ## js的数据类型
 
-* 基础数据类型 ---> null，undefined，string，number，boolean，symbol，object
+* 基础数据类型: null，undefined，string，number，boolean，symbol，object
 
 * 原始类型（Number、String、Boolean）和引用类型（Object、Array、Function）
 

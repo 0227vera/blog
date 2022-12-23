@@ -8,6 +8,9 @@ action:
   - text: 关于我的
     icon: wode
     link: /about/
+  - text: 技术积累
+    icon: zhishidian
+    link: /posts/HTML/
   - text: 心路历程
     icon: 16
     link: /essay/

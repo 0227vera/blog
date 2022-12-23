@@ -16,4 +16,4 @@
 
 3. 相当内存问题，canvas 的宽高大小直接影响所占内存，fabric 这个插件会根据屏幕的 dpr 重新计算 canvas 的高度，导致每个 canvas 的宽高都乘以了一个 dpr 系数，这样相当每次渲染 canvas 的时候 canvas 所占内存是原来的 9 倍修改方案：<font color=red>不再乘以 ratina 屏的 dpr 系数，在高清屏里面，手动设置 fabric.devicePixelRatio = 1</font>
 
-<gitask />
+

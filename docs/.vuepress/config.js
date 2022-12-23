@@ -13,14 +13,13 @@ module.exports = config({
       { text: "About", link: "/about/", icon: 'wode' },
       {
         text: "Posts",
-        link: "/posts/",
+        link: "/posts/HTML/",
         icon: 'zhishidian',
         items: [
           { text: "HTML", link: "/posts/HTML/", icon: 'html5' },
           { text: "CSS", link: "/posts/CSS/", icon: 'css' },
           { text: "JavaScript", link: "/posts/JavaScript/", icon: 'javascript' },
           { text: "Vue", link: "/posts/Vue/", icon: 'vue' },
-          { text: "React", link: "/posts/React/", icon: 'react' },
           { text: "TypeScript", link: "/posts/TypeScript/", icon: 'typescript' },
           { text: "nodeJS", link: "/posts/nodeJS/", icon: 'node' },
           { text: "快应用和微前端", link: "/posts/快应用和微前端/", icon: 'xiaochengxu' },
@@ -30,6 +29,19 @@ module.exports = config({
           { text: "常见问题", link: "/posts/question/", icon: 'changjianwentixiangguanwenti2' },
           { text: "算法扫盲", link: "/posts/算法扫盲/", icon: 'changjianwentixiangguanwenti2' },
         ],
+      },
+      {
+        text: "interview",
+        link: "/interview/html/",
+        icon: '16',
+        items: [
+          { text: "HTML", link: "/interview/html/", icon: 'html5' },
+          { text: "CSS", link: "/interview/css/", icon: 'css' },
+          { text: "JavaScript", link: "/interview/javascript/", icon: 'javascript' },
+          { text: "Vue", link: "/interview/vue/", icon: 'vue' },
+          { text: "小程序", link: "/posts/mp/", icon: 'xiaochengxu' },
+          { text: "项目相关", link: "/posts/项目/", icon: 'xiaochengxu' },
+        ]
       },
       {
         text: "Essay",
@@ -63,7 +75,6 @@ module.exports = config({
           children: [
             "/posts/HTML/",
             "/posts/HTML/常见案例",
-            "/posts/HTML/面试题",
           ],
         },
         {
@@ -72,14 +83,13 @@ module.exports = config({
           children: [
             "/posts/CSS/",
             "/posts/CSS/常见案例",
-            "/posts/CSS/面试题",
           ],
         },
         {
           title: "JavaScript",
           icon: 'javascript',
           children: [
-            "/posts/JavaScript/",
+            "/posts/JavaScript/变量",
             "/posts/JavaScript/js的数据类型及检测",
             "/posts/JavaScript/数组",
             "/posts/JavaScript/对象",
@@ -95,7 +105,6 @@ module.exports = config({
             "/posts/JavaScript/基本算法",
             "/posts/JavaScript/polyfill",
             "/posts/JavaScript/工具函数",
-            "/posts/JavaScript/面试",
           ],
         },
         {
@@ -104,14 +113,6 @@ module.exports = config({
           children: [
             "/posts/Vue/",
             "/posts/Vue/面试",
-          ],
-        },
-        {
-          title: "React",
-          icon: 'react',
-          children: [
-            "/posts/React/",
-            "/posts/React/面试",
           ],
         },
         {
@@ -193,6 +194,53 @@ module.exports = config({
             "/posts/算法扫盲/链表",
           ],
         }
+      ],
+      "/interview": [
+        {
+          title: "html",
+          icon: 'html5',
+          children: [
+            "/interview/html/",
+            "/interview/html/浏览器相关",
+          ]
+        },
+        {
+          title: "css",
+          icon: 'css',
+          children: [
+            "/interview/css/",
+          ]
+        },
+        {
+          title: "javascript",
+          icon: 'javascript',
+          children: [
+            "/interview/javascript/",
+            "/interview/javascript/code",
+            "/interview/javascript/es6",
+          ]
+        },
+        {
+          title: "vue",
+          icon: 'vue',
+          children: [
+            "/interview/vue/",
+          ]
+        },
+        {
+          title: "小程序",
+          icon: 'xiaochengxu',
+          children: [
+            "/interview/mp/",
+          ]
+        },
+        {
+          title: "项目相关",
+          icon: 'xiaochengxu',
+          children: [
+            "/interview/项目/",
+          ]
+        },
       ],
       "/about/": [""],
       "/": [""],

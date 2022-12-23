@@ -398,4 +398,3 @@ module.exports = webpackConfig
 
 
 
-<gitask />
