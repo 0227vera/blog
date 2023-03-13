@@ -10,6 +10,5 @@ export default [
 	{ name: '状态', value: '在职' },
 	{ name: '学校', value: '华北理工大学(2014-2018)' },
 	{ name: '专业', value: '数学--计算机信息科学' },
-	{ name: '是否统招', value: '是' },
-	{ name: '个人blog', value: 'https://0227vera.github.io/' }
+	{ name: '是否统招', value: '是' }
 ];

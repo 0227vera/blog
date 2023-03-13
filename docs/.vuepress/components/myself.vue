@@ -4,7 +4,8 @@
       <ul class="baseInfo">
         <li v-for="(item,index) in baseInfo" :key="index">
           <span>{{item.name}}:</span>
-          <span>{{item.value}}</span>
+          <a v-if="item.isLink" :href="item.value">{{ item.value }}</a>
+          <span v-else>{{item.value}}</span>
         </li>
       </ul>
       <hr />
