@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        dinfineReactive --- dep
+        get dep.depend dep.subs
+        set ---> get ---> change ---> dep.notify
+        notify ---> watcher update
+    </div>
+    <input type="text" id="text-id">
+</body>
+<script lang="ts">
+const debounce = (fn, wait, immediate = false) => {
+    let timeout = null
+    return function (...arg) {
+        const context = this
+        if (immediate) {
+            const flag = !timeout
+            if (flag) {
+                fn.apply(context, arg)
+            } else {
+                clearInterval(timeout)
+            }
+            timeout = setTimeout(() => {
+                timeout = null
+            }, wait)
+            return
+        }
+        clearInterval(timeout)
+        timeout = setTimeout(() => {
+            fn.apply(context, arg)
+        }, wait)
+    }
+}
+
+const throttle = (fn, wait) => {
+    let  timeout = null
+    return function (...arg) {
+        const context = this
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                timeout = null
+                fn.apply(context, arg)
+            }, wait)
+        }
+    }
+}
+const selector = document.querySelector('#text-id')
+const handle = (e) => {
+    console.log('=======>', selector.value)
+}
+selector.addEventListener('input', throttle(handle, 1000))
+</script>
+</html>

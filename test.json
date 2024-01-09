@@ -1,0 +1,746 @@
+{
+	"data": {
+		"disorder_components": [{
+			"errno": 0,
+			"name": "passenger_mini_popup",
+			"priority": 9
+		}, {
+			"data": {
+				"bussiness_id": "260",
+				"button_control_detail": [{
+					"action_params": null,
+					"action_subtype": 0,
+					"click_action_type": 5,
+					"content": "打电话",
+					"extra_info": null,
+					"grey_message": {
+						"text": "",
+						"title": ""
+					},
+					"icon": "phone-call",
+					"icon_style": "font-size:13px",
+					"id": "phonecall",
+					"is_grey": false,
+					"more_icon_style": "font-size:22px",
+					"name": "打电话",
+					"red_point_type": 0,
+					"tips": "",
+					"type": 0
+				}, {
+					"action_params": null,
+					"action_subtype": 0,
+					"click_action_type": 4,
+					"content": "发消息",
+					"extra_info": null,
+					"grey_message": {
+						"text": "",
+						"title": ""
+					},
+					"icon": "send-msg",
+					"icon_style": "font-size:13px",
+					"id": "sendmsg",
+					"is_grey": false,
+					"more_icon_style": "font-size:22px",
+					"name": "发消息",
+					"red_point_type": 0,
+					"tips": "",
+					"type": 0
+				}, {
+					"action_params": null,
+					"action_subtype": 0,
+					"click_action_type": 9,
+					"content": "取消订单",
+					"extra_info": null,
+					"grey_message": {
+						"text": "",
+						"title": ""
+					},
+					"icon": "cancel-order",
+					"icon_style": "font-size:13px",
+					"id": "cancelorder",
+					"is_grey": false,
+					"more_icon_style": "font-size:22px",
+					"name": "取消订单",
+					"red_point_type": 0,
+					"tips": "",
+					"type": 1
+				}, {
+					"action_params": null,
+					"action_subtype": 0,
+					"click_action_type": 1,
+					"content": "行程分享",
+					"extra_info": null,
+					"grey_message": {
+						"text": "",
+						"title": ""
+					},
+					"icon": "share-trip",
+					"icon_style": "font-size:13px",
+					"id": "sharetrip",
+					"is_grey": false,
+					"more_icon_style": "font-size:22px",
+					"name": "行程分享",
+					"red_point_type": 0,
+					"tips": "",
+					"type": 1
+				}, {
+					"action_params": null,
+					"action_subtype": 0,
+					"click_action_type": 12,
+					"content": "选择路线",
+					"extra_info": null,
+					"grey_message": {
+						"text": "",
+						"title": ""
+					},
+					"icon": "select-route",
+					"icon_style": "font-size:13px",
+					"id": "selectroute",
+					"is_grey": false,
+					"more_icon_style": "font-size:22px",
+					"name": "选择路线",
+					"red_point_type": 0,
+					"tips": "",
+					"type": 0
+				}, {
+					"action_params": null,
+					"action_subtype": 0,
+					"click_action_type": 2,
+					"content": "联系客服",
+					"extra_info": null,
+					"grey_message": {
+						"text": "",
+						"title": ""
+					},
+					"icon": "new-need-help",
+					"icon_style": "font-size:13px",
+					"id": "needhelp",
+					"is_grey": false,
+					"link": "https://help.xiaojukeji.com/static/psgComplaintFlow.html?source=app_complaint_xcz\u0026entrance=1\u0026token=KzJGlR063j42FH_TmPI4n-MZvVfcSFhRxg-capdv5-gkzDmOwkAQhtG7fHHJ-qv3rtvM4hlIGglEZPnuCBG97B0sEeRNmzCWE26sROQqTWNlwnudLY08m4_ajVUIGasSYHx9-CbSnOqemlqRqhu_hLuxEweP2_P-sxNV0jyNv3esUkpqqRv_BJK8qY80JsaFwDGuhM5XAAAA__8=\u0026oid=TWpnNE1qTXdORFl5TXpneU5ETXdOakV4\u0026entry=0\u0026scene_type=\u0026business_id=260\u0026payments_type=2",
+					"more_icon_style": "font-size:22px",
+					"name": "联系客服",
+					"red_point_type": 0,
+					"tips": "",
+					"type": 0
+				}],
+				"card_type": 0,
+				"more_operation_bubble": {
+					"count_down": 0,
+					"title": ""
+				},
+				"p_complaint_url": "https://static.udache.com/passenger/apps/complaint/index.html",
+				"pay_status": "",
+				"payment_type": "2",
+				"show_btn_nums": 4
+			},
+			"errno": 0,
+			"extension": {
+				"android_component_name": "com.didi.quattro.common.operationarea.QUOperationAreaBuilder",
+				"ios_component_name": "QUOperationAreaBuilder"
+			},
+			"name": "passenger_common_operationarea",
+			"omega_param": {
+				"click": {
+					"wyc_didiapp_multipage_drivercard_moreopzone_key": {
+						"name": "wyc_didiapp_multipage_drivercard_moreopzone_ck",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					},
+					"wyc_didiapp_multipage_drivercard_opzone_key": {
+						"name": "wyc_didiapp_multipage_drivercard_opzone_ck",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				},
+				"show": {
+					"wyc_didiapp_multipage_drivercard_moreopzone_key": {
+						"name": "wyc_didiapp_multipage_drivercard_moreopzone_sw",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					},
+					"wyc_didiapp_multipage_drivercard_opzone_key": {
+						"name": "wyc_didiapp_multipage_drivercard_opzone_sw",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				}
+			},
+			"priority": 8,
+			"template": {
+				"name": "passenger_common_operationarea_template_01"
+			}
+		}, {
+			"data": {
+				"business_id": "260",
+				"card_type": "0",
+				"driver_detail_h5_url": "https://page.udache.com/passenger/apps/driver-homepage-v2/index.html?did=580542143988150\u0026oid=TWpnNE1qTXdORFl5TXpneU5ETXdOakV4\u0026product_id=3\u0026driver_product_id=3",
+				"driver_info": {
+					"car_color": "黑色",
+					"car_image": "",
+					"car_level": "500",
+					"car_tag": "",
+					"car_type": "奥迪A6",
+					"car_type_end_bgcolor": "#F7643B",
+					"car_type_name": "快车",
+					"car_type_start_bgcolor": "#FF7F41",
+					"car_type_text_color": "#FFFFFF",
+					"car_type_text_shadow_color": "#E35029",
+					"car_type_text_shadow_offset_x": 0,
+					"car_type_text_shadow_offset_y": 1.5,
+					"car_type_text_shadow_radius": 2,
+					"driver_id": "580542143988150",
+					"driver_name": "测师傅",
+					"driver_product_id": 260,
+					"driver_tag": "",
+					"driver_tag_icon": {
+						"bg_color_left": "",
+						"bg_color_right": "",
+						"text": "",
+						"text_color": ""
+					},
+					"full_picture": "",
+					"head_url": "",
+					"is_big_picture": 0,
+					"level": "5.0",
+					"license_num": "{京}ATEST6367700D",
+					"license_num_bgcolor": "#FFD9CE",
+					"license_num_raw": "",
+					"lux_driver_level_icon": "",
+					"moving_on_car_image": "https://img-hxy021.didistatic.com/static/apollofile/do1_fi1uIpSuBZE5kwL29YtH",
+					"order_cnt": "0",
+					"pendant_image": "",
+					"push_driver_button": {
+						"status": "0",
+						"text": "催一下"
+					}
+				},
+				"order_type": 0,
+				"time_axis": {
+					"bottom_desc": "",
+					"bottom_title": "",
+					"top_desc": "",
+					"top_title": ""
+				},
+				"trip_message": "为您匹配到附近车辆，请前往{广州市人民政府-南2门}上车。若在{16:22}后取消行程，将需支付取消费。请您耐心等待。",
+				"trip_message_info": {
+					"background_color": "#F5F8FD",
+					"carousel_time": 5,
+					"rounded_corner": 10,
+					"trip_messages": ["为您匹配到附近车辆，请前往{广州市人民政府-南2门}上车。若在{16:22}后取消行程，将需支付取消费。请您耐心等待。"]
+				}
+			},
+			"errno": 0,
+			"extension": {
+				"android_component_name": "com.didi.quattro.business.inservice.orderinfo.QUInServiceOrderInfoBuilder",
+				"ios_component_name": "QUInServiceOrderInfoBuilder"
+			},
+			"name": "passenger_intrip_orderinfo",
+			"omega_param": {
+				"click": {
+					"wyc_didiapp_multipage_drivercard_head_key": {
+						"name": "wyc_didiapp_multipage_drivercard_head_ck",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				},
+				"show": {
+					"wyc_didiapp_multipage_drivercard_head_key": {
+						"name": "wyc_didiapp_multipage_drivercard_head_sw",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				}
+			},
+			"priority": 7,
+			"template": {
+				"name": "passenger_intrip_orderinfo_template_01"
+			}
+		}, {
+			"data": {
+				"arrive_time": 0,
+				"bubble_activity_control": 0,
+				"bubble_type": 1,
+				"business_id": 260,
+				"combo_type": 0,
+				"consult_time": 0,
+				"departure_range": null,
+				"departure_time": 1704442747,
+				"driver_id": "580542143988150",
+				"is_confirm_dest_station": 0,
+				"is_driver_passenger_both_show": 1,
+				"is_refresh_popup": false,
+				"is_station_carpool": 0,
+				"is_stop_carpool": 0,
+				"long_rent_type": 0,
+				"loss_remand": 0,
+				"map_additional_desc": "",
+				"map_button_text": "",
+				"map_count_down_text": "",
+				"map_countdown_time": 0,
+				"map_next_fresh_time": 0,
+				"map_sub_title": "",
+				"map_title": "快车司机正努力赶来",
+				"na_map_button_auto_link": "",
+				"na_map_button_manual_link": "",
+				"oid": "TWpnNE1qTXdORFl5TXpneU5ETXdOakV4",
+				"order_type": 0,
+				"p_late_fee_rule_url": "https://page.udache.com/passenger/apps/late-price-intro/index.html",
+				"passenger_overtime_service_switch": 0,
+				"push_info": {
+					"is_service_control": 0,
+					"msg_arrived_immediately": "快车司机即将到达，请您提前到路边等候。",
+					"not_arrived_right_pos": 0,
+					"passenger_late_fee_switch": 0,
+					"passenger_late_time": 0
+				},
+				"real_time_fee_detail_url": "https://page.udache.com/passenger/apps/price/view-details-v2/index.html",
+				"show_new_map_popup": false
+			},
+			"errno": 0,
+			"extension": {
+				"android_component_name": "com.didi.quattro.business.inservice.servicebubble.QUInServiceBubbleBuilder",
+				"ios_component_name": "QUInServiceBubbleBuilder"
+			},
+			"name": "passenger_intrip_bubble",
+			"omega_param": {
+				"click": {
+					"map_pickupchg_changebubble_key": {
+						"extension": {
+							"poi_id": "2000000000050023148",
+							"poi_lat": 23.129106,
+							"poi_lng": 113.264999,
+							"poi_name": "广东省广州市越秀区吉祥路与府前路交叉口西100米"
+						},
+						"name": "map_pickupchg_changebubble_ck",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					},
+					"wyc_onroad_map_key": {
+						"name": "wyc_onroad_map_ck",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				},
+				"show": {
+					"drvier_arrive_remind_key": {
+						"extension": {
+							"driver_id": "580542143988150",
+							"order_id": "TWpnNE1qTXdORFl5TXpneU5ETXdOakV4"
+						},
+						"name": "drvier_arrive_remind",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					},
+					"map_pickupchg_changeresult_toast_key": {
+						"extension": {
+							"old_poi_id": "2000000000050023148",
+							"old_poi_lat": 23.129106,
+							"old_poi_lng": 113.264999,
+							"old_poi_name": "广东省广州市越秀区吉祥路与府前路交叉口西100米"
+						},
+						"name": "map_pickupchg_changeresult_toast_sw",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					},
+					"wyc_ckd_pickup_bubble_key": {
+						"name": "wyc_ckd_pickup_bubble_sw",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				}
+			},
+			"priority": 6,
+			"template": {
+				"name": "passenger_intrip_bubble_template_01"
+			}
+		}, {
+			"errno": 204,
+			"extension": {
+				"android_component_name": "com.didi.quattro.business.inservice.dialog.QUInServiceDialogBuilder",
+				"ios_component_name": "QUInServiceDialogBuilder"
+			},
+			"name": "passenger_intrip_dialog",
+			"priority": 5
+		}, {
+			"data": {
+				"data": [{
+					"data": {
+						"card_type": "pope"
+					},
+					"dimension": "mp-260-wait-v2",
+					"extension": {
+						"lang": "zh-CN",
+						"log_data": {
+							"access_key_id": "9",
+							"app_version": "6.7.48",
+							"business_id": "260",
+							"card_id": "mp-xp-new-perception",
+							"card_type": "4",
+							"channel_id": "1100000002",
+							"city_id": "3",
+							"container_type": "",
+							"dimension": "mp-260-wait-v2",
+							"is_preload": "0",
+							"lang": "zh-CN",
+							"order_id": "TWpnNE1qTXdORFl5TXpneU5ETXdOakV4",
+							"ranking_type": 4,
+							"rpc_name": "xp-new-perception",
+							"template_id": "",
+							"uid": "299071260640051",
+							"x_bid": "260",
+							"x_scene": "wait"
+						}
+					},
+					"id": "mp-xp-new-perception"
+				}]
+			},
+			"errno": 0,
+			"extension": {
+				"android_component_name": "com.didi.quattro.common.casper.QUCasperBuilder",
+				"ios_component_name": "QUCasperBuilder"
+			},
+			"name": "passenger_common_casper",
+			"priority": 4,
+			"template": {
+				"name": "passenger_common_casper_template_01"
+			}
+		}, {
+			"data": {
+				"action": {
+					"action_param": null,
+					"action_type": 1,
+					"link": "http://v-test.intra.xiaojukeji.com/Qmrj6rg?act_id=216737694338\u0026previous_page=wait_pick_up_communicate_card",
+					"omega_params": null
+				},
+				"background": {
+					"color": "",
+					"gradual_color": ["#7F55FF", "#541AFF"],
+					"texture_img": "https://dpubstatic.udache.com/static/dpubimg/wTz_lFkSktiyetAgKcoV5.png"
+				},
+				"badge": {
+					"action": {
+						"action_param": null,
+						"action_type": 1,
+						"link": "http://v-test.intra.xiaojukeji.com/Qmrj6rg?act_id=216737694338\u0026previous_page=wait_pick_up_communicate_card",
+						"omega_params": null
+					},
+					"img": "https://dpubstatic.udache.com/static/dpubimg/TyVYqLCvyrt8MXPRQyvCu.png"
+				},
+				"button_list": [{
+					"action": {
+						"action_param": {
+							"callback_h5_link": "http://v-test.intra.xiaojukeji.com/Qmrj6rg?act_id=216737694338\u0026previous_page=wait_pick_up_communicate_card",
+							"method": "get",
+							"query": {
+								"act_id": "216737694338",
+								"city_id": "3",
+								"package_id": "0",
+								"privilege_source": "scene_vocal_concert",
+								"source_page": "wait_pick_up_communicate_card",
+								"uniq_bind_key": "3a5331fb801dafe68feecdddea57b666"
+							}
+						},
+						"action_type": 26,
+						"link": "https://member.xiaojukeji.com/hilda/h5/landing/bind",
+						"omega_params": null
+					},
+					"after_icon": "",
+					"background": {
+						"color": "",
+						"gradual_color": ["#FF6400", "#FF413C"],
+						"img": "",
+						"texture_img": ""
+					},
+					"before_icon": "",
+					"border": {
+						"color": "",
+						"radius": "29"
+					},
+					"content": {
+						"color": "#FFFFFF",
+						"font": "PingFangSC-Semibold",
+						"font_weight": "600",
+						"size": "24",
+						"text": "收下"
+					}
+				}],
+				"card_id": "1704442772726",
+				"operation_card": {
+					"operation_card_list": [{
+						"background": {
+							"color": "#B6A7FF",
+							"gradual_color": null
+						},
+						"border": {
+							"color": "",
+							"radius": "8"
+						},
+						"border_color": "",
+						"border_radius": "",
+						"button_list": null,
+						"title": {
+							"action": {
+								"action_param": null,
+								"action_type": 0,
+								"link": "",
+								"omega_params": null
+							},
+							"color": "#350FB6",
+							"font": "PingFangSC-Regular",
+							"font_weight": 400,
+							"highlight": {
+								"color": "#175684",
+								"font": "DINAlternate-Bold",
+								"font_weight": 700,
+								"size": 26
+							},
+							"size": 22,
+							"text": "极速应答+"
+						},
+						"type": "normal"
+					}, {
+						"background": {
+							"color": "#B6A7FF",
+							"gradual_color": null
+						},
+						"border": {
+							"color": "",
+							"radius": "8"
+						},
+						"border_color": "",
+						"border_radius": "",
+						"button_list": null,
+						"title": {
+							"action": {
+								"action_param": null,
+								"action_type": 0,
+								"link": "",
+								"omega_params": null
+							},
+							"color": "#350FB6",
+							"font": "PingFangSC-Regular",
+							"font_weight": 400,
+							"highlight": {
+								"color": "#175684",
+								"font": "DINAlternate-Bold",
+								"font_weight": 700,
+								"size": 26
+							},
+							"size": 22,
+							"text": "极速客服"
+						},
+						"type": "normal"
+					}],
+					"type": "station_and_outoftown_package"
+				},
+				"scene_type": 0,
+				"show_omega": {
+					"omega_params": {}
+				},
+				"sub_title": {
+					"size": 0,
+					"text": ""
+				},
+				"sub_title_is_list": false,
+				"title": {
+					"after_icon": "",
+					"color": "#FFFFFF",
+					"font": "PingFangSC-Medium",
+					"font_weight": 500,
+					"highlight": {
+						"color": "#FFE96B",
+						"font": "DINAlternate-Bold",
+						"font_weight": 700,
+						"size": 44
+					},
+					"size": 28,
+					"text": "{极速应答+}待生效"
+				}
+			},
+			"errno": 0,
+			"name": "passenger_mini_bubble-mini_bubble",
+			"omega_param": {
+				"click": {
+					"wyc_didiapp_multipage_helper_key": {
+						"extension": {
+							"scene_type": 249022,
+							"xid": "216737694338"
+						},
+						"name": "wyc_didiapp_multipage_helper_ck",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				},
+				"click_name": "wyc_didiapp_multipage_helper_ck",
+				"extension": {
+					"activity_id": "congying_test",
+					"component": "communicate_card",
+					"scene_type": 249022,
+					"step": "wait_pick_up_in_xs",
+					"template": "text_plus_button_communicate_template_03",
+					"trace_id": "z18847808a87bb93b046f657357226f2",
+					"xid": "216737694338"
+				},
+				"show": {
+					"wyc_didiapp_multipage_helper_key": {
+						"extension": {
+							"scene_type": 249022,
+							"xid": "216737694338"
+						},
+						"name": "wyc_didiapp_multipage_helper_sw",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				},
+				"show_name": "wyc_didiapp_multipage_helper_sw"
+			},
+			"priority": 3,
+			"template": {
+				"name": "text_plus_button_communicate_template_03"
+			}
+		}],
+		"order_components": null,
+		"page_conf": {
+			"data": {
+				"driver_info": {
+					"car_color": "黑色",
+					"car_image": "",
+					"car_level": "500",
+					"car_tag": "",
+					"car_title": "黑色 •奥迪A6",
+					"car_type": "奥迪A6",
+					"car_type_end_bgcolor": "#F7643B",
+					"car_type_name": "快车",
+					"car_type_start_bgcolor": "#FF7F41",
+					"car_type_text_color": "#FFFFFF",
+					"car_type_text_shadow_color": "#E35029",
+					"car_type_text_shadow_offset_x": 0,
+					"car_type_text_shadow_offset_y": 1.5,
+					"car_type_text_shadow_radius": 2,
+					"driver_id": "580542143988150",
+					"driver_name": "测师傅",
+					"driver_product_id": 260,
+					"driver_tag": "",
+					"full_picture": "",
+					"head_url": "",
+					"is_big_picture": 0,
+					"level": "5.0",
+					"license_num": "{京}ATEST6367700D",
+					"license_num_bgcolor": "#FFD9CE",
+					"license_num_raw": "京ATEST6367700D",
+					"lux_driver_level_icon": "",
+					"moving_on_car_image": "https://img-hxy021.didistatic.com/static/apollofile/do1_fi1uIpSuBZE5kwL29YtH",
+					"order_cnt": "0",
+					"pendant_image": ""
+				},
+				"entry_data": {
+					"button_control": 58656960,
+					"button_control_detail": [],
+					"comment": {
+						"level": 0,
+						"qid": 0,
+						"status": 0
+					},
+					"driver_passenger_poi_show_switch": 1,
+					"is_display_tips": 0,
+					"is_new_pre_cancel_page": 1,
+					"kf_button_detail": [],
+					"kf_use_bronze_door": 0,
+					"passenger_cancel_trip_reason_page": "https://ihapfe.xiaojukeji.com/passenger-cancel/index",
+					"passenger_overtime_service_switch": 0,
+					"question_show": 0,
+					"remote_control_info": [],
+					"share_info": {
+						"share_type": "1",
+						"wx_share_icon": "https://static.udache.com/gulfstream/api/passenger/logo.png",
+						"wx_share_img": "https://static.udache.com/gulfstream/api/passenger/share.jpg",
+						"wx_share_msg": "专属商务车，下车的时候周围都震惊了，以为我是个明星呢！",
+						"wx_share_title": "刚用了滴滴专车，感觉超赞！你也来试一下呗！",
+						"wx_share_url": "http://static.udache.com/gulfstream/webapp/pages/ordershare/order-share.html?sig=1a2ec4339f0b438f\u0026oid=TWpnNE1qTXdORFl5TXpneU5ETXdOakV4"
+					},
+					"update_departure_info": "{\"is_support\":0,\"reason\":\"\\u4e0d\\u652f\\u6301\\u7684\\u7248\\u672c\\u53f7\"}",
+					"update_destination_info": {
+						"is_disable": 1,
+						"text": "抱歉，当前订单暂不支持修改终点。",
+						"title": "当前订单不支持修改终点"
+					},
+					"urge_driver_info": []
+				},
+				"order_info": {
+					"airport_type": 0,
+					"arrive_time": 0,
+					"begin_charge_time": 0,
+					"business_id": 260,
+					"call_car": 0,
+					"carpool_price_type": 0,
+					"carpool_type": 0,
+					"choose_from_tag": "didirgeov3",
+					"city_name": "广州市",
+					"combo_type": 0,
+					"confirm_dest_station": 0,
+					"confirm_starting_station": 0,
+					"confirm_walk_type": 0,
+					"consult_time": 0,
+					"departure_time": 1704442747,
+					"dest_station_address": "",
+					"dest_station_lat": 0,
+					"dest_station_lng": 0,
+					"dest_station_name": "",
+					"dest_station_poi_id": "",
+					"finish_time": 0,
+					"from_address": "广东省广州市越秀区吉祥路与府前路交叉口西100米",
+					"from_area": 3,
+					"from_lat": 23.129106,
+					"from_lng": 113.264999,
+					"from_name": "广州市人民政府-南2门",
+					"from_poi_id": "2000000000050023148",
+					"from_src_tag": "didirgeov3",
+					"is_show_stopover_points": 0,
+					"is_station_carpool": 0,
+					"last_order_id": "",
+					"menu_id": "dache_anycar",
+					"oid": "TWpnNE1qTXdORFl5TXpneU5ETXdOakV4",
+					"order_type": 0,
+					"payments_type": 2,
+					"prepay_query": false,
+					"require_level": "600",
+					"route_type": "0",
+					"starting_station_address": "",
+					"starting_station_lat": 0,
+					"starting_station_lng": 0,
+					"starting_station_name": "",
+					"starting_station_poi_id": "",
+					"to_address": "赤岗",
+					"to_area": 3,
+					"to_city_name": "广州市",
+					"to_lat": 23.105415,
+					"to_lng": 113.323193,
+					"to_name": "广州塔-西门",
+					"to_poi_id": "2000000000018162887_3747838704414097408_95121253_200",
+					"to_src_tag": "hd:dropoff_dbck_recall_multiple_mapapipoirecallmultiple:951212530:1",
+					"travel_id": "0",
+					"upgrade_unitaxi": 0,
+					"walk_type": "0"
+				},
+				"push_info": {
+					"msg": "为您找到{最快接驾}的快车。司机正努力赶来，请您耐心等待。若您改变行程，可在{16:22前}免费取消。",
+					"msg_arrived_immediately": "快车司机即将到达，请您提前到路边等候。",
+					"push_arrived_immediately": "快车司机（京ATEST6367700D）即将到达，请您提前到路边等候。",
+					"push_msg": "快车司机（京ATEST6367700D）正努力赶来，请您耐心等待。若您改变行程，可在{16:22前}免费取消。"
+				},
+				"scene_data": {
+					"departure_range": [],
+					"is_carpool_commute": 0,
+					"is_driver_passenger_both_show": 1,
+					"waiting_page_type": 4
+				},
+				"tts": ""
+			},
+			"data_url": "/gulfstream/passenger-center/v2/other/pInTripData",
+			"filter_components": ["passenger_intrip_lamp", "passenger_intrip_travelcard"],
+			"lazy_load_components": ["passenger_mini_popup"],
+			"omega_param": {
+				"show": {
+					"wyc_didiapp_pickuppage_key": {
+						"extension": {
+							"xcx_page_id": "pick"
+						},
+						"name": "wyc_didiapp_pickuppage_sw",
+						"trace_id": "z18847808a87bb93b046f657357226f2"
+					}
+				}
+			},
+			"reload_components": ["passenger_intrip_dialog"]
+		}
+	},
+	"errmsg": "success",
+	"errno": 0,
+	"trace_id": "z18847808a87bb93b046f657357226f2"
+}

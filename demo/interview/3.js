@@ -45,7 +45,11 @@ class MyPromise{
   }
 }
 
-const promise = new MyPromise(function(resolve, reject){resolve(1)})
+const promise = new MyPromise(function(resolve, reject){
+  setTimeout(() => {
+    resolve(1)
+  }, 1000)
+})
 promise.then(res => {
   console.log('res======>', res)
 }).catch(e => {

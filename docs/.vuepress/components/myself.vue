@@ -1,6 +1,7 @@
 <template>
   <div v-if="isPCBroswer">
     <div class="about" id="printMe">
+      <h2>基础信息</h2>
       <ul class="baseInfo">
         <li v-for="(item,index) in baseInfo" :key="index">
           <span>{{item.name}}:</span>
@@ -151,26 +152,15 @@ export default {
 }
 .about {
   width: 100%;
+  h2 {
+    text-align: center;
+    padding: 20px 0;
+    letter-spacing: 20px;
+  }
   .baseInfo {
+    
     width: 100%;
     overflow: hidden;
-    position: relative;
-    &::after {
-      content: "基础信息";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      letter-spacing: 80px;
-      z-index: -1;
-      color: #eeefff;
-      font-style: oblique;
-    }
     display: flex;
     flex-wrap: wrap;
     li {
@@ -186,29 +176,8 @@ export default {
     }
   }
   .skillInfo {
-    h2 {
-      text-align: center;
-      padding: 20px 0;
-      letter-spacing: 20px;
-    }
     margin-top: 10px;
     position: relative;
-    &::after {
-      content: "专业技能";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 40px;
-      letter-spacing: 80px;
-      z-index: -1;
-      color: #eeefff;
-      font-style: oblique;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
     span:nth-child(1) {
       margin-right: 5px;
     }
