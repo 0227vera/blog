@@ -1,10 +1,20 @@
-// a_b_ccc_D_EEE_f ==> aBCccdeEEF
+// 数组洗牌,  [1, 2, 3, 4, 5]随机打乱
 
-const transformStr = str => str.replace(/(_\w)/g, $ => $[1].toUpperCase())
+const createRandomIndex = (length, arr = []) => {
+  const randomIndex = Math.floor(Math.random() * length)
+  if (arr.includes(randomIndex)) {
+    return createRandomIndex(length, arr)
+  } else {
+    arr.push(randomIndex)
+    return arr.length === length ? arr : createRandomIndex(length, arr)
+  }
+}
 
-const transform_str = str => str.replace(/[A-Z]/g, s => `_${s.toLowerCase()}`)
+const randomArr = (arr)=> {
+  const randomIndex = createRandomIndex(arr.length)
+  return randomIndex.map(item => arr[item])
+}
 
-const newStr = transformStr('a_b_ccc_D_EEE_f')
-console.log(newStr)
-const newerStr = transform_str(newStr)
-console.log(newerStr)
+const newArr = randomArr([1, 2, 3, 4, 5])
+
+console.log(newArr)

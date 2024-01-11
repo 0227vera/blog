@@ -11,16 +11,15 @@
 
 * 跨域是基于浏览器同源（所谓同源就是，同一协议，同一ip，同一端口）策略的限制，目的是为了客户端的数据安全
 * 常见的解决跨域的方式有：
-    * NGINX 反向代理
-    * 服务端对CORS的设置：Access-Control-Allow-Origin添加白名单(设置header信息)，多用于生产环境
+  * NGINX 反向代理
+  * 服务端对CORS的设置：Access-Control-Allow-Origin添加白名单(设置header信息)，多用于生产环境
 * 前端处理方式
-    * jsonp（比较老的处理方式，当然兼容性比较好原理是script的src不受同源策略的限制）（缺点只支持get请求，服务端需要将数据以callback包裹返回）
-    * 开发阶段如果是现代框架如vue、react；我们常用的还有proxy的代理；优点是简单，缺点是只能在开发环境中使用
-    * 开发阶段和测试阶段比较简单粗暴的就是使用抓包工具；如charles
-    * 开发阶段还有就是黑科技一点的直接使用Google插件
+  * jsonp（比较老的处理方式，当然兼容性比较好原理是script的src不受同源策略的限制）（缺点只支持get请求，服务端需要将数据以callback包裹返回）
+  * 开发阶段如果是现代框架如vue、react；我们常用的还有proxy的代理；优点是简单，缺点是只能在开发环境中使用
+  * 开发阶段和测试阶段比较简单粗暴的就是使用抓包工具；如charles
+  * 开发阶段还有就是黑科技一点的直接使用Google插件
 
 ### 3. webpack相关面试整理
-
 
 ### 4. css选择器
 
@@ -87,6 +86,7 @@ const f1 = B.f1,
 f2 = B.f2;
 console.log(f1(), f2());
 ```
+
 浏览器：
 10 2
 2 2
@@ -134,4 +134,43 @@ console.log(newerStr)
 8. name server服务器查询储存的域名和ip映射表，把查询出来的域名ip地址连同TTL值返回给本地DNS服务器
 9. 本地DNS服务器缓存这个域名和ip的对应关系
 
+### 3. 三次握手，四次挥手是什么
 
+### 4. TCP和UDP区别
+
+[背](https://juejin.cn/post/7275549394492080188?searchId=2024011122365246C2C762656BAAD137D8)
+
+### 5. 移动端弹性布局
+
+1. flex
+2. position: fixed
+3. calc计算内容高度
+
+### 6. http2.0 和http1.1的区别
+
+[背](https://juejin.cn/post/6844903897899728909?searchId=20240111232600F20C2E5917AE3ED958C9)
+
+#### 7. 数组洗牌,  [1, 2, 3, 4, 5]随机打乱
+
+```js
+// 数组洗牌,  [1, 2, 3, 4, 5]随机打乱
+
+const createRandomIndex = (length, arr = []) => {
+  const randomIndex = Math.floor(Math.random() * length)
+  if (arr.includes(randomIndex)) {
+    return createRandomIndex(length, arr)
+  } else {
+    arr.push(randomIndex)
+    return arr.length === length ? arr : createRandomIndex(length, arr)
+  }
+}
+
+const randomArr = (arr)=> {
+  const randomIndex = createRandomIndex(arr.length)
+  return randomIndex.map(item => arr[item])
+}
+
+const newArr = randomArr([1, 2, 3, 4, 5])
+
+console.log(newArr)
+```
