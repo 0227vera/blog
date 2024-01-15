@@ -15,45 +15,48 @@
     <input type="text" id="text-id">
 </body>
 <script lang="ts">
-const debounce = (fn, wait, immediate = false) => {
-    let timeout = null
-    return function (...arg) {
+// 在wait内只能执行一次
+const debounce = (fn, wait, immediate) => {
+    let timer = 0
+    return function () {
         const context = this
+        const arg = [].slice.call(arguments)
         if (immediate) {
-            const flag = !timeout
-            if (flag) {
+            let callNow = !timer
+            if (callNow) fn.apply(context, arg)
+            clearInterval(timer)
+            timer = setTimeout(() => {
                 fn.apply(context, arg)
-            } else {
-                clearInterval(timeout)
-            }
-            timeout = setTimeout(() => {
-                timeout = null
             }, wait)
-            return
+        } else {
+            clearInterval(timer)
+            timer = setTimeout(() => {
+                timer = 0
+                fn.apply(content, arg)
+            }, wait)
         }
-        clearInterval(timeout)
-        timeout = setTimeout(() => {
-            fn.apply(context, arg)
-        }, wait)
     }
 }
 
+// 每wait 执行一次
 const throttle = (fn, wait) => {
-    let  timeout = null
-    return function (...arg) {
+    let timer = 0
+    return function() {
         const context = this
-        if (!timeout) {
-            timeout = setTimeout(() => {
-                timeout = null
+        const arg = [].slice.call(arguments)
+        if (!timer) {
+            timer = setTimeout(() => {
                 fn.apply(context, arg)
+                timer = 0
             }, wait)
         }
     }
 }
+
 const selector = document.querySelector('#text-id')
 const handle = (e) => {
     console.log('=======>', selector.value)
 }
-selector.addEventListener('input', throttle(handle, 1000))
+selector.addEventListener('input', throttle(handle, 1000, true))
 </script>
 </html>

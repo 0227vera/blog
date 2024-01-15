@@ -57,9 +57,6 @@ copyrightText: false
 ---
 
 <style>
-body{
-  overflow:auto
-}
   .hero>img {
     width: 200px;
     height: 200px;
