@@ -134,6 +134,12 @@ console.log(newerStr)
 8. name server服务器查询储存的域名和ip映射表，把查询出来的域名ip地址连同TTL值返回给本地DNS服务器
 9. 本地DNS服务器缓存这个域名和ip的对应关系
 
+如何优化
+
+```html
+<link ref="dns-prefetch" href="xxxx">
+```
+
 ### 3. 三次握手，四次挥手是什么
 
 ### 4. TCP和UDP区别
@@ -470,7 +476,7 @@ Webpack：
 
 ### 0. css基础：布局相关、排错问题、工程化
 
-### 1. js基础： 防抖节流以及取消正在进行中的请求、promise、事件循环（done）、this和箭头函数、继承
+### 1. js基础： 防抖节流以及取消正在进行中的请求(done)、promise、事件循环（done）、this和箭头函数、继承(done)
 
 ### 1.1 js 代码题：红绿灯、sleep、间隔时间打印
 
@@ -628,7 +634,7 @@ console.log(dfs(tree, 'g'))
 ```
 
 
-### 防抖节流以及取消正在进行中的请求
+### 防抖、节流、取消正在进行中的请求、批量请求，可限制上限
 
 ```js
 // 在wait内只能执行一次
@@ -748,6 +754,298 @@ concuiRequest(urls, 3).then(res => {
   console.log(res)
 })
 ```
+
+
+### 最少子串、千分符、大写转化
+删除最少子串问题
+
+```js
+const func = str => {
+  const map = {}
+  for (let i = 0; i < str.length; i++) {
+    const item = str[i]
+    map[item] = map[item] ? map[item] + 1 : 1
+  }
+  const minLength = Object.values(map).reduce((min, item) => Math.min(min, item), str.length)
+  Object.keys(map).forEach(key => {
+    if (map[key] === minLength) {
+      const reg = new RegExp(key)
+      for (let i = 0; i < minLength; i++) {
+        str = str.replace(reg, '')
+      }
+    }
+  })
+  return str
+}
+console.log(func('ababac'))
+```
+
+千分符号问题
+```js
+// 优先使用本身存在的方法，如果没有去扩展
+const toLocaleString = num => {
+  if (!Number.prototype.toLocaleString) {
+    Number.prototype.toLocaleString = function() {
+      // 此处暂不关心配置问题
+      return trans(this)
+    }
+  } else {
+    return num.toLocaleString()
+  }
+}
+
+// 转换基本的整数
+const intTrans = num => {
+  const arr = []
+  num = num + ''
+  for(let i = num.length - 1; i >=0 ; i--) {
+    arr.unshift(num[i])
+    if ((num.length - i) % 3 === 0 && i) {
+      arr.unshift(',')
+    }
+  }
+  return arr.join('')
+}
+
+// 小数的转化和判断
+const isDe = num => {
+  return num.toString().includes('.')
+}
+
+const deTrans = str => {
+  const [i, d] = str.split('.')
+  return `${intTrans(i)}.${d.slice(0, 3)}`
+}
+
+// 负数的转化和判断
+const isFu = num => {
+  return num < 0
+}
+
+const trans = num => {
+  str = `${num}`
+  if (isDe(num)) {
+    if (isFu(num)) {
+      const fu = str.slice(0, 1)
+      const n = str.slice(1)
+      return `${fu}${deTrans(n)}`
+    }
+    return deTrans(str)
+  }
+  if (isFu(num)) {
+    const fu = str.slice(0, 1)
+    const n = str.slice(1)
+    return `${fu}${intTrans(n)}`
+  }
+  return intTrans(num)
+}
+
+console.log(trans(12431451345))
+```
+
+大写转化问题
+
+```js
+const numMap = {
+  0: '零',
+  1: '一',
+  2: '二',
+  3: '三',
+  4: '四',
+  5: '五',
+  6: '六',
+  7: '七',
+  8: '八',
+  9: '九',
+}
+
+const unitMap = {
+  0: '',
+  1: '十',
+  2: '百',
+  3: '千'
+}
+
+const unitMapGlo = {
+  0: '',
+  1: '万',
+  2: '亿',
+}
+
+const getUpperStr = arr => {
+  if (arr.every(item => +item === 0)) {
+    return ''
+  }
+  let cachearr = []
+  arr.forEach((item, index) => {
+    let res = ''
+    res += numMap[item]
+    if (+item) {
+      res += unitMap[index]
+    }
+    cachearr.push(res)
+  })
+  cachearr.reverse()
+  let str = cachearr.join('').replace(/零+/g, '零')
+  if (str[str.length - 1] === '零') {
+    str = str.slice(0, -1)
+  }
+  return str
+}
+
+const trans = num => {
+  if (num > 10000 * 10000 * 1000) {
+    throw '数太大了'
+  }
+  let str = num.toString()
+  let arr = []
+  let conuner = 0
+  for(let i = str.length - 1; i >=0; i--) {
+    if (!arr[conuner]) {
+      arr[conuner] = []
+    }
+    arr[conuner].push(str[i])
+    if ((str.length - i) % 4 === 0) {
+      conuner++
+    }
+  }
+  let resarr = []
+  arr.forEach((item, index) => {
+    let str = getUpperStr(item)
+    str && (str += unitMapGlo[index])
+    resarr.push(str)
+  })
+  resarr.reverse()
+  return resarr.join('')
+}
+
+const str = trans(20330050860)
+console.log('======>', str)
+```
+
+### 做过哪些性能优化
+
+做过哪些性能优化的事情
+
+### vue2和vue3有哪些区别
+
+vue3优点
+
+1. 性能更好
+2. 体积更小
+3. 更好维护
+4. ts支持好
+
+pinia和vuex的区别
+
+pinia
+
+1. 去除了mutation
+2. 体积更小
+3. 多实例
+4. 对ts支持更好
+5. composition api 维护更方便
+
+react和vue的区别
+
+1. react是只针对MVC的view层，vue是MVVM模式
+2. react是单向数据流，vue是双向数据绑定
+3. react是JSX，vue推荐单文件组件
+4. react不加干预会刷新整个组件，vue会添加一栏关系不需要重新渲染整个树
+
+### http1.1和http2.0的区别
+
+http1.1的不足：
+
+1. 高延时-队头阻塞
+2. 无状态-影响交互
+3. 明文传输-不安全
+4. 无法服务端推送
+
+http2.0解决方案
+
+1. 二进制传输
+2. 头部压缩 HPACK算法
+3. 多路复用：减少tcp的链接，一个tcp的链接，通过传输二进制帧和消息标识来传输数据
+
+tcp的三次握手
+
+1. 客户端给服务端发送SYN数据包，请求链接
+2. 服务端给客户端发送SYN包+ACK包，告知准备好
+3. 客户端给服务端发送ACK包，确认连接
+
+为什么是3次而不是两次，如果不发第三次ACK包确认，会出现连接不稳定，如SYN包发送失败，马上发送第二次
+
+四次挥手
+
+1. 客户端停止数据传输，发送FIN给服务端，进入等待阶段
+2. 服务端收到FIN包后，发送FIN包+ACK包，进入半关闭状态，仍然可以发送数据，客户端收到数据
+3. 服务端没有数据接受，在发送FIN+ACK包，进入等待关闭状态
+4. 客户端发送ACK，进入等待关闭状态，服务端接受ACK包，close，客户端等待一会Close
+
+TCP和UDP的区别
+
+1. TCP面向连接，UDP面向无连接
+2. TCP是一对一的，UDP是多对多的
+3. TCP是可靠的，但是UDP是不可靠的
+4. TCP队头阻塞，UDP不会
+
+### 前端安全问题
+
+#### xss攻击（跨站脚本攻击）
+
+1. 反射型XSS：在url里面添加参数，可上传到数据库
+2. 储存型XSS：数据提交时候上传到数据库
+3. DOM型XSS： dom解析时候运行的，数据客户端
+
+如何预防
+
+主要从两个方面：
+
+1. 恶意提交的代码
+2. 浏览器执行恶意代码
+
+针对第一点：
+
+1. 前端充分对输入数据，充分过滤，并做相关转移，这一点vue已经帮做了
+2. 是用现代框架，将数据和渲染代码分割
+
+针对第二点：
+
+1. innerHTML、outerHTML、document.write()时候要注意
+2. 在执行事件的时候要注意
+
+#### CSRF攻击（跨站请求伪造）
+
+第三方盗用cookie
+
+如何防范
+
+1. 同源策略，只接受本站域名的请求
+2. header添加token
+3. cookie 的samesite设置严格模式
+
+#### 点击劫持（ClickJacking）
+
+就是将你的网站放在iframe中，然后再给iframe中添加蒙版，诱导点击
+
+#### 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

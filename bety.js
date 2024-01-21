@@ -23,198 +23,228 @@ const coder = {
 // coder.run()
 
 
-const tree = [{
-  value:"a",
-  children:[
-    {
-      value:"c",
-      children:[
-        {
-          value:"f",
-          children:[]
-        },
-        {
-          value:"g",
-          children:[]
-        }
-      ]
-    },
-    {
-      value:"b",
-      children: [
-        {
-          value:"d",
-          children:[
-            {
-              value:"e",
-              children:[
-                {
-                  value: "h",
-                  children: []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}]
+/**
+ * 
+ */
 
-const dfs = (root, goal) => {
-  const stack = [...root]
-  let dir = ''
-  while(stack.length) {
-    const node = stack.shift()
-    dir += `${node.value}-`
-    if (node.value === goal) {
-      dir = dir.slice(0, -1)
-      return dir
-    }
-    const child = node.children || []
-    for(let i = child.length -1; i >=0; i--) {
-      const item = child[i]
-      stack.unshift(item)
-    }
-  }
-  return -1
-}
-
-const bfs = (root, goal) => {
-  const stack = [...root]
-  let dir = ''
-  while(stack.length) {
-    const node = stack.shift()
-    dir += `${node.value}-`
-    if (node.value === goal) {
-      dir = dir.slice(0, -1)
-      return dir
-    }
-    node.children.forEach(item => stack.push(item))
-  }
-  return -1
-}
-
-console.log(bfs(tree, 'h'))
-// console.log(dfs(tree, 'h'))
-
-class EventBus{
-  constructor() {
-    this.list = []
-  }
-  on(name, func) {
-    const isHasName = this.list.find(item => item.name === name)
-    if (isHasName) {
-      this.list.forEach(item => {
-        if (item.name === name) {
-          item.cbs.push(func)
-        }
-      })
-    } else {
-      this.list.push({
-        name,
-        cbs: [func]
-      })
-    }
-  }
-  emit(name, ...params) {
-    const Funcs = this.list.find(item => item.name === name)?.cbs || []
-    Funcs.forEach(cb => {
-      cd.apply(this, params)
+function runMicroTask(fn) {
+  if (typeof process !== 'undefined' && typeof process.nextTick === 'function' ) {
+    return process.nextTick(fn)
+  } else if (typeof MutationObserver === 'function') {
+    const ob = new MutationObserver(fn)
+    const textNode = document.createTextNode('1')
+    ob.observe(textNode, {
+      characterData: true
+    })
+    textNode.data = '2'
+  } else {
+    setTimeout(() => {
+      fn 
     })
   }
-  once(name, func) {
-    this.list.push({
-      name,
-      cd: params => {
-        func(params)
-        this.remove(name)
-      }
+}
+
+function isPromiseLike(value) {
+  return value && typeof value.then === 'function'
+}
+
+Promise.prototype.catch = function(reject) {
+  return this.then(null, reject)
+}
+Promise.prototype.finally = function(onFinally) {
+  return this.then(
+    value => Promise.resolve(onFinally()).then(() => value), 
+    error => Promise.resolve(onFinally()).then(() => {
+      throw error
+    })
+  )
+}
+Promise.resovle = function(value) {
+  if (value instanceof Promise) return value
+  if (isPromiseLike(value)) {
+    return new Promise((resolve, reject) => {
+      value.then(resolve, reject)
     })
   }
-  remove(name) {
-    this.list = this.list.filter(item => item.name !== name)
-
-  }
-  removeAll() {
-    this.list = []
-  }
+}
+Promise.reject = function(reason) {
+  return new Promise((resolve, reject) => {
+    reject(reason)
+  })
 }
 
 /**
- * 并发请求
- * @params {string[]} urls 待请求的url数组
- * @params {number} maxNum 最大的并发数
+ * [
+ *  ['A', 'B', 'C'],
+ *  [1, 2, 3],
+ *  ['a', 'b', 'C']
+ * ]
+ */
+// 输入 [['A', 'B', ...], [1, 2], ['a', 'b'], ...]
+
+// 输出 ['A1a', 'A1b', ....]
+
+const sortMatrixArr = (arr1, arr2) => {
+  if (!arr1.length) {
+    return arr2
+  }
+  const res = []
+  arr1.forEach(item => {
+    arr2.forEach(item2 => {
+      res.push(`${item}${item2}`)
+    })
+  })
+  return res
+}
+
+const sortMatrix = arr => {
+  return arr.reduce((res, item) => {
+    return sortMatrixArr(res, item)
+  }, [])
+}
+
+const twoArr = [
+  ['A', 'B', 'C'],
+  [1, 2, 3],
+  ['a', 'b', 'C']
+]
+
+// const res = sortMatrix(twoArr)
+// console.log(res)
+
+
+/**
+ * pre = 'abcde123'
+ * now = '1abc123'
  */
 
-const fetch = (url, index) => {
-  return new Promise(resolve => {
-    const time = Math.random() * 1000
-    setTimeout(() => {
-      resolve({
-        url,
-        index,
-        time
-      })
-    }, time)
-  })
-}
+const pre = 'abcde123'
+const now = '1abc123'
 
-function concuiRequest(urls, maxNum) {
-  return new Promise((resolve) => {
-    if (!urls.length) {
-      resolve([])
+// 1. 当前索引值比较
+
+const compareStr = (pre, now) => {
+  const res = []
+  let index = 0
+  while(true) {
+    console.log(res, pre, now, index)
+    if (pre.length === now.length) {
+      return res
     }
-    let index = 0
-    const result = []
-    let finishCount = 0
-    async function request() {
-      const i = index
-      const url = urls[index]
-      index++
-      try {
-        const res = await fetch(url, index)
-        result[i] = res
-      } catch (error) {
-        result[i] = error
-      } finally {
-        console.log(result)
-        if (finishCount === urls.length) {
-          resolve(result)
-        }
-        if (index < urls.length) {
-          request()
-        }
+    if (pre[index] !== now[index]) {
+
+      if (index === 0) {
+        res.push({
+          type: 'add',
+          index: 0,
+          content: now[index]
+        })
+        now.shift()
+      } else {
+        res.push({
+          type: 'delete',
+          index,
+          content: pre[index]
+        })
+        now.splice(index, 0, pre[index])
+        index++
       }
+    } else {
+      index++
     }
-    for(let i = 0; i < Math.min(urls.length, maxNum); i++) {
-      console.log(i)
-      request()
-    }
-  })
-}
-
-let urls = []
-for (let i = 0; i < 20; i++) {
-  urls.push(`url---${i}`)
-}
-console.log(urls)
-
-concuiRequest(urls, 3).then(res => {
-  console.log(res)
-})
-
-
-let control;
-async function getList() {
-  control?.abort()
-  controller = new AbortController()
-  try {
-    const list = await fetch('url', {
-      signal: controller.signal
-    })
-    console.log(list)
-  } catch (error) {
-    console.log(error)
   }
 }
+
+// compareStr(pre.split(''), now.split(''))
+
+/**
+ * 要求：实现LazyMan的链式调用，完成LazyMan(name).eat().sleep()
+ * @Author: salvatoreliaoxuan salvatoreliaoxuan@didiglobal.com
+ * @Date: 2023-02-06 17:22:22
+ * @LastEditors: salvatoreliaoxuan salvatoreliaoxuan@didiglobal.com
+ * @LastEditTime: 2023-02-06 17:36:08
+ * @param {name} 名字
+ * @retrun {object} LazyMan 返回一个LazyManClass实例
+ * @retrun {object} LazyMan.eat() 吃东西
+ * @retrun {object} LazyMan.sleep() 睡多久
+ * @example
+ * const LazyManTony = new LazyManClass('Tony')
+ * LazyManTony.eat('lunch').sleep(10).eat('dinner').sleep(20)
+ */
+
+class LazyManClass {
+  constructor(name) {
+    this.name = name
+    this.task = []
+    console.log(this.name)
+    setTimeout(() => {
+      this._next()
+    })
+  }
+  _next() {
+    console.log(this.task)
+    const func = this.task.shift()
+    func?.()
+  }
+  eat(f) {
+    const self = this
+    const fn = function(food) {
+      return function() {
+        console.log(food)
+        self._next()
+      }
+    }(f)
+    this.task.push(fn)
+    return this
+  }
+  sleep(time) {
+    const self = this
+    const fn = function(t) {
+      return function() {
+        console.log('sleep……')
+        setTimeout(() => {
+          self._next()
+        }, t * 1000);
+      }
+    }(time)
+    this.task.push(fn)
+    return this
+  }
+}
+
+// const LazyManTony = new LazyManClass('Tony')
+// setTimeout(() => {
+//   LazyManTony.eat('lunch').sleep(10).eat('dinner').sleep(20)
+// })
+
+/**
+ *  写一个mySetInterVal(fn, a, b), 每次间隔 a,a+b,a+2b,...,a+nb 的时间，执行一次fn
+ * 然后写一个 myClear，停止上面的 mySetInterVal
+ * */
+let timer = null
+let n = 0
+const mySetInterVal = (fn, a, b) => {
+  timer = setInterval(() => {
+    clearInterval(timer)
+    fn()
+    n++
+    mySetInterVal(fn, a, n * b)
+  }, a + b);
+}
+
+const myClear = () => {
+  clearInterval(timer)
+  timer = null
+  n = 0
+}
+
+
+// mySetInterVal(() => {
+//   console.log(2)
+// }, 1000, 1000)
+
+var b = 10;
+(function b(){
+    b = 20;
+    console.log(b);
+})();
