@@ -246,5 +246,50 @@ const myClear = () => {
 var b = 10;
 (function b(){
     b = 20;
-    console.log(b);
+    // console.log(b);
 })();
+
+
+/**
+ * 斐波拉切数列
+ * 1 1 2 3 5 8 13
+ */
+
+const getN = (n) => {
+  if (n === 1 || n === 2) {
+    return 1
+  }
+  return getN(n-1) + getN(n - 2)
+}
+
+const getForN = n => {
+  let p1 = 1
+  let p2 = 1
+  let dp = 0
+  for(let i = 2; i < n; i++){
+    dp = p1 + p2
+    p1 = p2
+    p2 = dp
+  }
+  return dp
+}
+
+const c = getForN(6)
+console.log('========>', c)
+
+var removeElement = function (nums, val) {
+  let n = nums.length
+  let left = 0
+  let right = 0
+  while (right < n) {
+      if (nums[right] !== val) {
+          nums[left] = nums[right]
+          left++
+      }
+      right++
+  }
+  console.log(nums)
+  return left
+};
+const g = [0,1,2,2,3,0,4,2]
+removeElement(g, 2)
