@@ -42,32 +42,9 @@ module.exports = config({
           { text: "小程序", link: "/posts/mp/", icon: 'xiaochengxu' },
           { text: "项目相关", link: "/posts/项目/", icon: 'xiaochengxu' },
         ]
-      },
-      {
-        text: "Essay",
-        link: "/essay/",
-        icon: '16'
-      },
+      }
     ],
     sidebar: {
-      "/essay/": [
-        // 需要置顶的内容
-        "/essay/",
-        "20210122", 
-      ].concat([
-        // .concat(['---------'])
-        "20200925", 
-        "20201015", 
-        "20201102", 
-        "20201125", 
-        "20201207", 
-        "20201218", 
-        "20210220",
-        "20210409",
-        "20210620",
-        "20210829",
-        "20220614",
-      ].reverse()),
       "/posts/": [
         {
           title: "HTML",

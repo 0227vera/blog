@@ -2,7 +2,7 @@
 
 ## 标签
 
-### doctype(1)
+### doctype
 
 doctype 是一种标准通用标记语言的文档类型声明，目的是告诉标准通用标记语言解析器要使用什么样的文档类型来定义解析文档
 
@@ -10,15 +10,15 @@ doctype 是一种标准通用标记语言的文档类型声明，目的是告诉
 
 浏览器本身分为两种模式：标准模式和怪异模式，浏览器通过 doctype 来区分这两种模式，如果没有 doctype 浏览器就会进入怪异模式，在这个模式下面，样式和标准模式存在差异，而 dom 标准和 html 标准规定标准模式下的行为，没有对怪异模式的规定，所以不同浏览器在怪异模式下面的的处理是不同的
 
-### html(1)
+### html
 
 `<html>` 元素 表示一个HTML文档的根（顶级元素），所以它也被称为*根元素*。所有其他元素必须是此元素的后代。
 
-#### head(2)
+#### head
 
 `<head>` 元素 规定文档相关的配置信息（元数据），包括文档的标题，引用的文档样式和脚本等。
 
-##### meta(3)
+##### meta
 
 `<meta>` 元素表示那些不能由其它 HTML 元相关（meta-related）元素（(`<base>`、`<link>`, `<script>`、`<style>` 或 `<title>`）之一表示的任何元数据信息。
 
@@ -107,27 +107,27 @@ user-scalable: 用户是否允许手动缩放
 
 在移动端开发的过程中需要注意这上面的值
 
-##### title(3)
+##### title
 
 `<title>` 元素 定义文档的标题，显示在浏览器的标题栏或标签页上。它只应该包含文本，若是包含有标签，则它包含的任何标签都将被忽略。
 
-##### link(3)
+##### link
 
 HTML外部资源链接元素 (`<link>`) 规定了当前文档与外部资源的关系。该元素最常用于链接样式表，此外也可以被用来创建站点图标(比如PC端的“favicon”图标和移动设备上用以显示在主屏幕的图标) 。
 
-##### style(3)
+##### style
 
 style 全局属性 包含应用到元素的 CSS 样式声明。要注意样式最好定义在单独的文件中。这个属性以及 `<style>` 元素的主要目的是快速装饰。例如用于测试目的。
 
 >用法注解：这个属性不能用于传递语义信息。即使所有样式都移除了，页面也应该保留正确语义。通常它不应用于隐藏不相关的信息；这应该使用 hidden 属性来实现。
 
-#### body(2)
+#### body
 
 `<body>` 元素表示文档的内容。document.body 属性提供了可以轻松访问文档的 body 元素的脚本。
 
 注意：body有一些方法[body属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body#%E5%B1%9E%E6%80%A7)
 
-##### 行内标签（内联标签） 和 块级标签 (3)
+##### 行内标签（内联标签） 和 块级标签 
 
 1. 行内标签（内联标签）
 
@@ -142,7 +142,7 @@ eg: div、p、h1-h6、ul、li、dl（定义列表、跟 ul…li 类似）、dt�
 3. 行内块标签 （这一类标签比较特殊，即具有行内标签的特性，又可以设置宽高）
   eg: img input （最典型的两个）
 
-##### canvas(3)
+##### canvas
 
 * 一些新的标签的兼容性可能比较差，所以用的也比较少，但是 canvas 不一样，canvas 用的还是比较多的，特别是基于 canvas 开发出来的大量的第三方的插件或者框架和引擎，比如：
 
@@ -167,40 +167,55 @@ eg: div、p、h1-h6、ul、li、dl（定义列表、跟 ul…li 类似）、dt�
 
 6. [vue 生成 canvas 海报图](https://segmentfault.com/a/1190000019975772)
 
-##### [video](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)、[audio](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio) (3)
+##### [video](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)、[audio](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio)
 
 1. `<video>` 元素 用于在HTML或者XHTML文档中嵌入媒体播放器，用于支持文档内的视频播放。你也可以将 `<video>`  标签用于音频内容，但是 `<audio>` 元素可能在用户体验上更合适。
 
 2. `<audio>` 元素用于在文档中嵌入音频内容。 `<audio>` 元素可以包含一个或多个音频资源， 这些音频资源可以使用 src 属性或者`<source>` 元素来进行描述：浏览器将会选择最合适的一个来使用。也可以使用 MediaStream 将这个元素用于流式媒体。
 
-##### script(3)
+## html 语义化
 
-`<script>` 元素用于嵌入或引用可执行脚本。这通常用作嵌入或者指向 JavaScript 代码。`<script>` 元素也能在其他语言中使用，比如 WebGL 的 GLSL 着色器语言。
+什么是语义化？ 就是用合理正确的标签来展示内容，比如`h1~h6`表示标题、`table`表示表格等等
 
-属性：
+好处有：
 
-1. `async`:
+1. 易于代码维护，样式丢失的时候能够让页面具有清晰的结构
 
-对于普通脚本，如果存在 async 属性，那么普通脚本会被并行请求，并尽快解析和执行。
+2. 利于 SEO，搜索引擎根据标签来确定上下文和各个关键字的权重
 
-对于模块脚本，如果存在 async 属性，那么脚本及其所有依赖都会在延缓队列中执行，因此它们会被并行请求，并尽快解析和执行。
+3. 方便其他设备解析，如盲人阅读器根据语义渲染网页
 
-该属性能够消除解析阻塞的 Javascript。解析阻塞的 Javascript 会导致浏览器必须加载并且执行脚本，之后才能继续解析。defer 在这一点上也有类似的作用。
+4. 有利于开发和维护，语义话更具可读性，代码更好维护，与 CSS3 关系更和谐
 
-2. `crossorigin`:
+## b/strong、i/em的区别
 
-那些没有通过标准[CORS (en-US)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)检查的正常script 元素传递最少的信息到 window.onerror。可以使用本属性来使那些将静态资源放在另外一个域名的站点打印错误信息。参考 [CORS 设置属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/crossorigin)了解对有效参数的更具描述性的解释。
+b（bold）是实体标签、用来给文字加粗；没什么实际含义，单纯的加粗文字
 
-3. `defer`:
+strong是逻辑标签，作用是加强字符语气
 
-这个布尔属性被设定用来通知浏览器该脚本将在文档完成解析后，触发 [DOMContentLoaded (en-US)](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event) 事件前执行。
-有 defer 属性的脚本会阻止 DOMContentLoaded 事件，直到脚本被加载并且解析完成。
+根据语义化，建议使用strong，少用b；对于i和em也是一样的，建议使用em标签
 
->如果缺少 src 属性（即内嵌脚本），该属性不应被使用，因为这种情况下它不起作用。
+##  css、js的引入位置问题
 
->defer 属性对模块脚本没有作用 —— 他们默认 defer。
+为什么最好把`<link>`标签放在 head 之间？为什么最好把`<script>`放在`</body>`之后
 
-[更多属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script#%E5%B1%9E%E6%80%A7)
+1. 把 link 标签放在 head 之间是规范要求的内容，如果不放在头部，一旦浏览器阻止渲染，会发生空白页面或者没有样式的内容
+
+2. script 脚本在下载和执行期间会阻止 html 解析，把 script 放在底部，保证 html 首先完成解析，将页面尽早呈现给用户
+
+## href 和 src 的区别
+
+1. href 标识超文本引用，用在 link 和 a 等元素上，href 是引用和页面关联，是在当前元素和引用资源之间建立联系；css 中的 href 是可以并行下载的并且不会停止当前对文档的处理，所以会推荐用 link 引入 css 为不是@import
+
+2. src 标识引入资源，在 img、script、iframe 上是必不可少的一部分；src 会暂停其他的下载和处理（图片不会暂停其他下载），直到该资源加载、编译、执行完成，这就是为什么建议把 js 脚本放在底部而不是头部
+
+## script 的 async 跟 defer 的区别
+
+背景：HTML在执行时，如果遇到外部JS引用，需要下载执行JS文件，此时会停止页面渲染，导致页面表现为空白。defer和async用来控制JS文件的下载和执行
+
+defer 表明脚本执行时不会影响页面构造，让脚本在页面解析完成后执行（即让浏览器下载JS文件，但等到页面解析完成后执行）
+
+async 只适用于外部JS文件，告诉浏览器立即下载JS文件，但是不保证按照JS的先后顺序运行（注意JS文件之间的依赖关系）
 
 ## 标签层级结构
 

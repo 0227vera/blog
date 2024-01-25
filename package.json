@@ -16,14 +16,12 @@
   "license": "ISC",
   "dependencies": {
     "gitalk": "^1.5.0",
-    "loadsh": "0.0.4",
     "vue-print-nb": "^1.4.0",
     "vuedraggable": "^2.23.0",
     "vuepress-theme-esper": "0.0.3",
     "vuepress-theme-hope": "^1.28.1",
     "vuepress-theme-mini": "^3.1.1",
-    "vuepress-theme-yuu": "^3.1.1",
-    "xy-ui": "^1.4.2"
+    "vuepress-theme-yuu": "^3.1.1"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.8.2",
