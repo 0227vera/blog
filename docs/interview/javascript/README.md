@@ -318,3 +318,41 @@ NaN === NaN // false
 Object.is(+0, -0) // false
 Object.is(NaN, NaN) // true
 ```
+
+## 打印值
+
+```js
+function Person () {
+  getAge = function () {
+    console.log(10)
+  }
+  return this  // 这个地方this的作用：在3的是是把this指向全局对象
+}
+Person.getAge = function () {
+  console.log(20)
+}
+Person.prototype.getAge = function () {
+  console.log(30)
+}
+var getAge = function () {
+  console.log(40)
+}
+function getAge () {
+  console.log(50)
+}
+Person.getAge()             // 1.  20
+
+getAge()                    // 2.  40
+
+Person().getAge()           // 3. 10
+
+getAge()                    // 4. 10
+
+new Person.getAge()         // 5. 20
+
+new Person().getAge()       // 6. 30
+
+new new Person().getAge()   // 7. 30
+
+new (new Person().getAge) () // 8. 30  对7的解释
+```
