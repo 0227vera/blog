@@ -141,7 +141,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 * {
   padding: 0;
   margin: 0;

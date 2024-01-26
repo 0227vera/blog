@@ -759,7 +759,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 canvas {
   width: 100%;
   height: 100%;

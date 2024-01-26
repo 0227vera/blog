@@ -393,7 +393,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }

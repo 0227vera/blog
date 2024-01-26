@@ -1,5 +1,5 @@
 export default [
-	'熟练掌握HTML5、CSS3、JavaScript、ES6/ES next开发;熟练使用scss、less,为熟悉和熟练vue/react/mpx(小程序)框架提供夯实基础',
+	'熟练掌握HTML5、CSS3、JavaScript、ES6/ES next开发;熟练使用less、less,为熟悉和熟练vue/react/mpx(小程序)框架提供夯实基础',
 	'使用第三方组件库,element-ui、vant、echarts等完成基础业务并高还原度完成页面,完成复杂应用的孵化和稳定迭代',
 	'使用vue3+vite+WindiCSS搭建后台管理系统,快速孵化营销后台管理,收敛ToC业务组件',
 	'使用mpx(小程序开发框架),孵化出租车小程序,并找到扫码付、红包码等抓手快速让UV达到百万级',
